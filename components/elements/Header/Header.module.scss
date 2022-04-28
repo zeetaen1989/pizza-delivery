@@ -1,0 +1,21 @@
+@use "@styles/abstracts"as a;
+
+.container {
+  padding: 2rem 15rem;
+  text-align: center;
+
+  .top__text {
+    font-size: a.$small-fs;
+    font-weight: a.$regular-fw;
+    text-transform: uppercase;
+    color: darkred;
+  }
+
+  h1 {
+    @include a.header;
+  }
+
+  p {
+    font-size: a.$regular-fs;
+  }
+}

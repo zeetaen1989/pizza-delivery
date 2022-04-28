@@ -1,0 +1,37 @@
+@use "@styles/abstracts"as a;
+
+.container {
+  background-color: goldenrod;
+  text-align: center;
+
+  p {
+    color: a.$primary-clr-3;
+    font-size: a.$small-fs;
+    animation: text 3s 0.15s ease-in-out infinite;
+  }
+
+  @keyframes text {
+    0% {
+      color: a.$primary-clr-3;
+      letter-spacing: 0.3rem;
+    }
+
+    25% {
+      color: darkred;
+    }
+
+    50% {
+      color: white;
+      letter-spacing: 0.1rem;
+    }
+
+    75% {
+      color: darkred;
+    }
+
+    100% {
+      color: black;
+      letter-spacing: 0.3rem;
+    }
+  }
+}
