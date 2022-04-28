@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>FoodLand || A platform to order food of your choice</title>
+        <title>PizzaLand || A platform to order pizza of your choice</title>
         <meta
           name="description"
           content="This is a food delivery platform where you can order food and get it delivered at your doorstep"
