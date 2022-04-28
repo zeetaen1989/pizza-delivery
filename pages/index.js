@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "@styles/Home.module.scss";
 
 const Home = () => {
@@ -14,7 +13,7 @@ const Home = () => {
         <meta name="keywords" content="FoodLand, Food, Food Delivery" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>HomePage</main>
+      <main></main>
     </div>
   );
 };
