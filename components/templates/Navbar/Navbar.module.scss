@@ -41,7 +41,7 @@
         flex: 4;
 
         a {
-          font-weight: 500;
+          font-weight: a.$regular-fw;
           transition: all 0.3s ease;
           position: relative;
 
@@ -95,7 +95,8 @@
       display: grid;
       place-items: center;
       font-size: a.$small-fs;
-      font-weight: 500;
+      font-weight: a.$regular-fw;
+      user-select: none;
     }
   }
 }
