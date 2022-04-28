@@ -5,12 +5,12 @@ import { AiOutlinePhone } from "react-icons/ai";
 import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
-  const linksLeft = ["Home", "Products", "Menu"];
-  const linksRight = ["Locations", "Chef", "Contact"];
+  const linksLeft = ["Home", "Products"];
+  const linksRight = ["Chef", "Contact"];
 
   return (
-    <header className={styles.container}>
-      <section className={styles.left}>
+    <section className={styles.container}>
+      <div className={styles.left}>
         <Link href="/" passHref>
           <AiOutlinePhone fontSize="2rem" />
         </Link>
@@ -18,7 +18,7 @@ const Navbar = () => {
           <h1>Order Now!</h1>
           <span>+01 234 567 89</span>
         </div>
-      </section>
+      </div>
       <nav className={styles.center}>
         <ul>
           <li>
@@ -48,13 +48,13 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-      <section className={styles.right}>
+      <div className={styles.right}>
         <Link href="/cart" passHref>
           <MdOutlineShoppingCart fontSize="2rem" cursor="pointer" />
         </Link>
         <span>3</span>
-      </section>
-    </header>
+      </div>
+    </section>
   );
 };
 
