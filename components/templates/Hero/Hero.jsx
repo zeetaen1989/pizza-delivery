@@ -14,11 +14,11 @@ const Hero = () => {
   const handleArrow = (direction) => {
     if (direction === "left") {
       setCurrentSlide(
-        currentSlide !== imgSlider.length - 1 ? currentSlide + 1 : 0
+        currentSlide < imgSlider.length - 1 ? currentSlide + 1 : 0
       );
     } else {
       setCurrentSlide(
-        currentSlide !== 0 ? currentSlide - 1 : imgSlider.length - 1
+        currentSlide > 0 ? currentSlide - 1 : imgSlider.length - 1
       );
     }
   };
