@@ -4,7 +4,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: a.$primary-padding;
+  padding: 0.5rem 2rem;
+  min-height: 5.25rem;
+  background-color: a.$primary-clr-1;
 
   .left {
     display: flex;
