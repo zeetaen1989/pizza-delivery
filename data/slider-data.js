@@ -17,4 +17,10 @@ export const imgSlider = [
     title: "Spicy & Tasty",
     percentage: "25%",
   },
+  {
+    id: 4,
+    img: "/images/slide2.png",
+    title: "Sweet & Sour",
+    percentage: "30%",
+  },
 ];
