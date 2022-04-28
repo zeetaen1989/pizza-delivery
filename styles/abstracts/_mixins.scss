@@ -1,5 +1,13 @@
+@use "./fonts" as f;
+
 // Flex Direction Column
 @mixin flex-direction-column {
   display: flex;
   flex-direction: column;
+}
+
+// Header Style
+@mixin header {
+  font-size: f.$medium-fs;
+  line-height: 1.2;
 }
