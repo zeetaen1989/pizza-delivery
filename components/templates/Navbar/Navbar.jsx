@@ -36,7 +36,7 @@ const Navbar = () => {
           </li>
         </ul>
         <Link href="/" passHref>
-          <h1>FoodLand</h1>
+          <h1>PizzaLand</h1>
         </Link>
         <ul>
           <li>
