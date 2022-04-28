@@ -1,3 +1,60 @@
+export const popularProducts = [
+  {
+    id: 1,
+    title: "Prosciutto E Unghi Pizza",
+    img: "/images/Prosciutto-e-unghi-pizza.png",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    price: 12.99,
+    rating: 4.5,
+  },
+  {
+    id: 2,
+    title: "Quattro Stagioni Pizza",
+    img: "/images/Quattro-stagioni-pizza.png",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    price: 14.99,
+    rating: 4.5,
+  },
+  {
+    id: 3,
+    title: "Pizza Alla Diavola",
+    img: "/images/Pizza-alla-diavola.png",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    price: 14.99,
+    rating: 4.5,
+  },
+  {
+    id: 4,
+    title: "Greek Pizza",
+    img: "/images/Greek-Pizza.png",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    price: 11.99,
+    rating: 5,
+  },
+  {
+    id: 5,
+    title: "Hawaiian Pizza",
+    img: "/images/Hawaiian-Pizza.png",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    price: 12.99,
+    rating: 4.5,
+  },
+  {
+    id: 6,
+    title: "Pepperoni Pizza",
+    img: "/images/Pepperoni-Pizza.png",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    price: 10.99,
+    rating: 5,
+  },
+];
+
 export const products = [
   {
     id: 1,
@@ -124,5 +181,14 @@ export const products = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: 15.99,
     rating: 4,
+  },
+  {
+    id: 15,
+    title: "Pizza Alla Diavola",
+    img: "/images/Pizza-alla-diavola.png",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    price: 14.99,
+    rating: 4.5,
   },
 ];
