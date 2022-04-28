@@ -1,5 +1,5 @@
-import { Hero } from "@components/templates";
 import Head from "next/head";
+import { Hero, PopularProducts } from "@components/templates";
 
 const Home = () => {
   return (
@@ -15,6 +15,7 @@ const Home = () => {
       </Head>
       <main>
         <Hero />
+        <PopularProducts />
       </main>
     </>
   );
