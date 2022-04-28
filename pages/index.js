@@ -1,9 +1,9 @@
+import { Hero } from "@components/templates";
 import Head from "next/head";
-import styles from "@styles/Home.module.scss";
 
 const Home = () => {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>FoodLand || A platform to order food of your choice</title>
         <meta
@@ -13,8 +13,10 @@ const Home = () => {
         <meta name="keywords" content="FoodLand, Food, Food Delivery" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main></main>
-    </div>
+      <main>
+        <Hero />
+      </main>
+    </>
   );
 };
 
