@@ -1,138 +1,165 @@
 @use "@styles/abstracts"as a;
 
 .container {
-  display: flex;
   height: calc(100vh - 6.25rem);
-  position: relative;
-  overflow: hidden;
-  user-select: none;
 
-  .arrow {
-    height: 3rem;
-    width: 3rem;
-    cursor: pointer;
-    margin: auto;
+  .top {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    transition: a.$transition-ease;
-    color: a.$primary-clr-2;
-    z-index: 2;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
 
-    &:hover {
-      color: a.$primary-clr-1;
-    }
-  }
-
-  .wrapper {
-    width: 350vw;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    transition: a.$transition-slider;
-
-    .slider {
-      position: relative;
+    .arrow {
+      height: 3rem;
+      width: 3rem;
+      cursor: pointer;
+      margin: auto;
       display: flex;
-      align-items: center;
       justify-content: center;
-      gap: 8rem;
-      width: 100vw;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      transition: a.$transition-ease;
+      color: a.$primary-clr-2;
+      z-index: 2;
+
+      &:hover {
+        color: a.$primary-clr-1;
+      }
+    }
+
+    .wrapper {
+      width: 400vw;
       height: 100%;
+      display: flex;
+      justify-content: center;
+      transition: a.$transition-slider;
 
-      article {
+      .slider {
+        position: relative;
         display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
-        text-align: center;
-        line-height: 1;
-        text-transform: uppercase;
+        align-items: center;
+        justify-content: center;
+        gap: 8rem;
+        width: 100vw;
+        height: 100%;
 
-        h1 {
-          font-size: a.$medium-fs;
-          font-weight: a.$bold-fw;
-          color: a.$primary-clr-2;
-          text-transform: capitalize;
-        }
+        article {
+          display: flex;
+          flex-direction: column;
+          gap: 0.8rem;
+          text-align: center;
+          line-height: 1;
+          text-transform: uppercase;
 
-        h2 {
-          font-size: a.$large-fs;
-          font-weight: a.$bold-fw;
-
-          &::after {
-            content: "";
-            display: block;
-            width: 50%;
-            height: 0.2rem;
-            background-color: a.$primary-clr-3;
-            margin: 0 auto;
+          h1 {
+            font-size: a.$medium-fs;
+            font-weight: a.$bold-fw;
+            color: a.$primary-clr-2;
+            text-transform: capitalize;
           }
-        }
 
-        span {
-          font-size: a.$medium-fs;
-          font-weight: a.$regular-fw;
-          color: a.$primary-clr-2;
-        }
+          h2 {
+            font-size: a.$large-fs;
+            font-weight: a.$bold-fw;
 
-        .btn {
-          position: relative;
-          margin: auto;
-          padding: 0.5rem 1rem;
-          transition: a.$transition-ease;
-          border: none;
-          background: none;
-
-          &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: block;
-            border-radius: 3.125rem;
-            background-color: a.$primary-clr-1;
-            width: 2.2rem;
-            height: 2.2rem;
-            transition: all 0.3s ease;
+            &::after {
+              content: "";
+              display: block;
+              width: 50%;
+              height: 0.2rem;
+              background-color: a.$primary-clr-3;
+              margin: 0 auto;
+            }
           }
 
           span {
-            position: relative;
-            font-size: a.$small-fs;
-            font-weight: a.$bold-fw;
-            letter-spacing: 0.05em;
-            color: a.$primary-clr-3;
+            font-size: a.$medium-fs;
+            font-weight: a.$regular-fw;
+            color: a.$primary-clr-2;
           }
 
-          svg {
+          .btn {
             position: relative;
-            top: 0;
-            margin-left: 0.625rem;
-            fill: none;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke: a.$primary-clr-3;
-            stroke-width: 2;
-            transform: translateX(-0.313rem);
+            margin: auto;
+            padding: 0.5rem 1rem;
             transition: a.$transition-ease;
-          }
+            border: none;
+            background: none;
 
-          &:hover::before {
-            width: 100%;
-            background-color: a.$primary-clr-1;
-          }
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              display: block;
+              border-radius: 3.125rem;
+              background-color: a.$primary-clr-1;
+              width: 2.2rem;
+              height: 2.2rem;
+              transition: all 0.3s ease;
+            }
 
-          &:hover svg {
-            transform: translateX(0);
-          }
+            span {
+              position: relative;
+              font-size: a.$small-fs;
+              font-weight: a.$bold-fw;
+              letter-spacing: 0.05em;
+              color: a.$primary-clr-3;
+            }
 
-          &:active {
-            transform: scale(0.95);
+            svg {
+              position: relative;
+              top: 0;
+              margin-left: 0.625rem;
+              fill: none;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              stroke: a.$primary-clr-3;
+              stroke-width: 2;
+              transform: translateX(-0.313rem);
+              transition: a.$transition-ease;
+            }
+
+            &:hover::before {
+              width: 100%;
+              background-color: a.$primary-clr-1;
+            }
+
+            &:hover svg {
+              transform: translateX(0);
+            }
+
+            &:active {
+              transform: scale(0.95);
+            }
           }
         }
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .dot {
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 50%;
+      background-color: a.$primary-clr-1;
+      margin: 0 0.5rem;
+      cursor: pointer;
+      transition: a.$transition-ease;
+
+      &:active {
+        background-color: a.$primary-clr-3;
+      }
+
+      &.active {
+        background-color: a.$primary-clr-3;
       }
     }
   }
