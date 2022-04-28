@@ -46,55 +46,69 @@ const Hero = () => {
   }, [currentSlide]);
 
   return (
-    <div className={styles.container}>
-      <section
-        className={styles.arrow}
-        style={{ left: "1rem", fontSize: "3rem" }}
-        onClick={() => handleArrow("left")}
-      >
-        <MdArrowBackIosNew />
-      </section>
-      <section
-        className={styles.wrapper}
-        style={{ transform: `translateX(${-100 * currentSlide}vw)` }}
-      >
-        {imgSlider.map((img) => (
-          <div className={styles.slider} key={img.id}>
-            <article>
-              <h1>{img.title}</h1>
-              <h2>Pizza</h2>
-              <span>{img.percentage} Off</span>
-              <Link href="/cart" passHref>
-                <a className={styles.btn}>
-                  <span>Order Now</span>
-                  <svg viewBox="0 0 13 10" height="10px" width="15px">
-                    <path d="M1,5 L11,5"></path>
-                    <polyline points="8 1 12 5 8 9"></polyline>
-                  </svg>
-                </a>
-              </Link>
-            </article>
-            <figure>
-              <Image
-                src={img.img}
-                alt="Pizza"
-                height={500}
-                width={540}
-                objectFit="contain"
-                priority
-              />
-            </figure>
-          </div>
-        ))}
-      </section>
-      <section
-        className={styles.arrow}
-        style={{ right: "1rem", fontSize: "3rem" }}
-        onClick={() => handleArrow("left")}
-      >
-        <MdArrowForwardIos />
-      </section>
-    </div>
+    <section className={styles.container}>
+      <div className={styles.top}>
+        <section
+          className={styles.arrow}
+          style={{ left: "2rem", fontSize: "3rem" }}
+          onClick={() => handleArrow("left")}
+        >
+          <MdArrowBackIosNew />
+        </section>
+        <section
+          className={styles.wrapper}
+          style={{ transform: `translateX(${-100 * currentSlide}vw)` }}
+        >
+          {imgSlider.map((img) => (
+            <div className={styles.slider} key={img.id}>
+              <article>
+                <h1>{img.title}</h1>
+                <h2>Pizza</h2>
+                <span>{img.percentage} Off</span>
+                <Link href="/cart" passHref>
+                  <a className={styles.btn}>
+                    <span>Order Now</span>
+                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                      <path d="M1,5 L11,5"></path>
+                      <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
+                  </a>
+                </Link>
+              </article>
+              <figure>
+                <Image
+                  src={img.img}
+                  alt="Pizza"
+                  height={500}
+                  width={540}
+                  objectFit="contain"
+                  priority
+                />
+              </figure>
+            </div>
+          ))}
+        </section>
+        <section
+          className={styles.arrow}
+          style={{ right: "2rem", fontSize: "3rem" }}
+          onClick={() => handleArrow("left")}
+        >
+          <MdArrowForwardIos />
+        </section>
+      </div>
+      <div className={styles.bottom}>
+        {imgSlider.map((item) => {
+          return (
+            <span
+              className={styles.dot}
+              key={item.id}
+              onClick={() => setCurrentSlide(item.id - 1)}
+              onChange={(e) => (e.target.style.backgroundColor = "red")}
+            ></span>
+          );
+        })}
+      </div>
+    </section>
   );
 };
 export default Hero;
