@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Hero, PopularProducts } from "@components/templates";
+import { Hero, Popular } from "@components/templates";
 
 const Home = () => {
   return (
@@ -13,10 +13,8 @@ const Home = () => {
         <meta name="keywords" content="FoodLand, Food, Food Delivery" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <Hero />
-        <PopularProducts />
-      </main>
+      <Hero />
+      <Popular />
     </>
   );
 };
