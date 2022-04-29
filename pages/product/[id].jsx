@@ -34,6 +34,7 @@ const Product = () => {
     toppings: ["Prosciutto", "Parmigiano", "Tomato Sauce", "Mushroom"],
     price: 12.99,
     rating: 4.5,
+    reviews: 84,
   };
 
   return (
@@ -60,7 +61,10 @@ const Product = () => {
         </figure>
         <article className={styles.container__right}>
           <h1>{pizza.title}</h1>
-          <Ratings rating={pizza.rating} />
+          <div className={styles.review}>
+            <Ratings rating={pizza.rating} />
+            <a href="#">({pizza.reviews} Reviews)</a>
+          </div>
           <span className={styles.price}>$ {pizza.price}</span>
           <p>{pizza.description}</p>
           <div className={styles.size}>
