@@ -1,0 +1,159 @@
+@use "@styles/abstracts"as a;
+
+.container {
+  display: flex;
+  gap: 1rem;
+  padding: 2rem 3rem;
+
+  &__left {
+    flex: 1;
+    display: grid;
+    place-items: center;
+  }
+
+  &__right {
+    @include a.flex-direction-column;
+    gap: 0.5rem;
+    flex: 1;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+
+    h1 {
+      font-size: a.$medium-fs;
+    }
+
+    .price {
+      font-size: a.$middle-fs;
+    }
+
+    .size {
+      @include a.flex-direction-column;
+      gap: 1rem;
+
+      &__wrapper {
+        display: flex;
+        gap: 3rem;
+
+        .img__wrapper {
+          position: relative;
+          cursor: pointer;
+
+          .info {
+            position: absolute;
+            background-color: a.$primary-clr-2;
+            border-radius: 0.5rem;
+            padding: 0rem 0.3rem;
+            top: -0.3rem;
+            right: -1.8rem;
+
+            &__title {
+              font-size: a.$small-fs;
+              color: a.$primary-clr-5;
+            }
+          }
+        }
+      }
+    }
+
+    .toppings {
+      &__wrapper {
+        display: flex;
+        gap: 1rem;
+
+        /* Checkbox container box */
+        .box {
+          position: relative;
+          padding-left: 1.5rem;
+          cursor: pointer;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+
+          /* Hide the browser's default checkbox */
+          input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+          }
+
+          /* Create a custom checkbox */
+          .checkmark {
+            position: absolute;
+            top: 3px;
+            left: 0;
+            height: 1.2rem;
+            width: 1.2rem;
+            border-radius: 5px;
+            background-color: a.$primary-clr-1;
+
+            /* Create the checkmark/indicator (hidden when not checked) */
+            &::after {
+              content: "";
+              position: absolute;
+              display: none;
+              left: 7px;
+              top: 3px;
+              width: 5px;
+              height: 10px;
+              border: solid a.$primary-clr-4;
+              border-width: 0 2px 2px 0;
+              -webkit-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              transform: rotate(45deg);
+            }
+          }
+
+          /* On mouse-over, add background color */
+          &:hover input~.checkmark {
+            background-color: a.$primary-clr-2;
+          }
+
+          input:checked~.checkmark {
+            /* Show the checkmark when checked */
+
+          }
+
+          input:checked~.checkmark::after {
+            display: block;
+          }
+        }
+      }
+    }
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      &__counter {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: a.$regular-fs;
+
+        .count__btn {
+          cursor: pointer;
+        }
+
+        .count__num {
+          font-size: a.$middle-fs;
+          font-weight: a.$regular-fw;
+          border: 1px solid a.$primary-clr-3;
+          border-radius: 0.4rem;
+          height: 2.5rem;
+          width: 2.5rem;
+          display: grid;
+          place-items: center;
+          user-select: none;
+        }
+      }
+
+      &__cart {
+        margin: 0rem;
+      }
+    }
+  }
+}
