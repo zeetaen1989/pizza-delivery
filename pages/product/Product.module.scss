@@ -9,6 +9,7 @@
     flex: 1;
     display: grid;
     place-items: center;
+    overflow: hidden;
   }
 
   &__right {
@@ -20,6 +21,15 @@
 
     h1 {
       font-size: a.$medium-fs;
+    }
+
+    .review {
+      display: flex;
+      gap: 0.5rem;
+
+      a {
+        width: fit-content;
+      }
     }
 
     .price {
@@ -111,11 +121,7 @@
             background-color: a.$primary-clr-2;
           }
 
-          input:checked~.checkmark {
-            /* Show the checkmark when checked */
-
-          }
-
+          /* Show the checkmark when checked */
           input:checked~.checkmark::after {
             display: block;
           }
