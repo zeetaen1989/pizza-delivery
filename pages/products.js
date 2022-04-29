@@ -20,7 +20,7 @@ const products = () => {
       </Head>
       <Header
         title="Our Products"
-        subtitle="Choose From Variety of Pizza's"
+        subtitle="Various Regional Taste"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor vitae purus faucibus ornare."
       />
       <Products />
