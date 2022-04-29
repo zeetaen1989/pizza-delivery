@@ -1,5 +1,5 @@
 import { Header } from "@components/elements";
-import { ProductsPage } from "@components/layouts";
+import { Products } from "@components/layouts";
 import Head from "next/head";
 
 const products = () => {
@@ -23,7 +23,7 @@ const products = () => {
         subtitle="Choose From Variety of Pizza's"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor vitae purus faucibus ornare."
       />
-      <ProductsPage />
+      <Products />
     </>
   );
 };
