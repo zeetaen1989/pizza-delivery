@@ -1,8 +1,15 @@
-@use "@styles/abstracts"as a;
+@use "@styles/abstracts" as a;
 
 .container {
   @include a.flex-direction-column;
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+    gap: 2rem;
+    text-align: center;
+  }
 }
