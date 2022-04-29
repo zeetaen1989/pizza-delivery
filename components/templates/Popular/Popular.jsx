@@ -16,9 +16,10 @@ const Popular = () => {
             key={product.id}
             image={product.img}
             title={product.title}
+            description={product.description}
             price={product.price}
             rating={product.rating}
-            description={product.description}
+            reviews={product.reviews}
           />
         ))}
       </div>
