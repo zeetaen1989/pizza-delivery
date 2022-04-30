@@ -5,7 +5,7 @@ const CartPage = () => {
   return (
     <>
       <Head>
-        <title>Cart || </title>
+        <title>Cart || Your Shopping Cart </title>
         <meta
           name="description"
           content="This is a shopping cart page display all the items in the cart"
