@@ -1,0 +1,24 @@
+@use "@styles/abstracts" as a;
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: a.$regular-fs;
+
+  .count__btn {
+    cursor: pointer;
+  }
+
+  .count__num {
+    font-size: a.$regular-fs;
+    font-weight: a.$regular-fw;
+    border: 1px solid a.$primary-clr-3;
+    border-radius: 0.4rem;
+    height: 2rem;
+    width: 2rem;
+    display: grid;
+    place-items: center;
+    user-select: none;
+  }
+}
