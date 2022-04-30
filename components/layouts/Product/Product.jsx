@@ -1,30 +1,12 @@
 import Image from "next/image";
 import Head from "next/head";
 import { useState } from "react";
-import {
-  MdAddCircleOutline,
-  MdOutlineRemoveCircleOutline,
-} from "react-icons/md";
 
-import { AddToCartBtn, Ratings } from "@components/elements";
+import { AddToCartBtn, Counter, Ratings } from "@components/elements";
 import { sizeItems } from "@data/size-data";
 import styles from "./Product.module.scss";
 
 const Product = () => {
-  const [count, setCount] = useState(1);
-
-  const handleAdd = () => {
-    setCount(count + 1);
-  };
-
-  const handleMinus = () => {
-    if (count > 1) {
-      setCount(count - 1);
-    } else {
-      setCount(1);
-    }
-  };
-
   const pizza = {
     id: 1,
     title: "Prosciutto E Unghi Pizza",
@@ -100,17 +82,7 @@ const Product = () => {
             </div>
           </div>
           <div className={styles.bottom}>
-            <div className={styles.bottom__counter}>
-              <MdOutlineRemoveCircleOutline
-                className={styles.count__btn}
-                onClick={handleMinus}
-              />
-              <span className={styles.count__num}>{count}</span>
-              <MdAddCircleOutline
-                className={styles.count__btn}
-                onClick={handleAdd}
-              />
-            </div>
+            <Counter />
             <div className={styles.bottom__cart}>
               <AddToCartBtn />
             </div>
