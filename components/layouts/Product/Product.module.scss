@@ -134,29 +134,6 @@
       align-items: center;
       gap: 2rem;
 
-      &__counter {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: a.$regular-fs;
-
-        .count__btn {
-          cursor: pointer;
-        }
-
-        .count__num {
-          font-size: a.$middle-fs;
-          font-weight: a.$regular-fw;
-          border: 1px solid a.$primary-clr-3;
-          border-radius: 0.4rem;
-          height: 2.5rem;
-          width: 2.5rem;
-          display: grid;
-          place-items: center;
-          user-select: none;
-        }
-      }
-
       &__cart {
         margin: 0rem;
       }
