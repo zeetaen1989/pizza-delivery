@@ -7,8 +7,8 @@ import styles from "./ProductCard.module.scss";
 
 const Products = ({ image, title, description, price, rating, reviews }) => {
   return (
-    <div className={styles.products}>
-      <section className={styles.products__card}>
+    <div className={styles.container}>
+      <section className={styles.container__card}>
         <figure className={styles.card__img}>
           <Image src={image} alt={title} height="250" width="250" />
         </figure>
