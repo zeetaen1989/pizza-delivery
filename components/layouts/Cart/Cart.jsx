@@ -13,9 +13,81 @@ const Cart = () => {
     setRemove(true);
   };
 
+  const status = 0;
+
+  const iconStatus = (index) => {
+    if (index - status < 1) return styles.completed;
+    if (index - status === 1) return styles.pending;
+    if (index - status > 1) return styles.incomplete;
+  };
+
   return (
     <section className={styles.container}>
-      <h1>My Shopping Cart</h1>
+      <div className={styles.top}>
+        <figure className={iconStatus(0)}>
+          <Image
+            src="/images/cart.svg"
+            alt="Shopping Bag"
+            height="50"
+            width="50"
+          />
+          <figure className={styles.checked__icon}>
+            <Image
+              src="/images/checked2.svg"
+              alt="Checked"
+              height="20"
+              width="20"
+            />
+          </figure>
+        </figure>
+        <hr />
+        <figure className={iconStatus(1)}>
+          <Image
+            src="/images/contact.svg"
+            alt="Details"
+            height="40"
+            width="40"
+          />
+          <figure className={styles.checked__icon}>
+            <Image
+              src="/images/checked2.svg"
+              alt="Checked"
+              height="20"
+              width="20"
+            />
+          </figure>
+        </figure>
+        <hr />
+        <figure className={iconStatus(2)}>
+          <Image src="/images/pay.svg" alt="Pay" height="40" width="40" />
+          <figure className={styles.checked__icon}>
+            <Image
+              src="/images/checked2.svg"
+              alt="Checked"
+              height="20"
+              width="20"
+            />
+          </figure>
+        </figure>
+        <hr />
+        <figure className={iconStatus(3)}>
+          <Image
+            src="/images/deliver.svg"
+            alt="Deliver"
+            height="60"
+            width="60"
+          />
+          <figure className={styles.checked__icon}>
+            <Image
+              src="/images/checked2.svg"
+              alt="Checked"
+              height="20"
+              width="20"
+            />
+          </figure>
+        </figure>
+      </div>
+      <h1>Shopping Cart</h1>
       <div className={styles.bottom}>
         <article className={styles.left}>
           <table>
