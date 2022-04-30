@@ -1,6 +1,9 @@
 @use "@styles/abstracts"as a;
 
-.products {
+.container {
+  max-width: 18.75rem;
+  margin: 0 auto;
+
   &__card {
     position: relative;
     width: 100%;
