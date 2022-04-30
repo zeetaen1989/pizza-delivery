@@ -41,13 +41,13 @@ const Cart = () => {
                 </td>
                 <td>Greek Pizza</td>
                 <td>Mozerella, Mushroom, Spicey Sauce</td>
-                <td>$ 19.95</td>
+                <td>$ 11.99</td>
                 <td>
                   <div className={styles.counter}>
                     <Counter />
                   </div>
                 </td>
-                <td>$ 49.95</td>
+                <td>$ 23.98</td>
                 <td>
                   <ImBin className={styles.bin} />
                 </td>
@@ -57,21 +57,21 @@ const Cart = () => {
               <tr>
                 <td>
                   <Image
-                    src="/images/Greek-Pizza.png"
-                    alt="Greek Pizza"
+                    src="/images/Pizza-Alla-Diavola.png"
+                    alt="Pizza Alla Diavola"
                     height="100"
                     width="100"
                   />
                 </td>
-                <td>Greek Pizza</td>
-                <td>Mozerella, Mushroom, Spicey Sauce</td>
-                <td>$ 19.95</td>
+                <td>Pizza Alla Diavola</td>
+                <td>Parmesan, Salami, Spicy Sauce</td>
+                <td>$ 14.99</td>
                 <td>
                   <div className={styles.counter}>
                     <Counter />
                   </div>
                 </td>
-                <td>$ 49.95</td>
+                <td>$ 44.97s</td>
                 <td>
                   <ImBin className={styles.bin} />
                 </td>
@@ -84,10 +84,10 @@ const Cart = () => {
           <hr />
           <div className={styles.right__summary}>
             <p>Subtotal:</p>
-            <span>$ 49.95</span>
+            <span>$ 68.95</span>
           </div>
           <div className={styles.right__summary}>
-            <p>Delivery:</p>
+            <p>Delivery Charge:</p>
             <span>$ 5.50</span>
           </div>
           <div className={styles.right__summary}>
@@ -97,7 +97,7 @@ const Cart = () => {
           <hr />
           <div className={styles.right__summary}>
             <p>Total:</p>
-            <span>$ 55.45</span>
+            <span>$ 74.45</span>
           </div>
           <Link href="/orders/:id" passHref>
             <button className={styles.btn}>
