@@ -2,8 +2,24 @@
 
 .container {
   @include a.flex-direction-column;  
-  gap: 2rem;
-  padding: 2rem 10rem;
+  padding: 2rem 3rem;
+  gap: 1.5rem;
+
+  .top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    hr {
+      width: 9rem;
+      border: none;
+      border-top: 1px solid a.$primary-clr-2;
+    }
+
+    // figure {
+    //   cursor: pointer;
+    // }
+  }
 
   h1 {
     @include a.header;
@@ -13,6 +29,7 @@
   .bottom {
     display: flex;
     justify-content: center;
+    padding: 0rem 7rem;
 
     .left {
       flex: 1.5;
@@ -80,14 +97,15 @@
         border-radius: 0.5rem;
         height: fit-content;
         width: fit-content;
-        padding: 0.5rem;
+        padding: 1rem;
         margin: auto;
 
         .list__items {
           display: flex;
+          gap: 1rem;
 
           .item__img {
-            flex: 1;
+            flex: 0.5;
             display: flex;
             justify-content: center;
             align-items: start;
@@ -101,16 +119,16 @@
               font-size: a.$small-fs;
               color: a.$primary-clr-2;
             }
+          }
 
-            .info__details {
-              @include a.flex-direction-column;
-              justify-content: center;
-              align-items: center;
+          .item__details {
+            @include a.flex-direction-column;
+            justify-content: center;
+            align-items: center;
 
-              .price, .quantity {
-                color: a.$primary-clr-4;
-                font-size: a.$small-fs;
-              }
+            .price, .quantity {
+              color: a.$primary-clr-4;
+              font-size: a.$small-fs;
             }
           }
         }
