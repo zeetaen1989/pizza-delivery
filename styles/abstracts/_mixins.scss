@@ -1,4 +1,6 @@
 @use "./fonts" as f;
+@use "./colors" as c;
+@use "./transitions" as t;
 
 // Flex Direction Column
 @mixin flex-direction-column {
@@ -10,4 +12,55 @@
 @mixin header {
   font-size: f.$medium-fs;
   line-height: 1.2;
+}
+
+// Button
+@mixin button {
+  margin: 1rem auto;
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  height: 2rem;
+  font-family: inherit;
+  font-weight: f.$regular-fw;
+  letter-spacing: 0.05rem;
+  background-color: c.$primary-clr-1;
+  color: c.$primary-clr-3;
+  border-radius: 0.5rem;
+  border: none;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 1.6rem -0.6rem c.$primary-clr-1;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+
+  .icon {
+    background: c.$primary-clr-3;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 0.3rem;
+    box-shadow: 0.1rem 0.1rem 0.6rem 0.2rem c.$primary-clr-1;
+    right: 0.3rem;
+    transition: t.$transition-ease;
+
+    svg {
+      width: 1rem;
+      transition: t.$transition-ease;
+    }
+  }
+
+  &:hover .icon {
+    width: calc(100% - 0.6rem);
+  }
+
+  &:hover .icon svg {
+    transform: translateX(0.1rem);
+  }
+
+  &:active .icon {
+    transform: scale(0.95);
+  }
 }
