@@ -4,6 +4,38 @@ import styles from "./Orders.module.scss";
 const Orders = () => {
   return (
     <section className={styles.container}>
+      <div className={styles.top}>
+        <figure>
+          <Image
+            src="/images/cart.svg"
+            alt="Shopping Bag"
+            height="50"
+            width="50"
+          />
+        </figure>
+        <hr />
+        <figure>
+          <Image
+            src="/images/contact.svg"
+            alt="Details"
+            height="40"
+            width="40"
+          />
+        </figure>
+        <hr />
+        <figure>
+          <Image src="/images/pay.svg" alt="Pay" height="40" width="40" />
+        </figure>
+        <hr />
+        <figure>
+          <Image
+            src="/images/deliver.svg"
+            alt="Deliver"
+            height="60"
+            width="60"
+          />
+        </figure>
+      </div>
       <h1>Customer Details</h1>
       <div className={styles.bottom}>
         <article className={styles.left}>
@@ -54,11 +86,11 @@ const Orders = () => {
                     Mozerella, Mushroom, Spicey Sauce
                   </p>
                 </section>
-                <section className={styles.info__details}>
-                  <span className={styles.price}>$11.99 </span>
-                  <span>X</span>
-                  <span className={styles.quantity}>2</span>
-                </section>
+              </figcaption>
+              <figcaption className={styles.item__details}>
+                <span className={styles.price}>$11.99</span>
+                <span>X</span>
+                <span className={styles.quantity}>2</span>
               </figcaption>
             </div>
             <div className={styles.list__items}>
@@ -75,11 +107,11 @@ const Orders = () => {
                   <h3>Pizza Alla Diavola</h3>
                   <p className={styles.extras}>Parmesan, Salami, Spicy Sauce</p>
                 </section>
-                <section className={styles.info__details}>
-                  <span className={styles.price}>$14.99 </span>
-                  <span>X</span>
-                  <span className={styles.quantity}>3</span>
-                </section>
+              </figcaption>
+              <figcaption className={styles.item__details}>
+                <span className={styles.price}>$14.99</span>
+                <span>X</span>
+                <span className={styles.quantity}>3</span>
               </figcaption>
             </div>
           </div>
