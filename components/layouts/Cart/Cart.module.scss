@@ -3,7 +3,61 @@
 .container {
   @include a.flex-direction-column;
   padding: 2rem 3rem;
-  gap: 3rem;
+  gap: 1.5rem;
+
+  .top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    hr {
+      width: 12rem;
+      border: none;
+      border-top: 1px solid a.$primary-clr-2;
+    }
+
+    figure {
+      cursor: pointer;
+    }
+
+    .completed {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .pending {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      animation: pending 1s ease infinite alternate;
+
+      .checked__icon {
+        display: none;
+      }
+    }
+
+    @keyframes pending {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .incomplete {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0.4;
+
+      .checked__icon {
+        display: none;
+      }
+    }
+  }
 
   h1 {
     @include a.header;
