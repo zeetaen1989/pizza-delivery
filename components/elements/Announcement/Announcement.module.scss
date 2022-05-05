@@ -35,3 +35,14 @@
     }
   }
 }
+
+//********MEDIA QUERY********
+
+// Media Query for small devices (less than 480px)
+@include a.media-query(small) {
+  .container {
+    p {
+      font-size: a.$very-small-fs;
+    }
+  }
+}
