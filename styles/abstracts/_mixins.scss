@@ -85,5 +85,15 @@
 
   &:active .icon {
     transform: scale(0.95);
+    display: none;
+  }
+}
+
+// Media Query
+@mixin media-query($key) {
+  $size: map.get(b.$breakpoints, $key);
+
+  @media screen and (max-width: $size) {
+    @content;
   }
 }
