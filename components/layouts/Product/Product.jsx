@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Head from "next/head";
-import { useState } from "react";
 
 import { AddToCartBtn, Counter, Ratings } from "@components/elements";
 import { sizeItems } from "@data/size-data";
