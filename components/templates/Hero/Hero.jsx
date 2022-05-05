@@ -49,8 +49,7 @@ const Hero = () => {
     <section className={styles.container}>
       <div className={styles.top}>
         <section
-          className={styles.arrow}
-          style={{ left: "2rem", fontSize: "3rem" }}
+          className={styles.arrow__left}
           onClick={() => handleArrow("left")}
         >
           <MdArrowBackIosNew />
@@ -75,7 +74,7 @@ const Hero = () => {
                   </a>
                 </Link>
               </article>
-              <figure>
+              <figure className={styles.slider__img}>
                 <Image
                   src={img.img}
                   alt="Pizza"
@@ -89,8 +88,7 @@ const Hero = () => {
           ))}
         </section>
         <section
-          className={styles.arrow}
-          style={{ right: "2rem", fontSize: "3rem" }}
+          className={styles.arrow__right}
           onClick={() => handleArrow("left")}
         >
           <MdArrowForwardIos />
