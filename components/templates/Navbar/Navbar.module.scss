@@ -112,3 +112,65 @@
     }
   }
 }
+
+//********MEDIA QUERY********
+
+// Media Query for large devices (less than 1024px)
+@include a.media-query(large) {
+  .container {
+    padding: 0.5rem 1rem;
+
+    .left {
+      gap: 0rem;
+
+      &__info {
+
+        h1,
+        span {
+          font-size: a.$very-small-fs;
+          line-height: 1.2;
+        }
+      }
+    }
+
+    .center {
+      gap: 1.5rem;
+
+      ul {
+        li {
+          gap: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+// Media Query for small devices (less than 480px)
+@include a.media-query(small) {
+  .container {
+    padding: 0rem 0.8rem;
+
+    .center {
+      ul {
+        li {
+          display: none;
+        }
+      }
+    }
+
+    .right {
+      &__menu {
+        display: block;
+        font-size: 1.5rem;
+      }
+
+      &__icon {
+        font-size: 1.5rem;
+      }
+
+      span {
+        right: 1.6rem;
+      }
+    }
+  }
+}
