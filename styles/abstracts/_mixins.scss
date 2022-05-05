@@ -16,6 +16,27 @@
   line-height: 1.2;
 }
 
+// Arrow Style
+@mixin arrow {
+  height: 3rem;
+  width: 3rem;
+  cursor: pointer;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transition: t.$transition-ease;
+  color: c.$primary-clr-2;
+  z-index: 2;
+
+  &:hover {
+    color: c.$primary-clr-1;
+  }
+}
+
 // Button
 @mixin button {
   margin: 1rem auto;
