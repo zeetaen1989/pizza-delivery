@@ -1,19 +1,32 @@
-import Image from "next/image";
 import Link from "next/link";
-import { MdOutlineShoppingCart } from "react-icons/md";
+import { useState } from "react";
+import { MdOutlineShoppingCart, MdMenuOpen, MdClose } from "react-icons/md";
 import { AiOutlinePhone } from "react-icons/ai";
+
 import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const linksLeft = ["Home", "Products"];
   const linksRight = ["Chef", "Contact"];
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeMenu = () => (
+    <MdMenuOpen className={styles.right__menu} onClick={toggleMenu} />
+  );
+
+  const openMenu = () => (
+    <MdClose className={styles.right__menu} onClick={toggleMenu} />
+  );
 
   return (
     <section className={styles.container}>
       <div className={styles.left}>
-        <Link href="/" passHref>
-          <AiOutlinePhone fontSize="2rem" />
-        </Link>
+        <AiOutlinePhone fontSize="2rem" />
         <div className={styles.left__info}>
           <h1>Order Now!</h1>
           <span>+01 234 567 89</span>
@@ -50,9 +63,10 @@ const Navbar = () => {
       </nav>
       <div className={styles.right}>
         <Link href="/cart" passHref>
-          <MdOutlineShoppingCart fontSize="2rem" cursor="pointer" />
+          <MdOutlineShoppingCart className={styles.right__icon} />
         </Link>
         <span>3</span>
+        {isOpen ? openMenu() : closeMenu()}
       </div>
     </section>
   );
