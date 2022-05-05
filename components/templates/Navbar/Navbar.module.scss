@@ -1,4 +1,4 @@
-@use "@styles/abstracts" as a;
+@use "@styles/abstracts"as a;
 
 .container {
   display: flex;
@@ -29,7 +29,7 @@
     }
   }
 
-  nav {
+  .center {
     display: flex;
     align-items: center;
     gap: 3rem;
@@ -81,7 +81,19 @@
     flex: 1;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     position: relative;
+    gap: 0.5rem;
+
+    &__menu {
+      display: none;
+      cursor: pointer;
+    }
+
+    &__icon {
+      font-size: 2rem;
+      cursor: pointer;
+    }
 
     span {
       position: absolute;
