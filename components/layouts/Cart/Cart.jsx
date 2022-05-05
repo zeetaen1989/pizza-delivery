@@ -121,7 +121,7 @@ const Cart = () => {
                 </td>
                 <td>$ 23.98</td>
                 <td>
-                  <ImBin className={styles.bin} />
+                  <ImBin className={styles.bin} onClick={handleRemove} />
                 </td>
               </tr>
             </tbody>
@@ -143,7 +143,7 @@ const Cart = () => {
                     <Counter />
                   </div>
                 </td>
-                <td>$ 44.97s</td>
+                <td>$ 44.97</td>
                 <td>
                   <ImBin className={styles.bin} />
                 </td>
