@@ -5,28 +5,16 @@
 
   .top {
     display: flex;
+    align-items: center;
     position: relative;
     overflow: hidden;
     user-select: none;
 
-    .arrow {
-      height: 3rem;
-      width: 3rem;
-      cursor: pointer;
-      margin: auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      transition: a.$transition-ease;
-      color: a.$primary-clr-2;
-      z-index: 2;
+    .arrow__left {
+      @include a.arrow;
 
-      &:hover {
-        color: a.$primary-clr-1;
-      }
+      left: 2rem;
+      font-size: 3rem;
     }
 
     .wrapper {
@@ -136,6 +124,22 @@
             }
           }
         }
+
+        figure {
+          flex: 1;
+        }
+      }
+    }
+
+    .arrow__right {
+      @include a.arrow;
+
+      right: 2rem;
+      font-size: 3rem;
+
+      @include a.media-query(small) {
+        right: 1rem;
+        font-size: 2rem;
       }
     }
   }
