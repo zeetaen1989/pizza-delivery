@@ -35,11 +35,10 @@
     gap: 3rem;
 
     ul {
-      li {
-        display: flex;
-        gap: 3rem;
-        flex: 4;
+      display: flex;
+      gap: 3rem;
 
+      li {
         a {
           font-weight: a.$regular-fw;
           transition: all 0.3s ease;
