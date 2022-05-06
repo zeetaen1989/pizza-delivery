@@ -1,7 +1,7 @@
 @use "@styles/abstracts" as a;
 
 .container {
-  background-color: goldenrod;
+  background-color: a.$primary-clr-1;
   text-align: center;
 
   p {
@@ -21,7 +21,7 @@
     }
 
     50% {
-      color: white;
+      color: a.$secondary-clr;
       letter-spacing: 0.1rem;
     }
 
