@@ -1,8 +1,7 @@
-import { Header } from "@components/elements";
-import { Products } from "@components/layouts";
 import Head from "next/head";
+import { Products } from "@components/layouts";
 
-const products = () => {
+const ProductsPage = () => {
   return (
     <>
       <Head>
@@ -18,13 +17,8 @@ const products = () => {
           content="Popular Products, Products, Pizza, Food, Food Delivery"
         />
       </Head>
-      <Header
-        title="Our Products"
-        subtitle="Various Regional Taste"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor vitae purus faucibus ornare."
-      />
       <Products />
     </>
   );
 };
-export default products;
+export default ProductsPage;
