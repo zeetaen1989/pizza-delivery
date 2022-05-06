@@ -25,13 +25,22 @@
         display: flex;
         gap: 0.7rem;
         position: absolute;
-        color: a.$primary-clr-4;
+        color: a.$primary-clr-3;
         font-size: a.$middle-fs;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
         text-align: center;
+
+        &__heart, &__search {
+          transition: all 0.1s ease;
+
+          &:hover {
+            color: a.$primary-clr-4;
+            transform: scale(1.1);
+          }
+        }
       }
     }
 
