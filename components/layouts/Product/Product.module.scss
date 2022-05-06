@@ -10,6 +10,8 @@
     display: grid;
     place-items: center;
     overflow: hidden;
+    background-color: a.$secondary-clr;
+    border-radius: 1rem;
   }
 
   &__right {
@@ -17,7 +19,8 @@
     gap: 0.5rem;
     flex: 1;
     padding: 0.5rem 1.5rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
+    background-color: a.$secondary-clr;
 
     h1 {
       font-size: a.$medium-fs;
