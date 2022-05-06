@@ -3,3 +3,4 @@ export { default as Products } from "./Products/Products";
 export { default as Product } from "./Product/Product";
 export { default as Cart } from "./Cart/Cart";
 export { default as Orders } from "./Orders/Orders";
+export { default as Contact } from "./Contact/Contact";
