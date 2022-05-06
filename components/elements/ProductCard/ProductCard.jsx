@@ -14,10 +14,14 @@ const Products = ({ image, title, description, price, rating, reviews }) => {
         </figure>
         <figcaption className={styles.card__overlay}>
           <div className={styles.icons}>
-            <FaHeart style={{ cursor: "pointer" }} />
-            <Link href="/product/:id" passHref>
-              <FaSearch style={{ cursor: "pointer" }} />
-            </Link>
+            <figure className={styles.icons__heart}>
+              <FaHeart style={{ cursor: "pointer" }} />
+            </figure>
+            <figure className={styles.icons__search}>
+              <Link href="/product/:id" passHref>
+                <FaSearch style={{ cursor: "pointer" }} />
+              </Link>
+            </figure>
           </div>
         </figcaption>
       </section>
@@ -28,7 +32,7 @@ const Products = ({ image, title, description, price, rating, reviews }) => {
           <Ratings rating={rating} />
           <a href="#">({reviews} Reviews)</a>
         </div>
-        <p>{description}</p>
+        {/* <p>{description}</p> */}
       </article>
       <AddToCartBtn />
     </div>
