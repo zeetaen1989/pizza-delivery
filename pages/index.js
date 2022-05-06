@@ -3,6 +3,7 @@ import {
   About,
   Hero,
   Locations,
+  Newsletter,
   Popular,
   Testimonials,
 } from "@components/templates";
@@ -24,6 +25,7 @@ const Home = () => {
       <Popular />
       <Locations />
       <Testimonials />
+      <Newsletter />
     </>
   );
 };
