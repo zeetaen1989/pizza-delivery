@@ -1,0 +1,68 @@
+@use "@styles/abstracts" as a;
+
+.container {
+  padding: a.$primary-padding;
+
+  .newsletter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: a.$secondary-padding;
+
+    form {
+      border: 1px solid a.$primary-clr-1;
+      border-radius: 2rem;
+      display: flex;
+      align-items: center;
+
+      input {
+        border: none;
+        width: 25rem;
+        padding: 0.5rem 1rem;
+        outline: none;
+
+        &::placeholder {
+          color: a.$primary-clr-2;
+          font-size: 1rem;
+        }
+      }
+
+      button {
+        border: 1px solid a.$primary-clr-1;
+        border-radius: 2rem;
+        background-color: transparent;
+        padding: 0.5rem;
+        cursor: pointer;
+
+        .icon {
+          font-size: 1.5rem;
+          color: a.$primary-clr-4;
+          transform: rotate(-45deg);
+          display: grid;
+          place-items: center;
+
+          &:hover {
+            color: a.$primary-clr-2;
+          }
+        }
+      }
+    }
+  }
+}
+
+//********MEDIA QUERY********
+
+// Media Query for small devices (less than 480px)
+@include a.media-query(small) {
+  .container {
+    .newsletter {
+      padding: 0rem;
+
+      form {
+        input {
+          width: 18rem;
+        }
+      }
+    }
+  }
+}
