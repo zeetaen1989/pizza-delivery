@@ -8,19 +8,25 @@ export const imgSlider = [
   {
     id: 2,
     img: "/images/slide2.png",
-    title: "Sweet & Sour",
+    title: "Cheesy & Tasty",
     percentage: "30%",
   },
   {
     id: 3,
     img: "/images/slide3.png",
-    title: "Spicy & Tasty",
+    title: "Sweet & Tasty",
     percentage: "25%",
   },
   {
     id: 4,
-    img: "/images/slide2.png",
+    img: "/images/slide4.png",
+    title: "Cheesy & Spicy",
+    percentage: "40%",
+  },
+  {
+    id: 5,
+    img: "/images/slide5.png",
     title: "Sweet & Sour",
-    percentage: "30%",
+    percentage: "20%",
   },
 ];
