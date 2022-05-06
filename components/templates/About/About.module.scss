@@ -30,3 +30,30 @@
     }
   }
 }
+
+//********MEDIA QUERY********
+
+// Media Query for large devices (less than 1024px)
+@include a.media-query(large) {
+  .container {
+    .about {
+      padding: 0rem 3rem;
+    }
+  }
+}
+
+// Media Query for small devices (less than 480px)
+@include a.media-query(small) {
+  .container {
+    .about {
+      padding: 0rem;
+
+      &__wrapper {
+        .card {
+          align-items: flex-start;
+          gap: 1rem;
+        }
+      }
+    }
+  }
+}
