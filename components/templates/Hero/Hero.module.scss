@@ -148,19 +148,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 0.5rem;
 
     .dot {
-      width: 0.8rem;
-      height: 0.8rem;
+      width: 0.9rem;
+      height: 0.9rem;
       border-radius: 50%;
-      background-color: a.$primary-clr-1;
-      margin: 0 0.5rem;
+      background-color: a.$primary-clr-2;
       cursor: pointer;
       transition: a.$transition-ease;
+    }
 
-      &:active {
-        background-color: a.$primary-clr-3;
-      }
+    .active {
+      background-color: a.$primary-clr-1;
+      width: 0.7rem;
+      height: 0.7rem;
+      border-radius: 50%;
     }
   }
 }
