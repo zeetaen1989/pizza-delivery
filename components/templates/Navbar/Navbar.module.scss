@@ -6,7 +6,8 @@
   justify-content: space-between;
   padding: 0.5rem 2rem;
   min-height: 5.25rem;
-  background-color: a.$primary-clr-1;
+  background-color: a.$primary-clr-2;
+  color: a.$primary-clr;
 
   .left {
     display: flex;
@@ -49,7 +50,7 @@
             display: block;
             width: 100%;
             height: 2px;
-            background-color: a.$primary-clr-2;
+            background-color: a.$primary-clr-3;
             position: absolute;
             bottom: 0;
             left: 0;
@@ -59,7 +60,7 @@
           }
 
           &:hover {
-            color: a.$primary-clr-2;
+            color: a.$primary-clr-3;
 
             &::after {
               transform: scaleX(1);
@@ -72,6 +73,7 @@
     h1 {
       cursor: pointer;
       font-size: 3rem;
+      color: a.$primary-clr-3;
       font-family: a.$secondary-ff;
     }
   }
@@ -92,6 +94,11 @@
     &__icon {
       font-size: 2rem;
       cursor: pointer;
+      transition: a.$transition-ease;
+
+      &:hover {
+        color: a.$primary-clr-3;
+      }
     }
 
     span {
@@ -101,8 +108,8 @@
       height: 1.1rem;
       width: 1.1rem;
       border-radius: 50%;
-      background-color: a.$primary-clr-3;
-      color: a.$primary-clr;
+      background-color: a.$primary-clr;
+      color: a.$primary-clr-4;
       display: grid;
       place-items: center;
       font-size: a.$small-fs;
