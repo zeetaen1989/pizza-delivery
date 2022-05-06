@@ -36,7 +36,7 @@ const Hero = () => {
       setCurrentSlide(
         currentSlide < imgSlider.length - 1 ? currentSlide + 1 : 0
       );
-    }, 3500);
+    }, 6000);
 
     return () => {
       resetTimeOut();
@@ -96,10 +96,13 @@ const Hero = () => {
         {imgSlider.map((item) => {
           return (
             <span
-              className={styles.dot}
+              className={
+                currentSlide === item.id - 1
+                  ? `${styles.dot}`
+                  : `${styles.dot} ${styles.active}`
+              }
               key={item.id}
               onClick={() => setCurrentSlide(item.id - 1)}
-              onChange={(e) => (e.target.style.backgroundColor = "red")}
             ></span>
           );
         })}
