@@ -1,0 +1,108 @@
+@use "@styles/abstracts" as a;
+
+.container {
+  padding: a.$primary-padding;
+  overflow: hidden;
+  
+  .testimonials {
+    position: relative;
+    padding: a.$secondary-padding;
+    display: flex;
+
+    &__left, &__right {
+      @include a.arrow;
+      font-size: 2rem;
+    }
+
+    &__left {
+      left: 10rem;
+    }
+
+    &__wrapper {
+      display: flex;
+      justify-content: center;
+      width: 400vw;
+      height: 100%;
+      transition: a.$transition-slider;
+
+      .slider {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+
+        .img {
+          & > span {
+            border-radius: 50%;
+          }
+        }
+
+        .info {
+          width: 45%;
+        }
+      }
+    }
+
+    &__right {
+      right: 10rem;
+    }
+  }
+}
+
+//********MEDIA QUERY********
+
+// Media Query for large devices (less than 1024px)
+@include a.media-query(large) {
+  .container {
+    .testimonials {
+      padding: 0rem;
+
+      &__left {
+        left: 5rem;
+      }
+
+      &__right {
+        right: 5rem;
+      }
+    }
+  }
+}
+
+// Media Query for medium devices (less than 768px)
+@include a.media-query(medium) {
+  .container {
+    .testimonials {
+      &__left {
+        left: 3rem;
+      }
+
+      &__right {
+        right: 3rem;
+      }
+    }
+  }
+}
+
+// Media Query for small devices (less than 480px)
+@include a.media-query(small) {
+  .container {
+    .testimonials {
+      &__left {
+        left: 1rem;
+      }
+
+      &__wrapper {
+        .slider {
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+          text-align: center;
+        }
+      }
+
+      &__right {
+        right: 1rem;
+      }
+    }
+  }
+}
