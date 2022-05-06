@@ -18,12 +18,13 @@
       input {
         border: none;
         width: 25rem;
-        padding: 0.5rem 1rem;
+        padding: 0.8rem 1rem;
         outline: none;
+        color: a.$primary-clr-3;
+        font-size: 1rem;
 
         &::placeholder {
           color: a.$primary-clr-2;
-          font-size: 1rem;
         }
       }
 
@@ -31,15 +32,16 @@
         border: 1px solid a.$primary-clr-1;
         border-radius: 2rem;
         background-color: transparent;
-        padding: 0.5rem;
         cursor: pointer;
+        margin-right: 0.2rem;
+        padding: 0.5rem 0.7rem;
 
         .icon {
-          font-size: 1.5rem;
+          font-size: 1.3rem;
           color: a.$primary-clr-4;
-          transform: rotate(-45deg);
           display: grid;
           place-items: center;
+          transition: a.$transition-ease;
 
           &:hover {
             color: a.$primary-clr-2;
