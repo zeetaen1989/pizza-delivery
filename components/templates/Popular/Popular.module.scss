@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 2rem 0rem;
+  padding: a.$primary-padding;
 
   .products {
     display: grid;
@@ -20,18 +20,19 @@
 // Media Query for large devices (less than 1024px)
 @include a.media-query(large) {
   .container {
-    padding: 0rem 2rem;
+    .products {
+      padding: 0rem 3rem;
+    }
   }
 }
 
 // Media Query for small devices (less than 480px)
 @include a.media-query(small) {
   .container {
-    padding: 0rem 1rem;
-
     .products {
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
+      padding: 0rem;
     }
   }
 }
