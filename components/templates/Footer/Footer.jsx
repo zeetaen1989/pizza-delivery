@@ -4,36 +4,10 @@ import {
   FaTwitter,
   FaInstagram,
 } from "react-icons/fa";
+import { ourLocation } from "@data/location-data";
 import styles from "./Footer.module.scss";
 
 const Footer = () => {
-  const ourLocation = [
-    {
-      id: 1,
-      street: "123 Main St",
-      city: "New York",
-      phone: "(01) 234 5678",
-    },
-    {
-      id: 2,
-      street: "315 Broadway",
-      city: "Boston",
-      phone: "(01) 254 8454",
-    },
-    {
-      id: 3,
-      street: "578 Boulevard",
-      city: "Los Angeles",
-      phone: "(01) 567 8454",
-    },
-    {
-      id: 4,
-      street: "890 Upstate",
-      city: "New Jersey",
-      phone: "(01) 278 1295",
-    },
-  ];
-
   const links = [
     "About Us",
     "Menu",
