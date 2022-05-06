@@ -1,15 +1,12 @@
 import Link from "next/link";
 import { useState } from "react";
 import { MdOutlineShoppingCart, MdMenuOpen, MdClose } from "react-icons/md";
-import { AiOutlinePhone } from "react-icons/ai";
+import { FaPhone } from "react-icons/fa";
 
 import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const linksLeft = ["Home", "Products"];
-  const linksRight = ["Chef", "Contact"];
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -26,7 +23,7 @@ const Navbar = () => {
   return (
     <section className={styles.container}>
       <div className={styles.left}>
-        <AiOutlinePhone fontSize="2rem" />
+        <FaPhone fontSize="2rem" />
         <div className={styles.left__info}>
           <h1>Order Now!</h1>
           <span>+01 234 567 89</span>
@@ -35,17 +32,14 @@ const Navbar = () => {
       <nav className={styles.center}>
         <ul>
           <li>
-            {linksLeft.map((link) =>
-              link === "Home" ? (
-                <Link href="/" passHref key={link}>
-                  <a className={styles.center__links}>{link}</a>
-                </Link>
-              ) : (
-                <Link href={`/${link.toLowerCase()}`} passHref key={link}>
-                  <a className={styles.center__links}>{link}</a>
-                </Link>
-              )
-            )}
+            <Link href="/" passHref>
+              <a className={styles.center__links}>Home</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/products" passHref>
+              <a className={styles.center__links}>Products</a>
+            </Link>
           </li>
         </ul>
         <Link href="/" passHref>
@@ -53,11 +47,14 @@ const Navbar = () => {
         </Link>
         <ul>
           <li>
-            {linksRight.map((link) => (
-              <Link href={`/${link.toLowerCase()}`} passHref key={link}>
-                <a className={styles.center__links}>{link}</a>
-              </Link>
-            ))}
+            <Link href="/#locations" passHref>
+              <a className={styles.center__links}>Locations</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact" passHref>
+              <a className={styles.center__links}>Contact Us</a>
+            </Link>
           </li>
         </ul>
       </nav>
