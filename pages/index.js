@@ -1,5 +1,11 @@
 import Head from "next/head";
-import { Hero, Popular } from "@components/templates";
+import {
+  About,
+  Hero,
+  Locations,
+  Popular,
+  Testimonials,
+} from "@components/templates";
 
 const Home = () => {
   return (
@@ -14,7 +20,10 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero />
+      <About />
       <Popular />
+      <Locations />
+      <Testimonials />
     </>
   );
 };
