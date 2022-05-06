@@ -14,11 +14,11 @@ const Hero = () => {
   const handleArrow = (direction) => {
     if (direction === "left") {
       setCurrentSlide(
-        currentSlide < imgSlider.length - 1 ? currentSlide + 1 : 0
+        currentSlide > 0 ? currentSlide - 1 : imgSlider.length - 1
       );
     } else {
       setCurrentSlide(
-        currentSlide > 0 ? currentSlide - 1 : imgSlider.length - 1
+        currentSlide < imgSlider.length - 1 ? currentSlide + 1 : 0
       );
     }
   };
@@ -87,7 +87,7 @@ const Hero = () => {
         </section>
         <section
           className={styles.arrow__right}
-          onClick={() => handleArrow("left")}
+          onClick={() => handleArrow("right")}
         >
           <MdArrowForwardIos />
         </section>
