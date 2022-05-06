@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Location = () => {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="locations">
       <Header
         title="Our Locations"
         subtitle="Where Can You Find Us"
