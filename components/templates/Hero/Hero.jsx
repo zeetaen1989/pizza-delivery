@@ -23,8 +23,6 @@ const Hero = () => {
     }
   };
 
-  console.log(currentSlide);
-
   const resetTimeOut = () => {
     if (timeOutRef.current) {
       clearTimeout(timeOutRef.current);
