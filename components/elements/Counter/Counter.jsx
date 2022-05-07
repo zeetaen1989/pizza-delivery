@@ -27,7 +27,12 @@ const Counter = () => {
         className={styles.count__btn}
         onClick={handleMinus}
       />
-      <span className={styles.count__num}>{count}</span>
+      <span
+        className={styles.count__num}
+        onChange={(e) => setCount(e.target.value)}
+      >
+        {count}
+      </span>
       <MdAddCircleOutline className={styles.count__btn} onClick={handleAdd} />
     </div>
   );
