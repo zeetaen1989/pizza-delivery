@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <section className={styles.container}>
       <div className={styles.left}>
-        <FaPhone fontSize="2rem" />
+        <FaPhone fontSize="1.7rem" />
         <div className={styles.left__info}>
           <h1>Order Now!</h1>
           <span>+01 234 567 89</span>
