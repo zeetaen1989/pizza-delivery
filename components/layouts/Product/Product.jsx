@@ -60,10 +60,10 @@ const Product = ({ pizza }) => {
         <article className={styles.container__right}>
           <h1>{pizza.title}</h1>
           <div className={styles.review}>
-            <Ratings rating={pizza.ratings} />
+            <Ratings rating={pizza.rating} />
             <a href="#">({pizza.reviews} Reviews)</a>
           </div>
-          <span className={styles.price}>$ {pizza.price[size]}</span>
+          <span className={styles.price}>$ {price.toFixed(2)}</span>
           <p>{pizza.description}</p>
           <div className={styles.size}>
             <h2>Choose Your Size</h2>
