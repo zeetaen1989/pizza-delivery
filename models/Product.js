@@ -4,28 +4,35 @@ const ProductSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      required: true,
+      maxlength: [50, "Title cannot be more than 50 characters"],
+      minlength: [3, "Title must be at least 3 characters"],
+      required: [true, "Title is required"],
       unique: true,
     },
     img: {
       type: String,
-      required: true,
+      required: [true, "Image is required"],
     },
     description: {
       type: String,
-      required: true,
+      maxlength: [1000, "Description cannot be more than 1000 characters"],
+      minlength: [3, "Description must be at least 3 characters"],
+      required: [true, "Description is required"],
     },
     toppings: {
       type: [
         {
-          text: { type: String, required: true },
-          price: { type: Number, required: true },
+          text: { type: String, required: [true, "Toppings are required"] },
+          price: {
+            type: Number,
+            required: [true, "Price for each toppings are required"],
+          },
         },
       ],
     },
     prices: {
       type: [Number],
-      required: true,
+      required: [true, "Prices are required"],
     },
     rating: {
       type: Number,
