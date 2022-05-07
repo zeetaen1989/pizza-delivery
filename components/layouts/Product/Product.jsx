@@ -16,8 +16,8 @@ const Product = () => {
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     toppings: ["Prosciutto", "Parmigiano", "Tomato Sauce", "Mushroom"],
-    price: 12.99,
-    rating: 4.5,
+    price: [10.99, 11.99, 12.99],
+    ratings: 4.5,
     reviews: 84,
   };
 
