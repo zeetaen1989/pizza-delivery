@@ -2,7 +2,7 @@ import { products } from "@data/products-data";
 import { Header, ProductCard } from "@components/elements";
 import styles from "./Products.module.scss";
 
-const ProductsPage = () => {
+const ProductsPage = ({ pizza }) => {
   return (
     <section className={styles.container}>
       <Header
