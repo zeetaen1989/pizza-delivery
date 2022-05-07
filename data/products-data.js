@@ -6,7 +6,7 @@ export const popularProducts = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: [10.99, 11.99, 12.99],
-    ratings: 5,
+    rating: 5,
     reviews: 387,
   },
   {
@@ -16,7 +16,7 @@ export const popularProducts = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: [11.99, 12.99, 13.99],
-    ratings: 5,
+    rating: 5,
     reviews: 256,
   },
   {
@@ -26,7 +26,7 @@ export const popularProducts = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: [12.99, 13.99, 14.99],
-    ratings: 4.5,
+    rating: 4.5,
     reviews: 148,
   },
   {
@@ -36,7 +36,7 @@ export const popularProducts = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: [14.99, 15.99, 16.99],
-    ratings: 4.5,
+    rating: 4.5,
     reviews: 124,
   },
   {
@@ -46,7 +46,7 @@ export const popularProducts = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: [14.99, 15.99, 16.99],
-    ratings: 4.5,
+    rating: 4.5,
     reviews: 96,
   },
   {
@@ -56,7 +56,7 @@ export const popularProducts = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: [12.99, 13.99, 14.99],
-    ratings: 4.5,
+    rating: 4.5,
     reviews: 84,
   },
 ];
@@ -69,7 +69,7 @@ export const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: [11.99, 12.99, 13.99],
-    ratings: 5,
+    rating: 5,
     reviews: 256,
   },
   {
@@ -79,7 +79,7 @@ export const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: [12.99, 13.99, 14.99],
-    ratings: 4.5,
+    rating: 4.5,
     reviews: 148,
   },
   {
@@ -89,7 +89,7 @@ export const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: [10.99, 11.99, 12.99],
-    ratings: 5,
+    rating: 5,
     reviews: 387,
   },
   {
@@ -99,7 +99,7 @@ export const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: [15.99, 16.99, 17.99],
-    ratings: 4,
+    rating: 4,
     reviews: 56,
   },
   {
@@ -109,7 +109,7 @@ export const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: [14.99, 15.99, 16.99],
-    ratings: 4.5,
+    rating: 4.5,
     reviews: 124,
   },
   {
@@ -119,7 +119,7 @@ export const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: [13.99, 14.99, 15.99],
-    ratings: 4,
+    rating: 4,
     reviews: 78,
   },
   {
@@ -129,7 +129,7 @@ export const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: [9.99, 10.99, 11.99],
-    ratings: 4.5,
+    rating: 4.5,
     reviews: 456,
   },
   {
@@ -139,7 +139,7 @@ export const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: [11.99, 12.99, 13.99],
-    ratings: 4,
+    rating: 4,
     reviews: 56,
   },
   {
@@ -149,7 +149,7 @@ export const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: [12.99, 13.99, 14.99],
-    ratings: 4.5,
+    rating: 4.5,
     reviews: 164,
   },
   {
@@ -159,7 +159,7 @@ export const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: [10.99, 11.99, 12.99],
-    ratings: 4,
+    rating: 4,
     reviews: 74,
   },
   {
@@ -169,7 +169,7 @@ export const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: [12.99, 13.99, 14.99],
-    ratings: 4.5,
+    rating: 4.5,
     reviews: 164,
   },
   {
@@ -179,7 +179,7 @@ export const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: [13.99, 14.99, 15.99],
-    ratings: 4,
+    rating: 4,
     reviews: 38,
   },
   {
@@ -189,7 +189,7 @@ export const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: [14.99, 15.99, 16.99],
-    ratings: 4.5,
+    rating: 4.5,
     reviews: 114,
   },
   {
@@ -199,7 +199,7 @@ export const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: [15.99, 16.99, 17.99],
-    ratings: 4,
+    rating: 4,
     reviews: 64,
   },
   {
@@ -209,7 +209,7 @@ export const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: [14.99, 15.99, 16.99],
-    ratings: 4.5,
+    rating: 4.5,
     reviews: 175,
   },
 ];
