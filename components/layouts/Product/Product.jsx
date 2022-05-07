@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Head from "next/head";
+import { useState } from "react";
 
 import { AddToCartBtn, Counter, Ratings } from "@components/elements";
 import { sizeItems } from "@data/size-data";
 import styles from "./Product.module.scss";
 
 const Product = () => {
+  const [size, setSize] = useState(0);
+
   const pizza = {
     id: 1,
     title: "Prosciutto E Unghi Pizza",
@@ -43,16 +46,20 @@ const Product = () => {
         <article className={styles.container__right}>
           <h1>{pizza.title}</h1>
           <div className={styles.review}>
-            <Ratings rating={pizza.rating} />
+            <Ratings rating={pizza.ratings} />
             <a href="#">({pizza.reviews} Reviews)</a>
           </div>
-          <span className={styles.price}>$ {pizza.price}</span>
+          <span className={styles.price}>$ {pizza.price[size]}</span>
           <p>{pizza.description}</p>
           <div className={styles.size}>
             <h2>Choose Your Size</h2>
             <div className={styles.size__wrapper}>
               {sizeItems.map((item) => (
-                <div className={styles.img__wrapper} key={item.id}>
+                <div
+                  className={styles.img__wrapper}
+                  key={item.id}
+                  onClick={() => setSize(item.id - 1)}
+                >
                   <figure className={styles.img}>
                     <Image
                       src={item.image}
