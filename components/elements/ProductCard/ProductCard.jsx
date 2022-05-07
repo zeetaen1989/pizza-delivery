@@ -5,12 +5,12 @@ import { FaHeart, FaSearch } from "react-icons/fa";
 import { Ratings, AddToCartBtn } from "@components/elements";
 import styles from "./ProductCard.module.scss";
 
-const Products = ({ image, title, description, price, rating, reviews }) => {
+const ProductCard = ({ pizza }) => {
   return (
     <div className={styles.container}>
       <section className={styles.container__card}>
         <figure className={styles.card__img}>
-          <Image src={image} alt={title} height="250" width="250" />
+          <Image src={pizza.img} alt={pizza.title} height="250" width="250" />
         </figure>
         <figcaption className={styles.card__overlay}>
           <div className={styles.icons}>
@@ -18,7 +18,7 @@ const Products = ({ image, title, description, price, rating, reviews }) => {
               <FaHeart style={{ cursor: "pointer" }} />
             </figure>
             <figure className={styles.icons__search}>
-              <Link href="/product/:id" passHref>
+              <Link href={`/product/${pizza._id}`} passHref>
                 <FaSearch style={{ cursor: "pointer" }} />
               </Link>
             </figure>
@@ -26,16 +26,16 @@ const Products = ({ image, title, description, price, rating, reviews }) => {
         </figcaption>
       </section>
       <article>
-        <h3>{title}</h3>
-        <span className={styles.price}>${price}</span>
+        <h3>{pizza.title}</h3>
+        <span className={styles.price}>${pizza.prices[0]}</span>
         <div className={styles.review}>
-          <Ratings rating={rating} />
-          <a href="#">({reviews} Reviews)</a>
+          <Ratings rating={pizza.rating} />
+          <a href="#">({pizza.reviews} Reviews)</a>
         </div>
-        {/* <p>{description}</p> */}
+        {/* <p>{pizza.description}</p> */}
       </article>
       <AddToCartBtn />
     </div>
   );
 };
-export default Products;
+export default ProductCard;
