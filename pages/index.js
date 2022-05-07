@@ -9,7 +9,7 @@ import {
   Testimonials,
 } from "@components/templates";
 
-const Home = () => {
+const Home = ({ pizzaList }) => {
   return (
     <>
       <Head>
@@ -23,7 +23,7 @@ const Home = () => {
       </Head>
       <Hero />
       <About />
-      <Popular />
+      <Popular pizzaList={pizzaList} />
       <Locations />
       <Testimonials />
       <Newsletter />
