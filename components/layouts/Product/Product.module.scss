@@ -4,6 +4,10 @@
   display: flex;
   gap: 1rem;
   padding: 2rem 3rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   &__left {
     flex: 1;
@@ -69,6 +73,10 @@
     }
 
     .toppings {
+      h2 {
+        margin-bottom: 0.5rem;
+      }
+
       &__wrapper {
         display: flex;
         gap: 1rem;
@@ -78,10 +86,6 @@
           position: relative;
           padding-left: 1.5rem;
           cursor: pointer;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          -ms-user-select: none;
-          user-select: none;
 
           /* Hide the browser's default checkbox */
           input {
