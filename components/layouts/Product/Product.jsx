@@ -6,19 +6,33 @@ import { AddToCartBtn, Counter, Ratings } from "@components/elements";
 import { sizeItems } from "@data/size-data";
 import styles from "./Product.module.scss";
 
-const Product = () => {
+const Product = ({ pizza }) => {
+  const [price, setPrice] = useState(pizza.prices[0]);
   const [size, setSize] = useState(0);
+  const [extraToppings, setExtraToppings] = useState([]);
 
-  const pizza = {
-    id: 1,
-    title: "Prosciutto E Unghi Pizza",
-    img: "/images/Prosciutto-e-unghi-pizza.png",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    toppings: ["Prosciutto", "Parmigiano", "Tomato Sauce", "Mushroom"],
-    price: [10.99, 11.99, 12.99],
-    ratings: 4.5,
-    reviews: 84,
+  const handlePrice = (number) => {
+    setPrice(price + number);
+  };
+
+  const handleSize = (sizeIndex) => {
+    const difference = pizza.prices[sizeIndex] - pizza.prices[size];
+    setSize(sizeIndex);
+    handlePrice(difference);
+  };
+
+  const handleChange = (e, topping) => {
+    const checked = e.target.checked;
+
+    if (checked) {
+      handlePrice(topping.price);
+      setExtraToppings((prev) => [...prev, topping]);
+    } else {
+      handlePrice(-topping.price);
+      setExtraToppings(
+        extraToppings.filter((extra) => extra._id !== topping._id)
+      );
+    }
   };
 
   return (
@@ -58,7 +72,7 @@ const Product = () => {
                 <div
                   className={styles.img__wrapper}
                   key={item.id}
-                  onClick={() => setSize(item.id - 1)}
+                  onClick={() => handleSize(item.id - 1)}
                 >
                   <figure className={styles.img}>
                     <Image
@@ -78,10 +92,17 @@ const Product = () => {
           <div className={styles.toppings}>
             <h2>Add Extra Toppings</h2>
             <div className={styles.toppings__wrapper}>
-              {pizza.toppings.map((item) => (
-                <label key={item} className={styles.box}>
-                  <p>{item}</p>
-                  <input type="checkbox" />
+              {pizza.toppings.map((topping) => (
+                <label key={topping._id} className={styles.box}>
+                  <p>
+                    {topping.text} (${topping.price})
+                  </p>
+                  <input
+                    type="checkbox"
+                    id={topping.text}
+                    name={topping.text}
+                    onChange={(e) => handleChange(e, topping)}
+                  />
                   <span className={styles.checkmark}></span>
                 </label>
               ))}
