@@ -55,7 +55,7 @@ const Product = ({ pizza }) => {
     }
   };
 
-  const handleDispatch = () => {
+  const handleAddToCart = () => {
     dispatch(addProduct({ ...pizza, price, size, extraToppings, count }));
   };
 
@@ -149,7 +149,7 @@ const Product = ({ pizza }) => {
                 onClick={handleAdd}
               />
             </div>
-            <div className={styles.bottom__cart} onClick={handleDispatch}>
+            <div className={styles.bottom__cart} onClick={handleAddToCart}>
               <AddToCartBtn />
             </div>
           </div>
