@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { MdOutlineShoppingCart, MdMenuOpen, MdClose } from "react-icons/md";
 import { FaPhone } from "react-icons/fa";
 
 import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
+  const quantity = useSelector((state) => state.cart.quantity);
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -62,7 +65,7 @@ const Navbar = () => {
         <Link href="/cart" passHref>
           <MdOutlineShoppingCart className={styles.right__icon} />
         </Link>
-        <span>3</span>
+        <span>{quantity}</span>
         {isOpen ? openMenu() : closeMenu()}
       </div>
     </section>
