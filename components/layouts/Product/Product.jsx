@@ -1,15 +1,35 @@
 import Image from "next/image";
 import Head from "next/head";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addProduct } from "redux/cartRedux";
+import {
+  MdAddCircleOutline,
+  MdOutlineRemoveCircleOutline,
+} from "react-icons/md";
 
-import { AddToCartBtn, Counter, Ratings } from "@components/elements";
+import { AddToCartBtn, Ratings } from "@components/elements";
 import { sizeItems } from "@data/size-data";
 import styles from "./Product.module.scss";
 
 const Product = ({ pizza }) => {
+  const dispatch = useDispatch();
+  const [count, setCount] = useState(1);
   const [price, setPrice] = useState(pizza.prices[0]);
   const [size, setSize] = useState(0);
   const [extraToppings, setExtraToppings] = useState([]);
+
+  const handleAdd = () => {
+    setCount(count + 1);
+  };
+
+  const handleMinus = () => {
+    if (count > 1) {
+      setCount(count - 1);
+    } else {
+      setCount(1);
+    }
+  };
 
   const handlePrice = (number) => {
     setPrice(price + number);
@@ -33,6 +53,10 @@ const Product = ({ pizza }) => {
         extraToppings.filter((extra) => extra._id !== topping._id)
       );
     }
+  };
+
+  const handleDispatch = () => {
+    dispatch(addProduct({ ...pizza, price, size, extraToppings, count }));
   };
 
   return (
