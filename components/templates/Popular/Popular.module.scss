@@ -6,13 +6,6 @@
   justify-content: center;
   text-align: center;
   padding: a.$primary-padding;
-
-  .products {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4rem;
-    padding: 2rem 0rem;
-  }
 }
 
 //********MEDIA QUERY********
