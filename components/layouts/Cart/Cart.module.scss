@@ -76,6 +76,24 @@
         border-collapse: collapse;
         text-align: center;
 
+        tbody {
+          user-select: none;
+          -moz-user-select: none;
+          -webkit-user-select: none;
+          
+          tr {
+            border-bottom: 1px solid a.$primary-clr-1;
+
+            td {
+              padding: 0.5rem 0rem;
+              
+              .extra__toppings {
+                @include a.flex-direction-column;
+              }
+            }
+          }
+        }
+
         .counter {
           display: flex;
           justify-content: center;
