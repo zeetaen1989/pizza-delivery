@@ -133,8 +133,23 @@ const Product = ({ pizza }) => {
             </div>
           </div>
           <div className={styles.bottom}>
-            <Counter />
-            <div className={styles.bottom__cart}>
+            <div className={styles.counter}>
+              <MdOutlineRemoveCircleOutline
+                className={styles.count__btn}
+                onClick={handleMinus}
+              />
+              <span
+                className={styles.count__num}
+                onChange={(e) => setCount(e.target.value)}
+              >
+                {count}
+              </span>
+              <MdAddCircleOutline
+                className={styles.count__btn}
+                onClick={handleAdd}
+              />
+            </div>
+            <div className={styles.bottom__cart} onClick={handleDispatch}>
               <AddToCartBtn />
             </div>
           </div>
