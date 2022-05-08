@@ -6,18 +6,18 @@ import {
 
 import styles from "./Counter.module.scss";
 
-const Counter = () => {
-  const [count, setCount] = useState(1);
+const Counter = ({ count }) => {
+  const [counter, setCounter] = useState(1);
 
   const handleAdd = () => {
-    setCount(count + 1);
+    setCounter(counter + 1);
   };
 
   const handleMinus = () => {
-    if (count > 1) {
-      setCount(count - 1);
+    if (counter > 1) {
+      setCounter(counter - 1);
     } else {
-      setCount(1);
+      setCounter(1);
     }
   };
 
@@ -29,7 +29,7 @@ const Counter = () => {
       />
       <span
         className={styles.count__num}
-        onChange={(e) => setCount(e.target.value)}
+        onChange={(e) => setCounter(e.target.value)}
       >
         {count}
       </span>
