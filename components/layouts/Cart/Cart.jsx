@@ -26,6 +26,10 @@ const Cart = () => {
     if (index - status > 1) return styles.incomplete;
   };
 
+  let deliveryCharge = (5.55).toFixed(2);
+  let discount = (0.0).toFixed(2);
+  let extraCharge = deliveryCharge - discount;
+
   return (
     <section className={styles.container}>
       <div className={styles.top}>
