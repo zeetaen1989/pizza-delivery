@@ -1,11 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useDispatch } from "react-redux";
+import { addProduct } from "redux/cartRedux";
 import { FaHeart, FaSearch } from "react-icons/fa";
 
 import { Ratings, AddToCartBtn } from "@components/elements";
 import styles from "./ProductCard.module.scss";
 
-const ProductCard = ({ pizza }) => {
+const ProductCard = ({ path, pizza }) => {
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (pizza) => {
+    dispatch(addProduct({ ...pizza, count: 1 }));
+  };
+
   return (
     <div className={styles.container}>
       <section className={styles.container__card}>
@@ -34,7 +42,9 @@ const ProductCard = ({ pizza }) => {
         </div>
         <p>{pizza.description}</p>
       </article>
-      <AddToCartBtn />
+      <div className={styles.add__btn} onClick={handleAddToCart}>
+        <AddToCartBtn />
+      </div>
     </div>
   );
 };
