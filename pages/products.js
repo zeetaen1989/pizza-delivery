@@ -1,7 +1,8 @@
 import Head from "next/head";
+import axios from "axios";
 import { Products } from "@components/layouts";
 
-const ProductsPage = () => {
+const ProductsPage = ({ pizzaList }) => {
   return (
     <>
       <Head>
@@ -17,8 +18,17 @@ const ProductsPage = () => {
           content="Popular Products, Products, Pizza, Food, Food Delivery"
         />
       </Head>
-      <Products />
+      <Products pizzaList={pizzaList} />
     </>
   );
 };
 export default ProductsPage;
+
+export const getServerSideProps = async () => {
+  const res = await axios.get("http://localhost:3000/api/products");
+  return {
+    props: {
+      pizzaList: res.data,
+    },
+  };
+};
