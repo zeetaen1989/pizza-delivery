@@ -88,6 +88,30 @@
   }
 }
 
+// Counter Button Section
+@mixin counter-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: f.$regular-fs;
+
+  .count__btn {
+    cursor: pointer;
+  }
+
+  .count__num {
+    font-size: f.$regular-fs;
+    font-weight: f.$regular-fw;
+    border: 1px solid c.$primary-clr-3;
+    border-radius: 0.4rem;
+    height: 2rem;
+    width: 2rem;
+    display: grid;
+    place-items: center;
+    user-select: none;
+  }
+}
+
 // Media Query
 @mixin media-query($key) {
   $size: map.get(b.$breakpoints, $key);
