@@ -24,11 +24,17 @@ const ProductsPage = ({ pizzaList }) => {
           content="Popular Products, Products, Pizza, Food, Food Delivery"
         />
       </Head>
-      <Products pizzaList={pizzaList} />
+      <div style={{ marginTop: "2rem" }}>
+        <Header
+          title="Our Products"
+          subtitle="Various Regional Taste"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor vitae purus faucibus ornare."
+        />
+      </div>
+      <ProductList pizzaList={pizzaList} path={path} />
     </>
   );
 };
-export default ProductsPage;
 
 export const getServerSideProps = async () => {
   const res = await axios.get("http://localhost:3000/api/products");
