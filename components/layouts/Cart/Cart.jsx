@@ -104,81 +104,65 @@ const Cart = () => {
               <tr>
                 <th>Product</th>
                 <th>Name</th>
-                <th>Extras</th>
+                <th>Extra Toppings</th>
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Total</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  <Image
-                    src="/images/Greek-Pizza.png"
-                    alt="Greek Pizza"
-                    height="100"
-                    width="100"
-                  />
-                </td>
-                <td>Greek Pizza</td>
-                <td>Mozerella, Mushroom, Spicey Sauce</td>
-                <td>$ 11.99</td>
-                <td>
-                  <div className={styles.counter}>
-                    <Counter />
-                  </div>
-                </td>
-                <td>$ 23.98</td>
-                <td>
-                  <ImBin className={styles.bin} onClick={handleRemove} />
-                </td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <td>
-                  <Image
-                    src="/images/Pizza-Alla-Diavola.png"
-                    alt="Pizza Alla Diavola"
-                    height="100"
-                    width="100"
-                  />
-                </td>
-                <td>Pizza Alla Diavola</td>
-                <td>Parmesan, Salami, Spicy Sauce</td>
-                <td>$ 14.99</td>
-                <td>
-                  <div className={styles.counter}>
-                    <Counter />
-                  </div>
-                </td>
-                <td>$ 44.97</td>
-                <td>
-                  <ImBin className={styles.bin} />
-                </td>
-              </tr>
+              {cart.products.map((product) => (
+                <tr key={product._id}>
+                  <td>
+                    <Image
+                      src={product.img}
+                      alt={product.title}
+                      height="100"
+                      width="100"
+                    />
+                  </td>
+                  <td>{product.title}</td>
+                  <td>
+                    <span className={styles.extra__toppings}>
+                      {product.extraToppings.map((extra) => (
+                        <span key={extra._id}>{extra.text}</span>
+                      ))}
+                    </span>
+                  </td>
+                  <td>$ {product.price.toFixed(2)}</td>
+                  <td>
+                    <div className={styles.counter}>
+                      <Counter count={product.count} />
+                    </div>
+                  </td>
+                  <td>$ {(product.price * product.count).toFixed(2)}</td>
+                  <td>
+                    <ImBin className={styles.bin} onClick={handleRemove} />
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </article>
         <aside className={styles.right}>
-          <h1>Cart Summary</h1>
+          <h1>Bill Summary</h1>
           <hr />
           <div className={styles.right__summary}>
             <p>Subtotal:</p>
-            <span>$ 68.95</span>
+            <span>$ {cart.total.toFixed(2)}</span>
           </div>
           <div className={styles.right__summary}>
             <p>Delivery Charge:</p>
-            <span>$ 5.50</span>
+            <span>$ {deliveryCharge}</span>
           </div>
           <div className={styles.right__summary}>
             <p>Discount:</p>
-            <span>$ 0.00</span>
+            <span>- $ {discount}</span>
           </div>
           <hr />
           <div className={styles.right__summary}>
             <p>Total:</p>
-            <span>$ 74.45</span>
+            <span>$ {(cart.total + extraCharge).toFixed(2)}</span>
           </div>
           <Link href="/orders/:id" passHref>
             <button className={styles.btn}>
