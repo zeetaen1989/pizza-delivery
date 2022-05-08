@@ -1,4 +1,5 @@
-import { Header, ProductCard } from "@components/elements";
+import { Header } from "@components/elements";
+import { ProductList } from "..";
 import styles from "./Popular.module.scss";
 
 const Popular = ({ pizzaList }) => {
@@ -9,24 +10,7 @@ const Popular = ({ pizzaList }) => {
         subtitle="What Our Customers Love"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor vitae purus faucibus ornare."
       />
-      <div className={styles.products}>
-        {pizzaList.map((pizza) => (
-          <>
-            {pizza.rating >= 4.5 ? (
-              <ProductCard
-                pizza={pizza}
-                key={pizza._id}
-                image={pizza.img}
-                title={pizza.title}
-                description={pizza.description}
-                price={pizza.price}
-                rating={pizza.rating}
-                reviews={pizza.reviews}
-              />
-            ) : null}
-          </>
-        ))}
-      </div>
+      <ProductList pizzaList={pizzaList} />
     </section>
   );
 };
