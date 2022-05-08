@@ -1,8 +1,14 @@
 import Head from "next/head";
 import axios from "axios";
-import { Products } from "@components/layouts";
+import { useRouter } from "next/router";
+import { Header } from "@components/elements";
+import { ProductList } from "@components/templates";
 
 const ProductsPage = ({ pizzaList }) => {
+  const router = useRouter();
+
+  const path = router.pathname.split("/")[1];
+
   return (
     <>
       <Head>
@@ -32,3 +38,5 @@ export const getServerSideProps = async () => {
     },
   };
 };
+
+export default ProductsPage;
