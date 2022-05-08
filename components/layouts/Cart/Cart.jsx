@@ -1,16 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { ImBin } from "react-icons/im";
 
 import { Counter } from "@components/elements";
+import { resetCart } from "redux/cartRedux";
 import styles from "./Cart.module.scss";
 
 const Cart = () => {
-  const [remove, setRemove] = useState(false);
+  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
 
-  const handleRemove = () => {
-    setRemove(true);
+  const handleRemove = (id) => {
+    const filteredProduct = cart.products.filter(
+      (product) => product._id !== id
+    );
+    dispatch(resetCart(filteredProduct));
   };
 
   const status = 0;
