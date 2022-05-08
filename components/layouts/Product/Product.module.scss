@@ -141,6 +141,10 @@
       align-items: center;
       gap: 2rem;
 
+      .counter {
+        @include a.counter-button;
+      }
+
       &__cart {
         margin: 0rem;
       }
