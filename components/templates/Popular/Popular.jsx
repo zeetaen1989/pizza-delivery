@@ -11,16 +11,20 @@ const Popular = ({ pizzaList }) => {
       />
       <div className={styles.products}>
         {pizzaList.map((pizza) => (
-          <ProductCard
-            pizza={pizza}
-            key={pizza._id}
-            image={pizza.img}
-            title={pizza.title}
-            description={pizza.description}
-            price={pizza.price}
-            rating={pizza.rating}
-            reviews={pizza.reviews}
-          />
+          <>
+            {pizza.rating >= 4.5 ? (
+              <ProductCard
+                pizza={pizza}
+                key={pizza._id}
+                image={pizza.img}
+                title={pizza.title}
+                description={pizza.description}
+                price={pizza.price}
+                rating={pizza.rating}
+                reviews={pizza.reviews}
+              />
+            ) : null}
+          </>
         ))}
       </div>
     </section>
