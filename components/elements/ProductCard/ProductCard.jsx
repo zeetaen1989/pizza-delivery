@@ -32,7 +32,7 @@ const ProductCard = ({ pizza }) => {
           <Ratings rating={pizza.rating} />
           <a href="#">({pizza.reviews} Reviews)</a>
         </div>
-        {/* <p>{pizza.description}</p> */}
+        <p>{pizza.description}</p>
       </article>
       <AddToCartBtn />
     </div>
