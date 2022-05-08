@@ -1,8 +1,7 @@
-import { products } from "@data/products-data";
 import { Header, ProductCard } from "@components/elements";
 import styles from "./Products.module.scss";
 
-const ProductsPage = ({ pizza }) => {
+const ProductsPage = ({ pizzaList }) => {
   return (
     <section className={styles.container}>
       <Header
@@ -11,15 +10,16 @@ const ProductsPage = ({ pizza }) => {
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor vitae purus faucibus ornare."
       />
       <div className={styles.container__products}>
-        {products.map((product) => (
+        {pizzaList.map((pizza) => (
           <ProductCard
-            key={product.id}
-            image={product.img}
-            title={product.title}
-            description={product.description}
-            price={product.price}
-            rating={product.rating}
-            reviews={product.reviews}
+            pizza={pizza}
+            key={pizza._id}
+            image={pizza.img}
+            title={pizza.title}
+            description={pizza.description}
+            price={pizza.price}
+            rating={pizza.rating}
+            reviews={pizza.reviews}
           />
         ))}
       </div>
