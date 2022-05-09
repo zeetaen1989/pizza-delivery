@@ -7,7 +7,7 @@ import { FaHeart, FaSearch } from "react-icons/fa";
 import { Ratings, AddToCartBtn } from "@components/elements";
 import styles from "./ProductCard.module.scss";
 
-const ProductCard = ({ path, pizza }) => {
+const ProductCard = ({ pizza }) => {
   const dispatch = useDispatch();
 
   const handleAddToCart = (pizza) => {
@@ -16,35 +16,29 @@ const ProductCard = ({ path, pizza }) => {
 
   return (
     <div className={styles.container}>
-      <section className={styles.container__card}>
-        <figure className={styles.card__img}>
-          <Image src={pizza.img} alt={pizza.title} height="250" width="250" />
-        </figure>
-        <figcaption className={styles.card__overlay}>
-          <div className={styles.icons}>
-            <figure className={styles.icons__heart}>
-              <FaHeart style={{ cursor: "pointer" }} />
-            </figure>
-            <figure className={styles.icons__search}>
-              <Link href={`/product/${pizza._id}`} passHref>
-                <FaSearch style={{ cursor: "pointer" }} />
-              </Link>
-            </figure>
-          </div>
-        </figcaption>
-      </section>
-      <article>
-        <h3>{pizza.title}</h3>
-        <span className={styles.price}>${pizza.prices[0]}</span>
-        <div className={styles.review}>
-          <Ratings rating={pizza.rating} />
+      <figure className={styles.img}>
+        <Image src={pizza.img} alt={pizza.title} height="200" width="200" />
+      </figure>
+      <article className={styles.info}>
+        <Ratings rating={pizza.rating} />
+        <span className={styles.info__reviews}>
           <a href="#">({pizza.reviews} Reviews)</a>
+        </span>
+        <div className={styles.info__text}>
+          {pizza.title.length > 18 ? (
+            <h4>{pizza.title.slice(0, 15)}....</h4>
+          ) : (
+            <h4>{pizza.title}</h4>
+          )}
+          <p>{pizza.description}</p>
         </div>
-        <p>{pizza.description}</p>
+        <div className={styles.info__bottom}>
+          <span className={styles.price}>${pizza.prices[0]}</span>
+          <div className={styles.cart__btn} onClick={handleAddToCart}>
+            <AddToCartBtn />
+          </div>
+        </div>
       </article>
-      <div className={styles.add__btn} onClick={handleAddToCart}>
-        <AddToCartBtn />
-      </div>
     </div>
   );
 };
