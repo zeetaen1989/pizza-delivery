@@ -31,7 +31,9 @@ const ProductsPage = ({ pizzaList }) => {
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor vitae purus faucibus ornare."
         />
       </div>
-      <ProductList pizzaList={pizzaList} path={path} />
+      <div style={{ padding: "0rem 8rem" }}>
+        <ProductList pizzaList={pizzaList} path={path} />
+      </div>
     </>
   );
 };
