@@ -40,14 +40,6 @@ const Cart = () => {
             height="50"
             width="50"
           />
-          <figure className={styles.checked__icon}>
-            <Image
-              src="/images/checked2.svg"
-              alt="Checked"
-              height="20"
-              width="20"
-            />
-          </figure>
         </figure>
         <hr />
         <figure className={iconStatus(1)}>
@@ -57,26 +49,10 @@ const Cart = () => {
             height="40"
             width="40"
           />
-          <figure className={styles.checked__icon}>
-            <Image
-              src="/images/checked2.svg"
-              alt="Checked"
-              height="20"
-              width="20"
-            />
-          </figure>
         </figure>
         <hr />
         <figure className={iconStatus(2)}>
           <Image src="/images/pay.svg" alt="Pay" height="40" width="40" />
-          <figure className={styles.checked__icon}>
-            <Image
-              src="/images/checked2.svg"
-              alt="Checked"
-              height="20"
-              width="20"
-            />
-          </figure>
         </figure>
         <hr />
         <figure className={iconStatus(3)}>
@@ -86,14 +62,6 @@ const Cart = () => {
             height="60"
             width="60"
           />
-          <figure className={styles.checked__icon}>
-            <Image
-              src="/images/checked2.svg"
-              alt="Checked"
-              height="20"
-              width="20"
-            />
-          </figure>
         </figure>
       </div>
       <h1>Shopping Cart</h1>
