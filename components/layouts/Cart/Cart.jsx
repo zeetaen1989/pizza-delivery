@@ -91,11 +91,13 @@ const Cart = () => {
                   </td>
                   <td>{product.title}</td>
                   <td>
-                    <span className={styles.extra__toppings}>
-                      {product.extraToppings.map((extra) => (
-                        <span key={extra._id}>{extra.text}</span>
-                      ))}
-                    </span>
+                    {product.extraToppings && (
+                      <span className={styles.extra__toppings}>
+                        {product.extraToppings.map((extra) => (
+                          <span key={extra._id}>{extra.text}</span>
+                        ))}
+                      </span>
+                    )}
                   </td>
                   <td>$ {product.price.toFixed(2)}</td>
                   <td>
@@ -117,7 +119,7 @@ const Cart = () => {
           <hr />
           <div className={styles.right__summary}>
             <p>Subtotal:</p>
-            <span>$ {cart.total.toFixed(2)}</span>
+            <span>$ {cart.total}</span>
           </div>
           <div className={styles.right__summary}>
             <p>Delivery Charge:</p>
