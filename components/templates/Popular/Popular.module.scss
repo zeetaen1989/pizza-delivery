@@ -6,26 +6,10 @@
   justify-content: center;
   text-align: center;
   padding: a.$primary-padding;
-}
 
-//********MEDIA QUERY********
-
-// Media Query for large devices (less than 1024px)
-@include a.media-query(large) {
-  .container {
-    .products {
-      padding: 0rem 3rem;
-    }
-  }
-}
-
-// Media Query for small devices (less than 480px)
-@include a.media-query(small) {
-  .container {
-    .products {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      padding: 0rem;
-    }
+  .btn {
+    @include a.button-one;
+    padding: 0.3rem 1rem;
+    margin: 0.5rem 0rem;
   }
 }
