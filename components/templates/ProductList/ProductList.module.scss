@@ -1,7 +1,28 @@
+@use "@styles/abstracts"as a;
+
 .products {
   display: grid;
+  place-items: center;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 3rem;
   text-align: center;
-  padding: 1rem 5rem;
+  padding: 2rem 0rem;
+}
+
+//********MEDIA QUERY********
+
+// Media Query for large devices (less than 1024px)
+@include a.media-query(large) {
+  .products {
+    padding: 0rem 3rem;
+  }
+}
+
+// Media Query for small devices (less than 480px)
+@include a.media-query(small) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 0rem;
+  }
 }
