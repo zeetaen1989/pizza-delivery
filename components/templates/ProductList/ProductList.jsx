@@ -11,11 +11,7 @@ const ProductList = ({ pizzaList, path }) => {
         : pizzaList
             .slice(0, 6)
             .map((pizza) => (
-              <div key={pizza._id}>
-                {pizza.rating >= 4.5 && (
-                  <ProductCard pizza={pizza} {...pizza} />
-                )}
-              </div>
+              <ProductCard key={pizza._id} pizza={pizza} {...pizza} />
             ))}
     </div>
   );
