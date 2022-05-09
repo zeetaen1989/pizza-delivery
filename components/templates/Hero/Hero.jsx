@@ -61,10 +61,10 @@ const Hero = () => {
               <article>
                 <h1>{img.title}</h1>
                 <h2>Pizza</h2>
-                <span>{img.percentage} Off</span>
-                <Link href="/cart" passHref>
+                <span className={styles.percentage}>{img.percentage} Off</span>
+                <Link href="/products" passHref>
                   <a className={styles.btn}>
-                    <span>Order Now</span>
+                    <span className={styles.text}>Order Now</span>
                     <svg viewBox="0 0 13 10" height="10px" width="15px">
                       <path d="M1,5 L11,5"></path>
                       <polyline points="8 1 12 5 8 9"></polyline>
