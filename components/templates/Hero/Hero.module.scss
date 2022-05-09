@@ -1,4 +1,4 @@
-@use "@styles/abstracts" as a;
+@use "@styles/abstracts"as a;
 
 .container {
   height: calc(100vh - 5.25rem);
@@ -62,66 +62,16 @@
             }
           }
 
-          span {
+          .percentage {
             font-size: a.$medium-fs;
             font-weight: a.$regular-fw;
             color: a.$primary-clr-2;
           }
 
           .btn {
-            position: relative;
+            @include a.button-one;
             margin: auto;
             padding: 0.5rem 1rem;
-            transition: a.$transition-ease;
-            border: none;
-            background: none;
-
-            &::before {
-              content: "";
-              position: absolute;
-              top: 0;
-              left: 0;
-              display: block;
-              border-radius: 3.125rem;
-              background-color: a.$primary-clr-1;
-              width: 2.2rem;
-              height: 2.2rem;
-              transition: all 0.3s ease;
-            }
-
-            span {
-              position: relative;
-              font-size: a.$small-fs;
-              font-weight: a.$bold-fw;
-              letter-spacing: 0.05em;
-              color: a.$primary-clr-3;
-            }
-
-            svg {
-              position: relative;
-              top: 0;
-              margin-left: 0.625rem;
-              fill: none;
-              stroke-linecap: round;
-              stroke-linejoin: round;
-              stroke: a.$primary-clr-3;
-              stroke-width: 2;
-              transform: translateX(-0.313rem);
-              transition: a.$transition-ease;
-            }
-
-            &:hover::before {
-              width: 100%;
-              background-color: a.$primary-clr-1;
-            }
-
-            &:hover svg {
-              transform: translateX(0);
-            }
-
-            &:active {
-              transform: scale(0.95);
-            }
           }
         }
 
