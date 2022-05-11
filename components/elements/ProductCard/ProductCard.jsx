@@ -10,8 +10,15 @@ import styles from "./ProductCard.module.scss";
 const ProductCard = ({ pizza }) => {
   const dispatch = useDispatch();
 
-  const handleAddToCart = (pizza) => {
-    dispatch(addProduct({ ...pizza, count: 1 }));
+  const handleAddToCart = () => {
+    dispatch(
+      addProduct({
+        ...pizza,
+        price: pizza.prices[0],
+        size: 0,
+        count: 1,
+      })
+    );
   };
 
   return (
