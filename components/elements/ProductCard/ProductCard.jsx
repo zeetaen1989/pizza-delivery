@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { addProduct } from "redux/cartRedux";
-import { FaHeart, FaSearch } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 
 import { Ratings, AddToCartBtn } from "@components/elements";
 import styles from "./ProductCard.module.scss";
@@ -16,8 +16,13 @@ const ProductCard = ({ pizza }) => {
 
   return (
     <div className={styles.container}>
-      <figure className={styles.img}>
+      <figure className={styles.wrapper__img}>
         <Image src={pizza.img} alt={pizza.title} height="200" width="200" />
+        <figcaption className={styles.overlap}>
+          <Link href={`/product/${pizza._id}`} passHref>
+            <FaSearch className={styles.icon} />
+          </Link>
+        </figcaption>
       </figure>
       <article className={styles.info}>
         <Ratings rating={pizza.rating} />
@@ -35,7 +40,7 @@ const ProductCard = ({ pizza }) => {
         <div className={styles.info__bottom}>
           <span className={styles.price}>${pizza.prices[0]}</span>
           <div className={styles.cart__btn} onClick={handleAddToCart}>
-            <AddToCartBtn />
+            <AddToCartBtn text="+" />
           </div>
         </div>
       </article>
