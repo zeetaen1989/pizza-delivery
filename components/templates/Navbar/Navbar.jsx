@@ -1,7 +1,12 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { MdOutlineShoppingCart, MdMenuOpen, MdClose } from "react-icons/md";
+import {
+  MdOutlineShoppingCart,
+  MdMenuOpen,
+  MdClose,
+  MdAccountCircle,
+} from "react-icons/md";
 import { FaPhone } from "react-icons/fa";
 
 import styles from "./Navbar.module.scss";
@@ -62,10 +67,26 @@ const Navbar = () => {
         </ul>
       </nav>
       <div className={styles.right}>
-        <Link href="/cart" passHref>
-          <MdOutlineShoppingCart className={styles.right__icon} />
-        </Link>
-        <span>{quantity}</span>
+        <div className={styles.right__account}>
+          <button className={styles.btn__link}>
+            <MdAccountCircle className={styles.icon} />
+          </button>
+          <div className={styles.dropdown__menu}>
+            <Link href="/login" passHref>
+              <a>Login</a>
+            </Link>
+            <hr />
+            <Link href="/register" passHref>
+              <a>Register</a>
+            </Link>
+          </div>
+        </div>
+        <div className={styles.right__cart}>
+          <Link href="/cart" passHref>
+            <MdOutlineShoppingCart className={styles.icon} />
+          </Link>
+          <span>{quantity}</span>
+        </div>
         {isOpen ? openMenu() : closeMenu()}
       </div>
     </section>
