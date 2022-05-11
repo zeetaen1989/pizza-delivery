@@ -46,11 +46,11 @@ const Hero = () => {
   return (
     <section className={styles.container}>
       <div className={styles.top}>
-        <section
-          className={styles.arrow__left}
-          onClick={() => handleArrow("left")}
-        >
-          <MdArrowBackIosNew />
+        <section className={styles.arrow__left}>
+          <MdArrowBackIosNew
+            className={styles.arrow}
+            onClick={() => handleArrow("left")}
+          />
         </section>
         <section
           className={styles.wrapper}
@@ -85,11 +85,11 @@ const Hero = () => {
             </div>
           ))}
         </section>
-        <section
-          className={styles.arrow__right}
-          onClick={() => handleArrow("right")}
-        >
-          <MdArrowForwardIos />
+        <section className={styles.arrow__right}>
+          <MdArrowForwardIos
+            className={styles.arrow}
+            onClick={() => handleArrow("right")}
+          />
         </section>
       </div>
       <div className={styles.bottom}>
