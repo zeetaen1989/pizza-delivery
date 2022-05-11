@@ -17,11 +17,7 @@ const Newsletter = () => {
       <div className={styles.newsletter}>
         <form>
           <input type="email" placeholder="Enter Your Email" />
-          <button onClick={handleSubmit}>
-            <div className={styles.icon}>
-              <MdSend />
-            </div>
-          </button>
+          <button onClick={handleSubmit}>Send</button>
         </form>
       </div>
     </section>
