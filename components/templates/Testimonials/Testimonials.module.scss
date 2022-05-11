@@ -1,21 +1,38 @@
-@use "@styles/abstracts" as a;
+@use "@styles/abstracts"as a;
 
 .container {
   padding: a.$primary-padding;
+  padding: 1rem 0rem;
   overflow: hidden;
-  
+
   .testimonials {
     position: relative;
     padding: a.$secondary-padding;
-    display: flex;
 
-    &__left, &__right {
+    &__left,
+    &__right {
       @include a.arrow;
-      font-size: 2rem;
+      width: 18rem;
+
+      .arrow {
+        font-size: 2rem;
+        transition: a.$transition-ease;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
     }
 
     &__left {
-      left: 10rem;
+      justify-content: end;
+      left: 0;
+    }
+
+    &__right {
+      justify-content: start;
+      right: 0;
     }
 
     &__wrapper {
@@ -32,7 +49,7 @@
         gap: 2rem;
 
         .img {
-          & > span {
+          &>span {
             border-radius: 50%;
           }
         }
@@ -41,10 +58,6 @@
           width: 45%;
         }
       }
-    }
-
-    &__right {
-      right: 10rem;
     }
   }
 }
