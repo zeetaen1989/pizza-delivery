@@ -1,4 +1,4 @@
-@use "@styles/abstracts" as a;
+@use "@styles/abstracts"as a;
 
 .container {
   padding: a.$primary-padding;
@@ -10,11 +10,13 @@
     padding: a.$secondary-padding;
 
     &__wrapper {
+      height: 7rem;
+      width: 13rem;
       display: flex;
       align-items: flex-start;
       gap: 1rem;
-      border: 1px solid a.$primary-clr-1;
-      border-radius: 0.5rem;
+      border-radius: 76% 24% 0% 24% / 0% 38% 0% 42%;
+      box-shadow: a.$primary-box-shadow;
       padding: 1rem;
       cursor: pointer;
     }
