@@ -18,9 +18,7 @@
 
 // Arrow Style
 @mixin arrow {
-  height: 3rem;
-  width: 3rem;
-  cursor: pointer;
+  width: 6rem;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -30,11 +28,8 @@
   bottom: 0;
   transition: t.$transition-ease;
   color: c.$primary-clr-2;
-  z-index: 2;
-
-  &:hover {
-    color: c.$primary-clr-1;
-  }
+  z-index: 1;
+  background-color: c.$primary-clr;
 }
 
 // Order Now Button Style
