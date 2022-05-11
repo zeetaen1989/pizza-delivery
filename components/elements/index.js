@@ -1,3 +1,4 @@
+export { default as OrderBtn } from "./OrderBtn/OrderBtn";
 export { default as AddToCartBtn } from "./AddToCartBtn/AddToCartBtn";
 export { default as Announcement } from "./Announcement/Announcement";
 export { default as Header } from "./Header/Header";
