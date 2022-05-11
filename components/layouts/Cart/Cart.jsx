@@ -84,21 +84,54 @@ const Cart = () => {
                   {cart.products.map((product) => (
                     <tr key={product._id}>
                       <td>
-                        <Image
-                          src={product.img}
-                          alt={product.title}
-                          height="100"
-                          width="100"
-                        />
+                        {product.size == 0 ? (
+                          <figure className={styles.img__size}>
+                            <Image
+                              src={product.img}
+                              alt={product.title}
+                              height="100"
+                              width="100"
+                            />
+                            <figcaption className={styles.size__info}>
+                              Small
+                            </figcaption>
+                          </figure>
+                        ) : product.size == 1 ? (
+                          <figure className={styles.img__size}>
+                            <Image
+                              src={product.img}
+                              alt={product.title}
+                              height="100"
+                              width="100"
+                            />
+                            <figcaption className={styles.size__info}>
+                              Medium
+                            </figcaption>
+                          </figure>
+                        ) : (
+                          <figure className={styles.img__size}>
+                            <Image
+                              src={product.img}
+                              alt={product.title}
+                              height="100"
+                              width="100"
+                            />
+                            <figcaption className={styles.size__info}>
+                              Large
+                            </figcaption>
+                          </figure>
+                        )}
                       </td>
                       <td>{product.title}</td>
                       <td>
-                        {product.extraToppings && (
+                        {product.extraToppings ? (
                           <span className={styles.extra__toppings}>
                             {product.extraToppings.map((extra) => (
                               <span key={extra._id}>{extra.text}</span>
                             ))}
                           </span>
+                        ) : (
+                          <span>No Extra Toppings</span>
                         )}
                       </td>
                       <td>$ {product.price.toFixed(2)}</td>
