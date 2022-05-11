@@ -2,6 +2,5 @@
 
 .btn {
   @include a.button;
-  font-size: 1.2rem;
   color: a.$primary-clr-5;
 }
