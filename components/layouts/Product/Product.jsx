@@ -150,7 +150,7 @@ const Product = ({ pizza }) => {
               />
             </div>
             <div className={styles.bottom__cart} onClick={handleAddToCart}>
-              <AddToCartBtn />
+              <AddToCartBtn text="Add To Cart" />
             </div>
           </div>
         </article>
