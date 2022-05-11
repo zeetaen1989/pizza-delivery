@@ -133,7 +133,9 @@
           transition: a.$transition-ease;
 
           &:hover {
-            color: a.$primary-clr-5;
+            color: a.$primary-clr;
+            background-color: a.$primary-clr-2;
+            border-radius: 0.25rem;
           }
         }
 
