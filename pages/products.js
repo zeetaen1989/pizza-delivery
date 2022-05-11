@@ -24,7 +24,7 @@ const ProductsPage = ({ pizzaList }) => {
           content="Popular Products, Products, Pizza, Food, Food Delivery"
         />
       </Head>
-      <div style={{ marginTop: "2rem" }}>
+      <div style={{ marginTop: "1rem" }}>
         <Header
           title="Our Products"
           subtitle="Various Regional Taste"
