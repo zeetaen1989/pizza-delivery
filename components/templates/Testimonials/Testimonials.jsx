@@ -28,11 +28,11 @@ const Testimonials = () => {
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor vitae purus faucibus ornare."
       />
       <div className={styles.testimonials}>
-        <div
-          className={styles.testimonials__left}
-          onClick={() => handleArrow("left")}
-        >
-          <FaArrowAltCircleLeft />
+        <div className={styles.testimonials__left}>
+          <FaArrowAltCircleLeft
+            className={styles.arrow}
+            onClick={() => handleArrow("left")}
+          />
         </div>
         <div
           className={styles.testimonials__wrapper}
@@ -55,11 +55,11 @@ const Testimonials = () => {
             </article>
           ))}
         </div>
-        <div
-          className={styles.testimonials__right}
-          onClick={() => handleArrow("right")}
-        >
-          <FaArrowAltCircleRight />
+        <div className={styles.testimonials__right}>
+          <FaArrowAltCircleRight
+            className={styles.arrow}
+            onClick={() => handleArrow("right")}
+          />
         </div>
       </div>
     </section>
