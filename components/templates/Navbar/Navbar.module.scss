@@ -97,7 +97,7 @@
     &__account {
       position: relative;
 
-      & > .btn__link:focus {
+      &>.btn__link:focus {
         color: a.$primary-clr-5;
       }
 
@@ -106,10 +106,9 @@
         border: none;
         color: a.$primary-clr-3;
 
-        &:focus + .dropdown__menu {
+        &:focus+.dropdown__menu {
           opacity: 1;
           transform: translateY(0);
-          pointer-events: auto;
           visibility: visible;
         }
       }
@@ -122,7 +121,6 @@
         z-index: 2;
         opacity: 0;
         visibility: hidden;
-        pointer-events: none;
         border-radius: 0.25rem;
         background-color: a.$primary-clr-1;
         box-shadow: a.$primary-box-shadow;
