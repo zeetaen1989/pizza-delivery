@@ -10,11 +10,29 @@
     overflow: hidden;
     user-select: none;
 
-    .arrow__left {
-      @include a.arrow;
+    .arrow {
+      cursor: pointer;
+      transition: a.$transition-ease;
 
-      left: 2rem;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    .arrow__left,
+    .arrow__right {
+      @include a.arrow;
       font-size: 3rem;
+    }
+
+    .arrow__left {
+      left: 0;
+      justify-content: end;
+    }
+
+    .arrow__right {
+      right: 0;
+      justify-content: start;
     }
 
     .wrapper {
@@ -78,18 +96,6 @@
         figure {
           flex: 1;
         }
-      }
-    }
-
-    .arrow__right {
-      @include a.arrow;
-
-      right: 2rem;
-      font-size: 3rem;
-
-      @include a.media-query(small) {
-        right: 1rem;
-        font-size: 2rem;
       }
     }
   }
