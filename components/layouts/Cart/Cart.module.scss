@@ -80,13 +80,13 @@
           user-select: none;
           -moz-user-select: none;
           -webkit-user-select: none;
-          
+
           tr {
             border-bottom: 1px solid a.$primary-clr-1;
 
             td {
               padding: 0.5rem 0rem;
-              
+
               .extra__toppings {
                 @include a.flex-direction-column;
               }
@@ -151,5 +151,11 @@
         }
       }
     }
+  }
+
+  .btn__order {
+    @include a.button-one;
+    margin: 1rem auto;
+    padding: 0.3rem 1rem;
   }
 }
