@@ -82,15 +82,9 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    position: relative;
-    gap: 0.5rem;
+    gap: 1rem;
 
-    &__menu {
-      display: none;
-      cursor: pointer;
-    }
-
-    &__icon {
+    .icon {
       font-size: 1.8rem;
       cursor: pointer;
       transition: a.$transition-ease;
@@ -100,20 +94,81 @@
       }
     }
 
-    span {
-      position: absolute;
-      right: -0.5rem;
-      top: -0.5rem;
-      height: 1.1rem;
-      width: 1.1rem;
-      border-radius: 50%;
-      background-color: a.$primary-clr-1;
-      color: a.$primary-clr-3;
-      display: grid;
-      place-items: center;
-      font-size: a.$small-fs;
-      font-weight: a.$regular-fw;
-      user-select: none;
+    &__account {
+      position: relative;
+
+      & > .btn__link:focus {
+        color: a.$primary-clr-5;
+      }
+
+      .btn__link {
+        background: none;
+        border: none;
+        color: a.$primary-clr-3;
+
+        &:focus + .dropdown__menu {
+          opacity: 1;
+          transform: translateY(0);
+          pointer-events: auto;
+          visibility: visible;
+        }
+      }
+
+      .dropdown__menu {
+        @include a.flex-direction-column;
+        position: absolute;
+        right: 0.5rem;
+        top: calc(100% - 0.25rem);
+        z-index: 2;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        border-radius: 0.25rem;
+        background-color: a.$primary-clr-1;
+        box-shadow: a.$primary-box-shadow;
+        transition: a.$transition-ease;
+        transform: translateY(-10px);
+
+        a {
+          text-align: center;
+          padding: 0.35rem 0.8rem;
+          transition: a.$transition-ease;
+
+          &:hover {
+            color: a.$primary-clr-5;
+          }
+        }
+
+        hr {
+          border: none;
+          border-bottom: 1px solid a.$primary-clr;
+        }
+      }
+    }
+
+    &__cart {
+      position: relative;
+
+      span {
+        position: absolute;
+        right: -0.5rem;
+        top: -0.5rem;
+        height: 1.1rem;
+        width: 1.1rem;
+        border-radius: 50%;
+        background-color: a.$primary-clr-1;
+        color: a.$primary-clr-3;
+        display: grid;
+        place-items: center;
+        font-size: a.$small-fs;
+        font-weight: a.$regular-fw;
+        user-select: none;
+      }
+    }
+
+    &__menu {
+      display: none;
+      cursor: pointer;
     }
   }
 }
