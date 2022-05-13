@@ -12,7 +12,7 @@
     form {
       display: flex;
       align-items: center;
-      border: 1px solid a.$primary-clr-2;
+      border: 2px solid a.$primary-clr-2;
       border-radius: 2rem;
 
       input {
@@ -31,11 +31,11 @@
 
       button {
         border-radius: 2rem;
-        border: 1px solid a.$primary-clr-2;
+        border: 2px solid a.$primary-clr-2;
         background-color: transparent;
         cursor: pointer;
         padding: 0.6rem 0.9rem;
-        margin-right: 0.3rem;
+        margin-right: 0.2rem;
         color: a.$primary-clr-3;
         text-transform: uppercase;
         font-weight: bold;
