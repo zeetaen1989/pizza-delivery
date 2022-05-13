@@ -7,3 +7,7 @@ export { default as Locations } from "./Locations/Locations";
 export { default as Testimonials } from "./Testimonials/Testimonials";
 export { default as Newsletter } from "./Newsletter/Newsletter";
 export { default as Footer } from "./Footer/Footer";
+export { default as CartItems } from "./CartItems/CartItems";
+export { default as CustomerInfo } from "./CustomerInfo/CustomerInfo";
+export { default as Payment } from "./Payment/Payment";
+export { default as Delivery } from "./Delivery/Delivery";
