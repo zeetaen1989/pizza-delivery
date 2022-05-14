@@ -1,30 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useSelector, useDispatch } from "react-redux";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { ImBin } from "react-icons/im";
 
-import { resetCart } from "redux/cartRedux";
-import { Counter, OrderBtn } from "@components/elements";
+import { BillSummary, Counter, OrderBtn } from "@components/elements";
 import styles from "./CartItems.module.scss";
+import { removeProduct } from "redux/cartRedux";
 
-const CartItems = () => {
-  const cart = useSelector((state) => state.cart);
+const CartItems = ({ products, total }) => {
   const dispatch = useDispatch();
 
-  const handleRemove = (id) => {
-    const filteredProduct = cart.products.filter(
-      (product) => product._id !== id
-    );
-    dispatch(resetCart(filteredProduct));
-  };
+  const [list, setList] = useState(products);
 
-  let deliveryCharge = (5.55).toFixed(2);
-  let discount = (0.0).toFixed(2);
-  let extraCharge = deliveryCharge - discount;
+  const handleRemove = (id) => {
+    const filteredData = list.filter((item) => item._id !== id);
+    setList(filteredData);
+    dispatch(removeProduct(id));
+  };
 
   return (
     <>
-      {cart.products.length > 0 ? (
+      {list.length > 0 ? (
         <div className={styles.container}>
           <h1>Shopping Cart</h1>
           <div className={styles.center}>
@@ -41,7 +38,7 @@ const CartItems = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {cart.products.map((product) => (
+                  {list.map((product) => (
                     <tr key={product._id}>
                       <td>
                         <figure className={styles.img__size}>
@@ -80,7 +77,10 @@ const CartItems = () => {
                       </td>
                       <td>$ {(product.price * product.count).toFixed(2)}</td>
                       <td>
-                        <ImBin className={styles.bin} onClick={handleRemove} />
+                        <ImBin
+                          className={styles.bin}
+                          onClick={() => handleRemove(product._id)}
+                        />
                       </td>
                     </tr>
                   ))}
@@ -92,23 +92,7 @@ const CartItems = () => {
               <div className={styles.right__container}>
                 <h1>Bill Summary</h1>
                 <hr />
-                <div className={styles.summary}>
-                  <p>Subtotal:</p>
-                  <span>$ {cart.total.toFixed(2)}</span>
-                </div>
-                <div className={styles.summary}>
-                  <p>Delivery Charge:</p>
-                  <span>$ {deliveryCharge}</span>
-                </div>
-                <div className={styles.summary}>
-                  <p>Discount:</p>
-                  <span>- $ {discount}</span>
-                </div>
-                <hr />
-                <div className={styles.summary}>
-                  <p>Total:</p>
-                  <span>$ {(cart.total + extraCharge).toFixed(2)}</span>
-                </div>
+                <BillSummary products={products} total={total} />
                 <Link href="#customer" passHref>
                   <button className={styles.btn}>
                     Checkout Now
