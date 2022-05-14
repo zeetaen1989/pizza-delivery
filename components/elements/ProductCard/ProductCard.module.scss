@@ -8,6 +8,10 @@
     position: relative;
     transition: opacity 0.3s ease;
 
+    &>span {
+      filter: drop-shadow(0 2rem 0.8rem rgba($color: a.$primary-clr-1, $alpha: 0.5));
+    }
+
     &:hover {
       opacity: 0.8;
 
@@ -43,7 +47,7 @@
     @include a.flex-direction-column;
     gap: 0.3rem;
     padding: 1rem;
-    border-radius: 48% 52% 10% 10% / 26% 25% 10% 10% ;
+    border-radius: 48% 52% 10% 10% / 26% 25% 10% 10%;
     box-shadow: a.$primary-box-shadow;
 
     &__text {
