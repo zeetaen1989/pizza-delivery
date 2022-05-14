@@ -1,7 +1,8 @@
+import { BillSummary } from "@components/elements";
 import Image from "next/image";
 import styles from "./CustomerInfo.module.scss";
 
-const CustomerInfo = () => {
+const CustomerInfo = ({ products, total }) => {
   return (
     <div className={styles.container} id="customer">
       <h1>Customer Details</h1>
@@ -37,76 +38,60 @@ const CustomerInfo = () => {
         <aside className={styles.right}>
           <h1>Order Summary</h1>
           <hr />
-          <div className={styles.list__summary}>
-            <div className={styles.list__items}>
-              <figure className={styles.item__img}>
-                <Image
-                  src="/images/Greek-Pizza.png"
-                  alt="Greek Pizza"
-                  height="50"
-                  width="50"
-                />
-              </figure>
-              <figcaption className={styles.item__info}>
-                <section>
-                  <h3>Greek Pizza</h3>
-                  <p className={styles.extras}>
-                    Mozerella, Mushroom, Spicey Sauce
-                  </p>
-                </section>
-              </figcaption>
-              <figcaption className={styles.item__details}>
-                <span className={styles.price}>$11.99</span>
-                <span>X</span>
-                <span className={styles.quantity}>2</span>
-              </figcaption>
+          {products.length > 0 ? (
+            <div className={styles.list__summary}>
+              {products.map((product) => (
+                <div key={product._id} className={styles.list__items}>
+                  <figure className={styles.item__img}>
+                    <Image
+                      src={product.img}
+                      alt={product.title}
+                      height="50"
+                      width="50"
+                    />
+                  </figure>
+                  <div className={styles.item__info}>
+                    <h3>
+                      {product.title}{" "}
+                      <span style={{ fontSize: "0.8rem" }}>
+                        (
+                        {product.size === 0
+                          ? "Small"
+                          : product.size === 1
+                          ? "Medium"
+                          : "Large"}
+                        )
+                      </span>
+                    </h3>
+                    {product.extraToppings ? (
+                      <>
+                        {product.extraToppings.map((extra) => (
+                          <span key={extra._id} className={styles.extras}>
+                            {extra.text}
+                          </span>
+                        ))}
+                      </>
+                    ) : (
+                      <span className={styles.extras}>No Extra Toppings</span>
+                    )}
+                  </div>
+                  <div className={styles.item__details}>
+                    <span className={styles.price}>
+                      $ {product.price.toFixed(2)}
+                    </span>
+                    <span>X</span>
+                    <span className={styles.quantity}>{product.count}</span>
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className={styles.list__items}>
-              <figure className={styles.item__img}>
-                <Image
-                  src="/images/Pizza-Alla-Diavola.png"
-                  alt="Pizza Alla Diavola"
-                  height="50"
-                  width="50"
-                />
-              </figure>
-              <figcaption className={styles.item__info}>
-                <section>
-                  <h3>Pizza Alla Diavola</h3>
-                  <p className={styles.extras}>Parmesan, Salami, Spicy Sauce</p>
-                </section>
-              </figcaption>
-              <figcaption className={styles.item__details}>
-                <span className={styles.price}>$14.99</span>
-                <span>X</span>
-                <span className={styles.quantity}>3</span>
-              </figcaption>
+          ) : (
+            <div className={styles.list__summary}>
+              <p className={styles.list__summary__empty}>Your Cart Is Empty</p>
             </div>
-          </div>
-          <div className={styles.info__summary}>
-            <p>Subtotal:</p>
-            <span>$ 68.95</span>
-          </div>
-          <div className={styles.info__summary}>
-            <p>*Delivery Charge:</p>
-            <span>$ 5.50</span>
-          </div>
-          <div className={styles.info__summary}>
-            <p>Discount:</p>
-            <span>$ 0.00</span>
-          </div>
-          <div className={styles.notice}>
-            <p>**Minimum Delivery Charge is $5.00</p>
-            <p>
-              *Extra Delivery Charges are added based upon your provided
-              location.
-            </p>
-          </div>
+          )}
           <hr />
-          <div className={styles.info__summary}>
-            <p>Total:</p>
-            <span>$ 74.45</span>
-          </div>
+          <BillSummary products={products} total={total} />
           <button className={styles.btn}>
             Proceed To Pay
             <div className={styles.icon}>
