@@ -1,6 +1,15 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { calculateTotals } from "redux/cartRedux";
 import styles from "./BillSummary.module.scss";
 
-const BillSummary = ({ total }) => {
+const BillSummary = ({ products, total }) => {
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(calculateTotals());
+  // }, [products, dispatch]);
+
   let deliveryCharge = (5.55).toFixed(2);
   let discount = (0.0).toFixed(2);
   let extraCharge = deliveryCharge - discount;
