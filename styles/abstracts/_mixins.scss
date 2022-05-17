@@ -3,6 +3,7 @@
 @use "./colors"as c;
 @use "./transitions"as t;
 @use "./breakpoints"as b;
+@use "./box-shadow"as s;
 
 // Flex Direction Column
 @mixin flex-direction-column {
@@ -30,6 +31,26 @@
   color: c.$primary-clr-2;
   z-index: 1;
   background-color: c.$primary-clr;
+}
+
+// Horizontal Rule Style
+@mixin hr {
+  border: none;
+  border-top: 0.1rem solid c.$primary-clr;
+  width: 100%;
+}
+
+// Right Aside Style
+@mixin right-aside {
+  @include flex-direction-column;
+  flex: 1;
+  gap: 1rem;
+  background-color: c.$primary-clr-1;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  width: fit-content;
+  height: fit-content;
+  box-shadow: s.$secondary-box-shadow;
 }
 
 // Order Now Button Style
@@ -90,12 +111,13 @@
 
 // Add To Cart Button Style
 @mixin button {
-  padding: 0.5rem 2.5rem 0.5rem 1rem;
-  height: 2rem;
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  height: 2.5rem;
   font-family: inherit;
-  font-weight: f.$regular-fw;
+  font-weight: f.$bold-fw;
   letter-spacing: 0.05rem;
-  background-color: c.$primary-clr-1;
+  text-transform: uppercase;
+  background-color: c.$primary-clr;
   color: c.$primary-clr-3;
   border-radius: 0.5rem;
   border: none;
@@ -112,15 +134,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 2rem;
+    width: 2rem;
     border-radius: 0.3rem;
     box-shadow: 0.1rem 0.1rem 0.6rem 0.2rem c.$primary-clr-1;
     right: 0.3rem;
     transition: t.$transition-ease;
 
     svg {
-      width: 1rem;
+      width: 1.5rem;
       transition: t.$transition-ease;
     }
   }
