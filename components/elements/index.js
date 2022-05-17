@@ -6,3 +6,5 @@ export { default as Header } from "./Header/Header";
 export { default as Counter } from "./Counter/Counter";
 export { default as Ratings } from "./Ratings/Ratings";
 export { default as ProductCard } from "./ProductCard/ProductCard";
+export { default as TabItem } from "./TabItem/TabItem";
+export { default as TabContent } from "./TabContent/TabContent";
