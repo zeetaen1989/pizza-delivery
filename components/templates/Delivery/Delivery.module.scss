@@ -1,0 +1,12 @@
+@use "@styles/abstracts"as a;
+
+.container {
+  @include a.flex-direction-column;
+  padding: 2rem 3rem;
+  gap: 1.5rem;
+  text-align: center;
+
+  h1 {
+    @include a.header;
+  }
+}
