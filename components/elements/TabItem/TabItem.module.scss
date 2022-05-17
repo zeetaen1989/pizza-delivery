@@ -1,0 +1,39 @@
+@use "@styles/abstracts"as a;
+
+.container {
+  list-style: none;
+
+  .active {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    animation: active 0.8s ease infinite alternate;
+
+    @keyframes active {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .checked__icon {
+      display: none;
+    }
+  }
+
+  .inactive {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    opacity: 0.5;
+
+    .checked__icon {
+      display: none;
+    }
+  }
+}
