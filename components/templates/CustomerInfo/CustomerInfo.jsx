@@ -2,12 +2,13 @@ import { BillSummary } from "@components/elements";
 import Image from "next/image";
 import styles from "./CustomerInfo.module.scss";
 
-const CustomerInfo = ({ products, total }) => {
+const CustomerInfo = ({ products, total, setActiveTab }) => {
   return (
-    <div className={styles.container} id="customer">
+    <div className={styles.container}>
       <h1>Customer Details</h1>
-      <div className={styles.bottom}>
-        <article className={styles.left}>
+      <div className={styles.content}>
+        <article className={styles.left}>Map</article>
+        <aside className={styles.right}>
           <h2>Enter Your Information</h2>
           <form>
             <div className={styles.form__control}>
@@ -34,65 +35,7 @@ const CustomerInfo = ({ products, total }) => {
               />
             </div>
           </form>
-        </article>
-        <aside className={styles.right}>
-          <h1>Order Summary</h1>
-          <hr />
-          {products.length > 0 ? (
-            <div className={styles.list__summary}>
-              {products.map((product) => (
-                <div key={product._id} className={styles.list__items}>
-                  <figure className={styles.item__img}>
-                    <Image
-                      src={product.img}
-                      alt={product.title}
-                      height="50"
-                      width="50"
-                    />
-                  </figure>
-                  <div className={styles.item__info}>
-                    <h3>
-                      {product.title}{" "}
-                      <span style={{ fontSize: "0.8rem" }}>
-                        (
-                        {product.size === 0
-                          ? "Small"
-                          : product.size === 1
-                          ? "Medium"
-                          : "Large"}
-                        )
-                      </span>
-                    </h3>
-                    {product.extraToppings ? (
-                      <>
-                        {product.extraToppings.map((extra) => (
-                          <span key={extra._id} className={styles.extras}>
-                            {extra.text}
-                          </span>
-                        ))}
-                      </>
-                    ) : (
-                      <span className={styles.extras}>No Extra Toppings</span>
-                    )}
-                  </div>
-                  <div className={styles.item__details}>
-                    <span className={styles.price}>
-                      $ {product.price.toFixed(2)}
-                    </span>
-                    <span>X</span>
-                    <span className={styles.quantity}>{product.count}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className={styles.list__summary}>
-              <p className={styles.list__summary__empty}>Your Cart Is Empty</p>
-            </div>
-          )}
-          <hr />
-          <BillSummary products={products} total={total} />
-          <button className={styles.btn}>
+          <button className={styles.btn} onClick={() => setActiveTab("3")}>
             Proceed To Pay
             <div className={styles.icon}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
