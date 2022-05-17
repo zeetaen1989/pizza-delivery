@@ -2,33 +2,27 @@
 
 .container {
   @include a.flex-direction-column;
-  padding: 2rem 3rem;
-  gap: 1.5rem;
+  padding: 2rem;
+  gap: 2rem;
 
-  .top {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    hr {
-      width: 9rem;
-      border: none;
-      border-top: 1px solid a.$primary-clr-2;
-    }
-  }
 
   h1 {
     @include a.header;
     text-align: center;
   }
 
-  .bottom {
+  .content {
     display: flex;
-    justify-content: center;
-    padding: 0rem 7rem;
+    justify-content: space-between;
+    gap: 4rem;
 
     .left {
-      flex: 1.5;
+      flex: 1;
+    }
+
+    .right {
+      @include a.right-aside;
+      padding: 1rem 2rem;
 
       h2 {
         margin-bottom: 1rem;
@@ -44,7 +38,7 @@
 
           input,
           textarea {
-            width: 70%;
+            width: 100%;
             font-family: inherit;
             padding: 0.5rem 1rem;
             border: 1px solid a.$primary-clr-1;
@@ -63,101 +57,10 @@
           }
         }
       }
-    }
-
-    .right {
-      @include a.flex-direction-column;
-      flex: 1;
-      gap: 1rem;
-      background-color: a.$primary-clr-1;
-      border-radius: 1rem;
-      padding: 1rem 1.5rem;
-      width: fit-content;
-      height: fit-content;
-
-      h1 {
-        font-size: a.$middle-fs;
-        text-align: center;
-      }
-
-      hr {
-        border: none;
-        border-top: 0.1rem solid a.$primary-clr;
-        width: 100%;
-      }
-
-      .list__summary {
-        @include a.flex-direction-column;
-        gap: 0.5rem;
-        background-color: a.$primary-clr;
-        border: none;
-        border-radius: 0.5rem;
-        height: fit-content;
-        width: fit-content;
-        padding: 1rem;
-        margin: auto;
-
-        .list__items {
-          display: flex;
-          gap: 1rem;
-
-          .item__img {
-            flex: 0.5;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-          }
-
-          .item__info {
-            flex: 3;
-            display: flex;
-            flex-direction: column;
-
-            h3 {
-              line-height: 1;
-            }
-
-            .extras {
-              font-size: a.$small-fs;
-              color: a.$primary-clr-2;
-            }
-          }
-
-          .item__details {
-            @include a.flex-direction-column;
-            align-items: center;
-
-            .price,
-            .quantity {
-              color: a.$primary-clr-4;
-              font-size: a.$small-fs;
-            }
-          }
-        }
-
-        &__empty {
-          font-size: a.$middle-fs;
-          font-weight: a.$regular-fw;
-        }
-      }
 
       .btn {
         @include a.button;
         margin: 0 auto;
-        background-color: a.$primary-clr;
-        height: 2.5rem;
-        padding: 0.5rem 3rem 0.5rem 1rem;
-        text-transform: uppercase;
-        font-weight: a.$bold-fw;
-
-        .icon {
-          height: 2rem;
-          width: 2rem;
-
-          svg {
-            width: 1.5rem;
-          }
-        }
       }
     }
   }
