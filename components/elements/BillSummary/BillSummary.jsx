@@ -26,7 +26,7 @@ const BillSummary = ({ products, total }) => {
       </div>
       <div className={styles.summary}>
         <p>Discount:</p>
-        <span>- $ {discount}</span>
+        <span>$ {discount}</span>
       </div>
       <div className={styles.notice}>
         <p>**Minimum Delivery Charge is $5.00</p>
