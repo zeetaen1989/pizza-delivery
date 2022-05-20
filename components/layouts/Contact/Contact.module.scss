@@ -10,7 +10,7 @@
 
     .left {
       flex: 1.5;
-      background-color: a.$secondary-clr;
+      box-shadow: a.$secondary-box-shadow;
       border-radius: 1rem;
       display: grid;
       place-items: center;
@@ -45,7 +45,7 @@
     .right {
       @include a.flex-direction-column;
       flex: 2;
-      background-color: a.$secondary-clr;
+      box-shadow: a.$secondary-box-shadow;
       border-radius: 1rem;
       justify-content: center;
       align-items: center;
