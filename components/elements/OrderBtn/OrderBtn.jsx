@@ -3,7 +3,7 @@ import styles from "./OrderBtn.module.scss";
 
 const OrderBtn = ({ text }) => {
   return (
-    <Link href="/products" passHref>
+    <Link href="/menu" passHref>
       <a className={styles.btn__order}>
         <span className={styles.text}>{text}</span>
         <svg viewBox="0 0 13 10" height="10px" width="15px">
