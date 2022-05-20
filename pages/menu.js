@@ -21,12 +21,12 @@ const ProductsPage = ({ pizzaList }) => {
         />
         <meta
           name="keywords"
-          content="Popular Products, Products, Pizza, Food, Food Delivery"
+          content="Popular Products, Menu, Pizza, Food, Food Delivery"
         />
       </Head>
       <div style={{ marginTop: "1rem" }}>
         <Header
-          title="Our Products"
+          title="Our Menu"
           subtitle="Various Regional Taste"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor vitae purus faucibus ornare."
         />
@@ -40,6 +40,7 @@ const ProductsPage = ({ pizzaList }) => {
 
 export const getServerSideProps = async () => {
   const res = await axios.get("http://localhost:3000/api/products");
+
   return {
     props: {
       pizzaList: res.data,
