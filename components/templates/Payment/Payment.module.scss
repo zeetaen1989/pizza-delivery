@@ -101,9 +101,8 @@
         gap: 0.5rem;
 
         .btn {
-          @include a.button;
-          margin: 0 auto;
           width: 13rem;
+          @include a.cart-btns;
         }
       }
     }
