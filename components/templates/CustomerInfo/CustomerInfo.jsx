@@ -3,8 +3,8 @@ import { useCallback, useState } from "react";
 import styles from "./CustomerInfo.module.scss";
 
 const containerStyle = {
-  width: "550px",
-  height: "550px",
+  width: "35rem",
+  height: "35rem",
   borderRadius: "1rem",
 };
 
