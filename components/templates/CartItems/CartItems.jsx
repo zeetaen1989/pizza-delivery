@@ -24,7 +24,7 @@ const CartItems = ({ products, total, setActiveTab }) => {
       {list.length > 0 ? (
         <div className={styles.container}>
           <h1>Shopping Cart</h1>
-          <div className={styles.center}>
+          <div className={styles.content}>
             <article className={styles.left}>
               <table>
                 <thead>
