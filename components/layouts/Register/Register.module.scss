@@ -1,0 +1,119 @@
+@use "@styles/abstracts"as a;
+
+.container {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 0rem 5rem;
+
+  .wrapper {
+    display: flex;
+    box-shadow: a.$secondary-box-shadow;
+    border-radius: 1rem;
+
+    .left {
+      flex: 1;
+      border-top-left-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+
+      &__header {
+        padding: 0.5rem 1rem 0rem;
+
+        h1 {
+          font-family: a.$secondary-ff;
+        }
+      }
+
+      hr {
+        border: none;
+        border-bottom: 1px solid a.$primary-clr-1;
+      }
+
+      &__content {
+        display: grid;
+        place-items: center;
+        padding: 2rem 0rem;
+
+        p {
+          margin: 0.5rem 0rem;
+          font-size: a.$small-fs;
+        }
+
+        form {
+          margin-top: 1.5rem;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
+          .form__control {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+
+            label {
+              font-size: 0.9rem;
+              font-weight: 600;
+            }
+
+            input {
+              border: 1px solid a.$primary-clr-1;
+              border-radius: 0.5rem;
+              padding: 0.5rem;
+              width: 17rem;
+
+              &::placeholder {
+                color: a.$primary-clr-2;
+              }
+            }
+          }
+
+          .terms {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            label {
+              font-size: a.$small-fs;
+            }
+          }
+
+          .btn__register {
+            @include a.button-one;
+            margin: 0rem auto;
+            padding: 0.2rem 1rem;
+            cursor: pointer;
+            user-select: none;
+          }
+        }
+
+        .bottom__content {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          margin-top: 1rem;
+
+          a {
+            font-size: a.$small-fs;
+            color: a.$primary-clr-4;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .right {
+      flex: 1;
+      display: grid;
+      place-items: center;
+      background-color: a.$primary-clr-1;
+      border-top-right-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+
+      p {
+        text-align: center;
+        font-size: a.$medium-fs;
+      }
+    }
+  }
+}
