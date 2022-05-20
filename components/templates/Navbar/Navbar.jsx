@@ -45,8 +45,8 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/products" passHref>
-              <a className={styles.center__links}>Products</a>
+            <Link href="/menu" passHref>
+              <a className={styles.center__links}>Menu</a>
             </Link>
           </li>
         </ul>
