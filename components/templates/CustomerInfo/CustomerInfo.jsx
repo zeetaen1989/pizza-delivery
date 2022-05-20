@@ -1,13 +1,56 @@
-import { BillSummary } from "@components/elements";
-import Image from "next/image";
+import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+import { useCallback, useState } from "react";
 import styles from "./CustomerInfo.module.scss";
 
+const containerStyle = {
+  width: "550px",
+  height: "550px",
+  borderRadius: "1rem",
+};
+
+const center = {
+  lat: 28.21963,
+  lng: 83.972959,
+};
+
 const CustomerInfo = ({ products, total, setActiveTab }) => {
+  const { isLoaded } = useJsApiLoader({
+    id: "google-map-script",
+    googleMapsApiKey: "AIzaSyAV5aJ9v8ce1APo45LU-pusQdsE3HHep9I",
+  });
+
+  const [map, setMap] = useState(null);
+
+  const onLoad = useCallback(function callback(map) {
+    const bounds = new window.google.maps.LatLngBounds(center);
+    map.fitBounds(bounds);
+    setMap(map);
+  }, []);
+
+  const onUnmount = useCallback(function callback(map) {
+    setMap(null);
+  }, []);
+
   return (
     <div className={styles.container}>
       <h1>Customer Details</h1>
       <div className={styles.content}>
-        <article className={styles.left}>Map</article>
+        <article className={styles.left}>
+          {isLoaded ? (
+            <GoogleMap
+              mapContainerStyle={containerStyle}
+              center={center}
+              zoom={10}
+              onLoad={onLoad}
+              onUnmount={onUnmount}
+            >
+              {/* Child components, such as markers, info windows, etc. */}
+              <></>
+            </GoogleMap>
+          ) : (
+            <></>
+          )}
+        </article>
         <aside className={styles.right}>
           <h2>Enter Your Information</h2>
           <form>
