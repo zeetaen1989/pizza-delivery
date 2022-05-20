@@ -64,7 +64,7 @@ const Hero = () => {
                 <h2>Pizza</h2>
                 <span className={styles.percentage}>{img.percentage} Off</span>
                 <div className={styles.btn__order}>
-                  <OrderBtn text="Order Now" link="menu" />
+                  <OrderBtn text="Order Now" />
                 </div>
               </article>
               <figure className={styles.slider__img}>
