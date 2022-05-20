@@ -76,6 +76,8 @@
               border-radius: 0.5rem;
               padding: 0.5rem;
               width: 17rem;
+              outline: none;
+              color: a.$primary-clr-3;
 
               &::placeholder {
                 color: a.$primary-clr-2;
