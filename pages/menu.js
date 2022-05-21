@@ -2,7 +2,7 @@ import Head from "next/head";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { Header } from "@components/elements";
-import { ProductList } from "@components/templates";
+import { ProductList, Sidebar } from "@components/templates";
 
 const ProductsPage = ({ pizzaList }) => {
   const router = useRouter();
@@ -31,7 +31,8 @@ const ProductsPage = ({ pizzaList }) => {
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor vitae purus faucibus ornare."
         />
       </div>
-      <div style={{ padding: "0rem 8rem" }}>
+      <div style={{ padding: "2rem 1rem", display: "flex" }}>
+        <Sidebar />
         <ProductList pizzaList={pizzaList} path={path} />
       </div>
     </>
