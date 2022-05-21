@@ -1,12 +1,12 @@
 @use "@styles/abstracts"as a;
 
 .products {
+  flex: 3;
   display: grid;
   place-items: center;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
   text-align: center;
-  padding: 2rem 0rem;
 }
 
 //********MEDIA QUERY********
