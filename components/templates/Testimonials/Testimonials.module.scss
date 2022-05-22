@@ -70,15 +70,18 @@
 // Media Query for large devices (less than 1024px)
 @include a.media-query(large) {
   .container {
+    padding: 3rem 0rem 0rem;
+
+    .header {
+      padding: 0rem 2rem;
+    }
+
     .testimonials {
       padding: 0rem;
 
-      &__left {
-        left: 5rem;
-      }
-
+      &__left,
       &__right {
-        right: 5rem;
+        width: 12rem;
       }
     }
   }
@@ -88,12 +91,10 @@
 @include a.media-query(medium) {
   .container {
     .testimonials {
-      &__left {
-        left: 3rem;
-      }
 
+      &__left,
       &__right {
-        right: 3rem;
+        width: 8rem;
       }
     }
   }
@@ -103,8 +104,10 @@
 @include a.media-query(small) {
   .container {
     .testimonials {
-      &__left {
-        left: 1rem;
+
+      &__left,
+      &__right {
+        width: 4rem;
       }
 
       &__wrapper {
@@ -114,10 +117,6 @@
           gap: 1rem;
           text-align: center;
         }
-      }
-
-      &__right {
-        right: 1rem;
       }
     }
   }
