@@ -1,5 +1,5 @@
-import { OrderBtn } from "@components/elements";
 import Link from "next/link";
+import { OrderBtn } from "@components/elements";
 import styles from "./Register.module.scss";
 
 const Register = () => {
@@ -57,13 +57,7 @@ const Register = () => {
                   I&apos;ve read and accept the Terms & Conditions
                 </label>
               </div>
-              <a className={styles.btn__register}>
-                <span className={styles.text}>Register</span>
-                <svg viewBox="0 0 13 10" height="10px" width="15px">
-                  <path d="M1,5 L11,5"></path>
-                  <polyline points="8 1 12 5 8 9"></polyline>
-                </svg>
-              </a>
+              <OrderBtn text="Register" />
             </form>
             <div className={styles.bottom__content}>
               <p>Already have an account?</p>
