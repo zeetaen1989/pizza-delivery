@@ -39,7 +39,7 @@
       justify-content: center;
       width: 400vw;
       height: 100%;
-      transition: a.$transition-slider;
+      transition: all 0.5s linear;
 
       .slider {
         width: 100vw;
@@ -55,6 +55,10 @@
 
         .info {
           width: 45%;
+
+          p {
+            font-style: italic;
+          }
         }
       }
     }
