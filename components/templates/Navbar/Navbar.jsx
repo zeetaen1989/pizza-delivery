@@ -6,6 +6,7 @@ import {
   MdMenuOpen,
   MdClose,
   MdAccountCircle,
+  MdRestaurantMenu,
 } from "react-icons/md";
 import { FaPhone } from "react-icons/fa";
 
@@ -25,13 +26,13 @@ const Navbar = () => {
   );
 
   const openMenu = () => (
-    <MdClose className={styles.right__menu} onClick={toggleMenu} />
+    <MdRestaurantMenu className={styles.right__menu} onClick={toggleMenu} />
   );
 
   return (
     <section className={styles.container}>
       <div className={styles.left}>
-        <FaPhone fontSize="1.7rem" />
+        <FaPhone fontSize="1.5rem" />
         <div className={styles.left__info}>
           <h1>Order Now!</h1>
           <span>+01 234 567 89</span>
