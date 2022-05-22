@@ -22,11 +22,13 @@ const Testimonials = () => {
 
   return (
     <section className={styles.container}>
-      <Header
-        title="Testimonials"
-        subtitle="What Our Customers Say"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor vitae purus faucibus ornare."
-      />
+      <div className={styles.header}>
+        <Header
+          title="Testimonials"
+          subtitle="What Our Customers Say"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor vitae purus faucibus ornare."
+        />
+      </div>
       <div className={styles.testimonials}>
         <div className={styles.testimonials__left}>
           <FaArrowAltCircleLeft
