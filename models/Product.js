@@ -19,6 +19,10 @@ const ProductSchema = new mongoose.Schema(
       minlength: [3, "Description must be at least 3 characters"],
       required: [true, "Description is required"],
     },
+    category: {
+      type: String,
+      required: [true, "Category is required"],
+    },
     toppings: {
       type: [
         {
