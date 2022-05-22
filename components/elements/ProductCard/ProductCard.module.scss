@@ -59,32 +59,14 @@
     }
 
     &__bottom {
-      margin-top: 0.5rem;
+      margin-top: 0.2rem;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
 
       .price {
-        text-align: left;
         font-weight: a.$regular-fw;
         color: a.$primary-clr-5;
-      }
-
-      .btn {
-        @include a.btn-container;
-        height: 2rem;
-        background-color: a.$primary-clr-1;
-
-        .icon {
-          @include a.btn-icon;
-          height: 1.5rem;
-          width: 1.5rem;
-
-          svg {
-            @include a.btn-icon-svg;
-            width: 1rem;
-          }
-        }
       }
     }
   }
