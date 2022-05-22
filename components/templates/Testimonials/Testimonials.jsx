@@ -48,10 +48,10 @@ const Testimonials = () => {
                   width={70}
                 />
               </figure>
-              <figcaption className={styles.info}>
+              <div className={styles.info}>
                 <h3>{testimonial.title}</h3>
                 <p>{testimonial.description}</p>
-              </figcaption>
+              </div>
             </article>
           ))}
         </div>
