@@ -52,6 +52,30 @@
 
 //********MEDIA QUERY********
 
+// Media Query for large devices (less than 1024px)
+@include a.media-query(large) {
+  .container {
+    padding: 2rem 2rem 0rem;
+
+    .newsletter {
+      padding: 0rem;
+    }
+  }
+}
+
+// Media Query for medium devices (less than 768px)
+@include a.media-query(medium) {
+  .container {
+    .newsletter {
+      form {
+        button {
+          margin-right: 0.1rem;
+        }
+      }
+    }
+  }
+}
+
 // Media Query for small devices (less than 480px)
 @include a.media-query(small) {
   .container {
