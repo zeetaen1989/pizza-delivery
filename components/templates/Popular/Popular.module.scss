@@ -14,3 +14,26 @@
     gap: 3rem;
   }
 }
+
+// Media Query for large devices (less than 1024px)
+@include a.media-query(large) {
+  .container {
+    padding: 1rem 2rem 0rem;
+
+    &__products {
+      padding: 0rem 0rem 1rem;
+    }
+  }
+}
+
+// Media Query for small devices (less than 480px)
+@include a.media-query(small) {
+  .container {
+    padding: 0rem 2rem;
+
+    &__products {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+  }
+}
