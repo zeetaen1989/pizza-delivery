@@ -22,7 +22,7 @@ const ProductCard = ({ pizza }) => {
   };
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <figure className={styles.wrapper__img}>
         <Image src={pizza.img} alt={pizza.title} height="200" width="200" />
         <figcaption className={styles.overlap}>
@@ -42,16 +42,20 @@ const ProductCard = ({ pizza }) => {
           ) : (
             <h4>{pizza.title}</h4>
           )}
-          <p>{pizza.description}</p>
+          {pizza.description.length > 50 ? (
+            <p>{pizza.description.slice(0, 50)}....</p>
+          ) : (
+            <p>{pizza.description}</p>
+          )}
         </div>
         <div className={styles.info__bottom}>
-          <span className={styles.price}>${pizza.prices[0]}</span>
+          <span className={styles.price}>${pizza.prices[0].toFixed(2)}</span>
           <div className={styles.btn__cart} onClick={handleAddToCart}>
             <AddToCartBtn text="+" />
           </div>
         </div>
       </article>
-    </div>
+    </section>
   );
 };
 export default ProductCard;
