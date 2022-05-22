@@ -1,5 +1,5 @@
-import { OrderBtn } from "@components/elements";
 import Link from "next/link";
+import { OrderBtn } from "@components/elements";
 import styles from "./Login.module.scss";
 
 const Login = () => {
@@ -46,13 +46,7 @@ const Login = () => {
                 <input type="checkbox" name="login" id="remember" />
                 <label htmlFor="remember">Remember Me</label>
               </div>
-              <a className={styles.btn__login}>
-                <span className={styles.text}>Login</span>
-                <svg viewBox="0 0 13 10" height="10px" width="15px">
-                  <path d="M1,5 L11,5"></path>
-                  <polyline points="8 1 12 5 8 9"></polyline>
-                </svg>
-              </a>
+              <OrderBtn text="Login" />
             </form>
             <div className={styles.bottom__content}>
               <p>Don&apos;t have an account?</p>
