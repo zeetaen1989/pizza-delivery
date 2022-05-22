@@ -85,7 +85,7 @@ const Navbar = () => {
           <Link href="/cart" passHref>
             <MdOutlineShoppingCart className={styles.icon} />
           </Link>
-          <span>{quantity}</span>
+          {quantity > 0 && <span className={styles.quantity}>{quantity}</span>}
         </div>
         {isOpen ? openMenu() : closeMenu()}
       </div>
