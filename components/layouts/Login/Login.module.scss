@@ -101,11 +101,23 @@
           }
 
           .btn__login {
-            @include a.button-one;
+            @include a.btn;
             margin: 0rem auto;
             padding: 0.2rem 1rem;
             cursor: pointer;
             user-select: none;
+
+            &::before {
+              @include a.btn-before;
+            }
+
+            .text {
+              @include a.btn-text;
+            }
+
+            svg {
+              @include a.btn-svg;
+            }
           }
         }
 
