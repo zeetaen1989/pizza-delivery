@@ -1,0 +1,69 @@
+@use "@styles/abstracts"as a;
+
+.container {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+
+  figure {
+    flex: 1;
+    position: relative;
+    transition: opacity 0.3s ease;
+
+    &>span {
+      filter: drop-shadow(0 2rem 0.8rem rgba($color: a.$primary-clr-1, $alpha: 0.5));
+    }
+
+    &:hover {
+      opacity: 0.8;
+
+      .overlap {
+        opacity: 1;
+        transition: a.$transition-ease;
+
+        &:hover {
+          color: a.$primary-clr;
+          background-color: a.$primary-clr-4;
+        }
+      }
+    }
+
+    .overlap {
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: grid;
+      place-items: center;
+      z-index: 2;
+      padding: 0.5rem;
+      background-color: a.$primary-clr;
+      border: 1px solid a.$primary-clr-1;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+
+  article {
+    flex: 3;
+    gap: 0.5rem;
+
+    h1 {
+      font-size: a.$regular-fs;
+    }
+
+    .price {
+      font-weight: a.$regular-fw;
+      color: a.$primary-clr-5;
+    }
+
+    .desc {
+      margin-top: 0.5rem;
+    }
+
+    .btn__cart {
+      margin-top: 1rem;
+    }
+  }
+}
