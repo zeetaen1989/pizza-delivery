@@ -1,7 +1,19 @@
 @use "@styles/abstracts"as a;
 
-.btn__order {
-  @include a.button-one;
+.btn {
+  @include a.btn;
   margin: 1rem auto;
   padding: 0.3rem 1rem;
+
+  &::before {
+    @include a.btn-before;
+  }
+
+  .text {
+    @include a.btn-text;
+  }
+
+  svg {
+    @include a.btn-svg;
+  }
 }
