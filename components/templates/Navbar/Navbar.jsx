@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import {
   MdOutlineShoppingCart,
   MdMenuOpen,
-  MdClose,
   MdAccountCircle,
   MdRestaurantMenu,
 } from "react-icons/md";
