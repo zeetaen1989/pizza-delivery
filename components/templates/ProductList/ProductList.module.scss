@@ -1,12 +1,69 @@
 @use "@styles/abstracts"as a;
 
-.products {
+.container {
+  @include a.flex-direction-column;
+  gap: 2rem;
   flex: 3;
-  display: grid;
-  place-items: center;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  text-align: center;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    .icons__container {
+      display: flex;
+      gap: 1rem;
+
+      .icon {
+        border: 1px solid a.$primary-clr-2;
+        border-radius: 0.2rem;
+        padding: 0.2rem;
+        display: grid;
+        place-items: center;
+        font-size: 1.8rem;
+        cursor: pointer;
+        transition: a.$transition-ease;
+
+        &:hover {
+          background-color: a.$primary-clr-2;
+          color: a.$primary-clr;
+        }
+      }
+
+      p {
+        margin-left: 1rem;
+      }
+    }
+
+    .sort__container {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    select {
+      border-radius: 0.25rem;
+      border: 1px solid a.$primary-clr-2;
+      background-color: a.$primary-clr-1;
+      color: a.$primary-clr-3;
+      padding-left: 0.25rem;
+      outline: none;
+    }
+  }
+
+  .products__grid {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .products__line {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 
 //********MEDIA QUERY********
