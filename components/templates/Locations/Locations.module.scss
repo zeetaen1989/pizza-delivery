@@ -10,8 +10,8 @@
     padding: a.$secondary-padding;
 
     &__wrapper {
-      height: 7rem;
-      width: 13rem;
+      height: fit-content;
+      width: fit-content;
       display: flex;
       align-items: flex-start;
       gap: 1rem;
@@ -28,8 +28,10 @@
 // Media Query for large devices (less than 1024px)
 @include a.media-query(large) {
   .container {
+    padding: 1rem 2rem 0rem;
+
     .location {
-      padding: 0rem 3rem;
+      padding: 0rem;
     }
   }
 }
@@ -39,8 +41,34 @@
   .container {
     .location {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      place-items: center;
+      grid-template-columns: repeat(2, 0.4fr);
       gap: 1rem;
+    }
+  }
+}
+
+// Media Query for small devices (less than 480px)
+@include a.media-query(small) {
+  .container {
+    .location {
+      &__wrapper {
+        width: max-content;
+
+        .address {
+          h3 {
+            font-size: 1rem;
+          }
+
+          p {
+            font-size: 0.9rem;
+          }
+
+          span {
+            font-size: 0.9rem;
+          }
+        }
+      }
     }
   }
 }
