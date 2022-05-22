@@ -1,5 +1,22 @@
 @use "@styles/abstracts"as a;
 
 .sidebar {
-  flex: 1;
+  @include a.flex-direction-column;
+  flex: 0.5;
+  gap: 1rem;
+
+  .search {
+    input {
+      border: none;
+      border-radius: 0.25rem;
+      background-color: a.$primary-clr-1;
+      padding: 0.5rem;
+      color: a.$primary-clr-3;
+      outline: none;
+
+      &::placeholder {
+        color: a.$primary-clr-2;
+      }
+    }
+  }
 }
