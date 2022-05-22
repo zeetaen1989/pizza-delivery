@@ -85,12 +85,6 @@
             font-weight: a.$regular-fw;
             color: a.$primary-clr-2;
           }
-
-          .btn {
-            @include a.button-one;
-            margin: auto;
-            padding: 0.5rem 1rem;
-          }
         }
 
         figure {
@@ -129,12 +123,19 @@
 // Media Query for large devices (less than 1024px)
 @include a.media-query(large) {
   .container {
-    height: calc(47vh - 5.25rem);
+    height: calc(43vh - 5.25rem);
 
     .top {
+
+      .arrow__left,
+      .arrow__right {
+        font-size: 2.5rem;
+        width: 3rem;
+      }
+
       .wrapper {
         .slider {
-          margin: 2rem 0rem;
+          padding: 2rem 4rem;
         }
       }
     }
@@ -144,7 +145,7 @@
 // Media Query for medium devices (less than 768px)
 @include a.media-query(medium) {
   .container {
-    height: calc(50vh - 5.25rem);
+    height: calc(45vh - 5.25rem);
 
     .top {
       .wrapper {
@@ -163,7 +164,7 @@
 // Media Query for small devices (less than 480px)
 @include a.media-query(small) {
   .container {
-    height: calc(92vh - 5.25rem);
+    height: calc(75vh - 5.25rem);
 
     .top {
       .arrow__left {
@@ -176,6 +177,8 @@
           flex-direction: column-reverse;
 
           article {
+            gap: 0.7rem;
+
             h1 {
               font-size: a.$middle-fs;
             }
@@ -184,8 +187,12 @@
               font-size: a.$medium-fs;
             }
 
-            span {
+            .percentage {
               font-size: a.$middle-fs;
+            }
+
+            .btn__order {
+              margin: 0.5rem 0rem;
             }
           }
 
