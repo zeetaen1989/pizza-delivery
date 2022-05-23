@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { OrderBtn } from "@components/elements";
 import styles from "./Register.module.scss";
+import Image from "next/image";
 
 const Register = () => {
   return (
@@ -57,7 +58,13 @@ const Register = () => {
                   I&apos;ve read and accept the Terms & Conditions
                 </label>
               </div>
-              <OrderBtn text="Register" />
+              <a className={styles.btn}>
+                <span className={styles.text}>Register</span>
+                <svg viewBox="0 0 13 10" height="10px" width="15px">
+                  <path d="M1,5 L11,5"></path>
+                  <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+              </a>
             </form>
             <div className={styles.bottom__content}>
               <p>Already have an account?</p>
@@ -68,9 +75,15 @@ const Register = () => {
           </div>
         </div>
         <div className={styles.right}>
+          <Image
+            src="/images/register.jpg"
+            alt="Enjoy"
+            height="500"
+            width="700"
+          />
           <p>
-            A place where you can find the best pizza in town from various
-            regions.
+            Order your pizza online from the comfort of your home or office and
+            enjoy with your loved ones.
           </p>
         </div>
       </div>
