@@ -10,7 +10,6 @@ import { removeProduct } from "redux/cartRedux";
 
 const CartItems = ({ products, total, setActiveTab }) => {
   const dispatch = useDispatch();
-
   const [list, setList] = useState(products);
 
   const handleRemove = (id) => {
@@ -114,9 +113,7 @@ const CartItems = ({ products, total, setActiveTab }) => {
       ) : (
         <div className={styles.container}>
           <h1>Your Shopping Cart is Empty!!</h1>
-          <div className={styles.order__btn}>
-            <OrderBtn text="Order Now" />
-          </div>
+          <OrderBtn text="Order Now" />
         </div>
       )}
     </>
