@@ -10,9 +10,9 @@ const BillSummary = ({ products, total }) => {
     dispatch(calculateTotals());
   }, [products, dispatch]);
 
-  let deliveryCharge = (5.55).toFixed(2);
-  let discount = (0.0).toFixed(2);
-  let extraCharge = deliveryCharge - discount;
+  let noCharge = (0.0).toFixed(2);
+  let deliveryCharge = (5.0).toFixed(2);
+  let extraCharge = deliveryCharge - noCharge;
 
   return (
     <div className={styles.container}>
@@ -22,14 +22,18 @@ const BillSummary = ({ products, total }) => {
       </div>
       <div className={styles.summary}>
         <p>Delivery Charge:</p>
-        <span>$ {deliveryCharge}</span>
+        {total > 50 ? (
+          <span>$ {noCharge}</span>
+        ) : (
+          <span>$ {deliveryCharge}</span>
+        )}
       </div>
       <div className={styles.summary}>
         <p>Discount:</p>
-        <span>$ {discount}</span>
+        <span>$ {noCharge}</span>
       </div>
       <div className={styles.notice}>
-        <p>**Minimum Delivery Charge is $5.00</p>
+        <p>**Minimum Delivery Charge is $5</p>
         <p>
           *Extra Delivery Charges are added based upon your provided location.
         </p>
