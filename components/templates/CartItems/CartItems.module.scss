@@ -26,6 +26,12 @@
         border-collapse: collapse;
         text-align: center;
 
+        thead {
+          tr {
+            border-bottom: 1px solid a.$primary-clr-2;
+          }
+        }
+
         tbody {
           user-select: none;
           -moz-user-select: none;
