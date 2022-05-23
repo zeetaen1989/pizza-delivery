@@ -1,8 +1,8 @@
+import { useEffect, useState } from "react";
 import { MdGridView, MdMenu } from "react-icons/md";
 import { ProductCard } from "@components/elements";
+import { HorizontalProductCard } from "@components/templates";
 import styles from "./ProductList.module.scss";
-import { useEffect, useState } from "react";
-import { HorizontalProductCard } from "..";
 
 const ProductList = ({ pizzaList, path }) => {
   const [sort, setSort] = useState("Lowest");
