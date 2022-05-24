@@ -11,8 +11,16 @@ const BillSummary = ({ products, total }) => {
   }, [products, dispatch]);
 
   let noCharge = (0.0).toFixed(2);
-  let deliveryCharge = (5.0).toFixed(2);
-  let extraCharge = deliveryCharge - noCharge;
+  let fixedDeliveryCharge = (5.0).toFixed(2);
+  let deliveryCharge, extraCharge;
+
+  if (total > 50) {
+    deliveryCharge = "FREE";
+    extraCharge = 0;
+  } else {
+    deliveryCharge = fixedDeliveryCharge;
+    extraCharge = deliveryCharge - noCharge;
+  }
 
   return (
     <div className={styles.container}>
@@ -22,11 +30,7 @@ const BillSummary = ({ products, total }) => {
       </div>
       <div className={styles.summary}>
         <p>Delivery Charge:</p>
-        {total > 50 ? (
-          <span>$ {noCharge}</span>
-        ) : (
-          <span>$ {deliveryCharge}</span>
-        )}
+        {total > 50 ? <span>FREE!!!</span> : <span>$ {deliveryCharge}</span>}
       </div>
       <div className={styles.summary}>
         <p>Discount:</p>
