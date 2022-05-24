@@ -80,6 +80,7 @@
       &__wrapper {
         display: flex;
         gap: 1rem;
+        flex-wrap: wrap;
 
         /* Checkbox container box */
         .box {
