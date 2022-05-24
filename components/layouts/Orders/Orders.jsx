@@ -1,6 +1,6 @@
 import styles from "./Orders.module.scss";
 
-const Order = ({ order }) => {
+const Orders = ({ order }) => {
   return (
     <section className={styles.container}>
       <header className={styles.header}>
@@ -21,7 +21,7 @@ const Order = ({ order }) => {
               <td>{order._id}</td>
               <td>{order.customer}</td>
               <td>{order.address}</td>
-              <td>{order.total + 5}</td>
+              <td>{order.total}</td>
             </tr>
           </tbody>
         </table>
@@ -35,4 +35,4 @@ const Order = ({ order }) => {
     </section>
   );
 };
-export default Order;
+export default Orders;
