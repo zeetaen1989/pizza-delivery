@@ -1,55 +1,45 @@
-import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
-import { useCallback, useState } from "react";
+import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
+import { useRef, useEffect, useState } from "react";
 import styles from "./CustomerInfo.module.scss";
 
-const containerStyle = {
-  width: "35rem",
-  height: "35rem",
-  borderRadius: "1rem",
-};
-
-const center = {
-  lat: 28.21963,
-  lng: 83.972959,
-};
+mapboxgl.accessToken =
+  "pk.eyJ1IjoiemVldGFlbiIsImEiOiJjbDNrOGw5M28wNGoyM3JyczB2dzBlOWgyIn0.k4NbfEMy1IDCMiWcMt1yhA";
 
 const CustomerInfo = ({ products, total, setActiveTab }) => {
-  const { isLoaded } = useJsApiLoader({
-    id: "google-map-script",
-    googleMapsApiKey: "AIzaSyAV5aJ9v8ce1APo45LU-pusQdsE3HHep9I",
+  const mapContainer = useRef(null);
+  const map = useRef(null);
+  const [lng, setLng] = useState(-70.9);
+  const [lat, setLat] = useState(42.35);
+  const [zoom, setZoom] = useState(9);
+
+  useEffect(() => {
+    if (map.current) return; // initialize map only once
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: "mapbox://styles/mapbox/streets-v11",
+      center: [lng, lat],
+      zoom: zoom,
+    });
   });
 
-  const [map, setMap] = useState(null);
-
-  const onLoad = useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds(center);
-    map.fitBounds(bounds);
-    setMap(map);
-  }, []);
-
-  const onUnmount = useCallback(function callback(map) {
-    setMap(null);
-  }, []);
+  useEffect(() => {
+    if (!map.current) return; // wait for map to initialize
+    map.current.on("move", () => {
+      setLng(map.current.getCenter().lng.toFixed(4));
+      setLat(map.current.getCenter().lat.toFixed(4));
+      setZoom(map.current.getZoom().toFixed(2));
+    });
+  });
 
   return (
     <div className={styles.container}>
       <h1>Customer Details</h1>
       <div className={styles.content}>
         <article className={styles.left}>
-          {isLoaded ? (
-            <GoogleMap
-              mapContainerStyle={containerStyle}
-              center={center}
-              zoom={10}
-              onLoad={onLoad}
-              onUnmount={onUnmount}
-            >
-              {/* Child components, such as markers, info windows, etc. */}
-              <></>
-            </GoogleMap>
-          ) : (
-            <></>
-          )}
+          <div className={styles.sidebar}>
+            Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
+          </div>
+          <div ref={mapContainer} className={styles.map} />
         </article>
         <aside className={styles.right}>
           <h2>Enter Your Information</h2>
