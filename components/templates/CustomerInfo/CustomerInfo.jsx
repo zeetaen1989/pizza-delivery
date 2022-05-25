@@ -5,7 +5,7 @@ import styles from "./CustomerInfo.module.scss";
 mapboxgl.accessToken =
   "pk.eyJ1IjoiemVldGFlbiIsImEiOiJjbDNrOGw5M28wNGoyM3JyczB2dzBlOWgyIn0.k4NbfEMy1IDCMiWcMt1yhA";
 
-const CustomerInfo = ({ products, total, setActiveTab }) => {
+const CustomerInfo = ({ setActiveTab }) => {
   const mapContainer = useRef(null);
   const map = useRef(null);
   const [lng, setLng] = useState(-70.9);
@@ -36,9 +36,6 @@ const CustomerInfo = ({ products, total, setActiveTab }) => {
       <h1>Customer Details</h1>
       <div className={styles.content}>
         <article className={styles.left}>
-          <div className={styles.sidebar}>
-            Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
-          </div>
           <div ref={mapContainer} className={styles.map} />
         </article>
         <aside className={styles.right}>
