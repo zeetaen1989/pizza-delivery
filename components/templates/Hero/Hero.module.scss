@@ -88,13 +88,13 @@
       width: 1.5rem;
       height: 0.7rem;
       border-radius: 1rem;
-      background-color: a.$primary-clr-2;
+      background-color: a.$secondary-clr-2;
       cursor: pointer;
       transition: a.$transition-ease;
     }
 
     .active {
-      background-color: a.$primary-clr-1;
+      background-color: a.$secondary-clr-1;
       width: 0.7rem;
       height: 0.7rem;
       border-radius: 50%;
