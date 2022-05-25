@@ -1,12 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
-import {
-  CartItems,
-  CustomerInfo,
-  Delivery,
-  Payment,
-} from "@components/templates";
+import { CartItems, CustomerInfo, Payment } from "@components/templates";
 import { TabContent, TabItem } from "@components/elements";
 import styles from "./Cart.module.scss";
 
@@ -48,16 +43,6 @@ const Cart = () => {
             activeTab={activeTab}
             setActiveTab={setActiveTab}
           />
-          <hr />
-          <TabItem
-            id="4"
-            img="/images/deliver.svg"
-            title="Delivery"
-            height="60"
-            width="60"
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
-          />
         </ul>
         <div className={styles.tab__content}>
           <TabContent id="1" activeTab={activeTab}>
@@ -76,13 +61,6 @@ const Cart = () => {
           </TabContent>
           <TabContent id="3" activeTab={activeTab}>
             <Payment
-              products={products}
-              total={total}
-              setActiveTab={setActiveTab}
-            />
-          </TabContent>
-          <TabContent id="4" activeTab={activeTab}>
-            <Delivery
               products={products}
               total={total}
               setActiveTab={setActiveTab}
