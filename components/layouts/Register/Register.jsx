@@ -75,14 +75,14 @@ const Register = () => {
         </div>
         <div className={styles.right}>
           <Image
-            src="/images/register.jpg"
-            alt="Enjoy"
+            src="/images/register-delivery.svg"
+            alt="Delivery"
             height="500"
             width="700"
           />
           <p>
-            Order your pizza online from the comfort of your home or office and
-            enjoy with your loved ones.
+            Get your favorite pizza delivered to your doorstep within 30
+            minutes. Moneyback guarantee.
           </p>
         </div>
       </div>
