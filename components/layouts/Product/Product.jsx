@@ -88,7 +88,7 @@ const Product = ({ pizza }) => {
             <a href="#">({pizza.reviews} Reviews)</a>
           </div>
           <span className={styles.price}>$ {price.toFixed(2)}</span>
-          <p>{pizza.description}</p>
+          <p className={styles.description}>{pizza.description}</p>
           <div className={styles.size}>
             <h2>Choose Your Size</h2>
             <div className={styles.size__wrapper}>
