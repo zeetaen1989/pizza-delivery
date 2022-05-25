@@ -25,6 +25,10 @@
 
         .text {
           flex: 2;
+
+          p {
+            color: a.$secondary-clr-2;
+          }
         }
       }
     }

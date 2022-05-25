@@ -50,11 +50,16 @@
     border-radius: 48% 52% 10% 10% / 26% 25% 10% 10%;
     box-shadow: a.$primary-box-shadow;
 
+    &__reviews {
+      color: a.$secondary-clr-3;
+    }
+
     &__text {
       text-align: left;
 
       p {
         font-size: a.$small-fs;
+        color: a.$secondary-clr-3;
       }
     }
 

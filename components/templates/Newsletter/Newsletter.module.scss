@@ -12,7 +12,7 @@
     form {
       display: flex;
       align-items: center;
-      border: 2px solid a.$primary-clr-2;
+      border: 2px solid a.$secondary-clr-2;
       border-radius: 2rem;
 
       input {
@@ -21,29 +21,29 @@
         width: 25rem;
         padding: 0.8rem 1.5rem;
         outline: none;
-        color: a.$primary-clr-3;
+        color: a.$secondary-clr-3;
         font-size: 1rem;
 
         &::placeholder {
-          color: a.$primary-clr-2;
+          color: a.$secondary-clr-2;
         }
       }
 
       button {
         border-radius: 2rem;
-        border: 2px solid a.$primary-clr-2;
+        border: 2px solid a.$secondary-clr-2;
         background-color: transparent;
         cursor: pointer;
         padding: 0.6rem 0.9rem;
         margin-right: 0.2rem;
-        color: a.$primary-clr-3;
+        color: a.$secondary-clr-3;
         text-transform: uppercase;
         font-weight: bold;
         transition: a.$transition-ease;
 
         &:hover {
-          color: a.$primary-clr;
-          background-color: a.$primary-clr-3;
+          color: a.$secondary-clr;
+          background-color: a.$secondary-clr-3;
         }
       }
     }

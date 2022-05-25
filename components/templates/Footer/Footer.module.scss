@@ -1,4 +1,4 @@
-@use "@styles/abstracts" as a;
+@use "@styles/abstracts"as a;
 
 .container {
   margin-top: 3rem;
@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-around;
   background-color: a.$primary-clr-3;
-  color: a.$primary-clr;
+  color: a.$secondary-clr;
   user-select: none;
 
   li {

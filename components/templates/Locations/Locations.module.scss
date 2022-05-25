@@ -19,6 +19,14 @@
       box-shadow: a.$primary-box-shadow;
       padding: 1rem;
       cursor: pointer;
+
+      .address {
+
+        p,
+        span {
+          color: a.$secondary-clr-2;
+        }
+      }
     }
   }
 }
