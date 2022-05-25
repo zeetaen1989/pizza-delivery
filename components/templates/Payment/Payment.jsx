@@ -36,8 +36,8 @@ const Payment = ({ products, total, setActiveTab }) => {
     try {
       const res = await axios.post("http://localhost:3000/api/orders", data);
       if (res.status === 201) {
-        dispatch(resetCart());
         router.push(`/orders/${res.data._id}`);
+        dispatch(resetCart());
       }
     } catch (err) {
       console.log(err);
@@ -91,7 +91,7 @@ const Payment = ({ products, total, setActiveTab }) => {
               createOrder({
                 customer: shipping.name.full_name,
                 address: shipping.address.address_line_1,
-                total: cart.total,
+                total: cart.total + extraCharge,
                 method: 1,
               });
             });
