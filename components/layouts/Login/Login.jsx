@@ -8,14 +8,14 @@ const Login = () => {
       <div className={styles.wrapper}>
         <div className={styles.left}>
           <Image
-            src="/images/delivery.png"
-            alt="Delivery"
+            src="/images/login-enjoy.svg"
+            alt="Enjoy"
             height="500"
             width="700"
           />
           <p>
-            Get your favorite pizza delivered to your doorstep in just a few
-            minutes.
+            Enjoy freshly made hot and tasty pizza with your loved ones and
+            family.
           </p>
         </div>
         <div className={styles.right}>
