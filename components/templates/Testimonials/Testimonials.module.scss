@@ -11,7 +11,12 @@
     &__left,
     &__right {
       @include a.arrow;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
       width: 18rem;
+      background-color: a.$primary-clr;
 
       .arrow {
         font-size: 2rem;
