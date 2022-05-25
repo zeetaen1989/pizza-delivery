@@ -12,21 +12,13 @@
 
   @keyframes text {
     0% {
-      color: a.$primary-clr-3;
+      color: a.$primary-clr-4;
       letter-spacing: 0.3rem;
-    }
-
-    25% {
-      color: darkred;
     }
 
     50% {
       color: a.$secondary-clr;
       letter-spacing: 0.1rem;
-    }
-
-    75% {
-      color: darkred;
     }
 
     100% {
