@@ -19,17 +19,11 @@
 
 // Arrow Style
 @mixin arrow {
-  width: 6rem;
-  margin: auto;
+  width: 2rem;
   display: flex;
-  justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 0;
-  bottom: 0;
   transition: t.$transition-ease;
   color: c.$primary-clr-2;
-  z-index: 1;
   background-color: c.$primary-clr;
 }
 
@@ -110,59 +104,59 @@
 }
 
 // @mixin button-one {
-  //   position: relative;
-  //   transition: t.$transition-ease;
-  //   border: none;
-  //   background: none;
+//   position: relative;
+//   transition: t.$transition-ease;
+//   border: none;
+//   background: none;
 
-  //   &::before {
-  //     content: "";
-  //     position: absolute;
-  //     top: 0;
-  //     left: 0;
-  //     display: block;
-  //     border-radius: 3.125rem;
-  //     background-color: c.$primary-clr-1;
-  //     width: 2.2rem;
-  //     height: 2.2rem;
-  //     transition: all 0.3s ease;
-  //   }
+//   &::before {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     display: block;
+//     border-radius: 3.125rem;
+//     background-color: c.$primary-clr-1;
+//     width: 2.2rem;
+//     height: 2.2rem;
+//     transition: all 0.3s ease;
+//   }
 
-  //   .text {
-  //     position: relative;
-  //     font-size: f.$small-fs;
-  //     text-transform: uppercase;
-  //     font-weight: f.$bold-fw;
-  //     letter-spacing: 0.05em;
-  //     color: c.$primary-clr-3;
-  //   }
+//   .text {
+//     position: relative;
+//     font-size: f.$small-fs;
+//     text-transform: uppercase;
+//     font-weight: f.$bold-fw;
+//     letter-spacing: 0.05em;
+//     color: c.$primary-clr-3;
+//   }
 
-  //   svg {
-  //     position: relative;
-  //     top: 0;
-  //     margin-left: 0.625rem;
-  //     fill: none;
-  //     stroke-linecap: round;
-  //     stroke-linejoin: round;
-  //     stroke: c.$primary-clr-3;
-  //     stroke-width: 2;
-  //     transform: translateX(-0.313rem);
-  //     transition: t.$transition-ease;
-  //   }
+//   svg {
+//     position: relative;
+//     top: 0;
+//     margin-left: 0.625rem;
+//     fill: none;
+//     stroke-linecap: round;
+//     stroke-linejoin: round;
+//     stroke: c.$primary-clr-3;
+//     stroke-width: 2;
+//     transform: translateX(-0.313rem);
+//     transition: t.$transition-ease;
+//   }
 
-  //   &:hover::before {
-  //     width: 100%;
-  //     background-color: c.$primary-clr-1;
-  //   }
+//   &:hover::before {
+//     width: 100%;
+//     background-color: c.$primary-clr-1;
+//   }
 
-  //   &:hover svg {
-  //     transform: translateX(0);
-  //   }
+//   &:hover svg {
+//     transform: translateX(0);
+//   }
 
-  //   &:active {
-  //     transform: scale(0.95);
-  //   }
-  // }
+//   &:active {
+//     transform: scale(0.95);
+//   }
+// }
 
 // Add To Cart Button Style
 @mixin btn-container {
