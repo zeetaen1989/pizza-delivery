@@ -10,31 +10,6 @@
     overflow: hidden;
     user-select: none;
 
-    .arrow {
-      cursor: pointer;
-      transition: a.$transition-ease;
-
-      &:hover {
-        opacity: 0.5;
-      }
-    }
-
-    .arrow__left,
-    .arrow__right {
-      @include a.arrow;
-      font-size: 3rem;
-    }
-
-    .arrow__left {
-      left: 0;
-      justify-content: end;
-    }
-
-    .arrow__right {
-      right: 0;
-      justify-content: start;
-    }
-
     .wrapper {
       width: 500vw;
       height: 100%;
@@ -58,37 +33,23 @@
           text-align: center;
           line-height: 1;
           text-transform: uppercase;
+          padding-left: 8rem;
+          text-align: left;
 
           h1 {
             font-size: a.$medium-fs;
             font-weight: a.$bold-fw;
-            color: a.$primary-clr-2;
-            text-transform: capitalize;
+            text-transform: uppercase;
           }
 
-          h2 {
-            font-size: a.$large-fs;
-            font-weight: a.$bold-fw;
-
-            &::after {
-              content: "";
-              display: block;
-              width: 25%;
-              height: 0.2rem;
-              background-color: a.$primary-clr-3;
-              margin: 0 auto;
-            }
-          }
-
-          .percentage {
-            font-size: a.$medium-fs;
+          p {
             font-weight: a.$regular-fw;
-            color: a.$primary-clr-2;
+            color: a.$secondary-clr-3;
           }
         }
 
         figure {
-          flex: 1;
+          flex: 2;
         }
       }
     }
@@ -99,6 +60,29 @@
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+
+    .arrow {
+      cursor: pointer;
+      transition: a.$transition-ease;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    .arrow__left,
+    .arrow__right {
+      @include a.arrow;
+      font-size: 1.5rem;
+    }
+
+    .arrow__left {
+      justify-content: end;
+    }
+
+    .arrow__right {
+      justify-content: start;
+    }
 
     .dot {
       width: 1.5rem;
