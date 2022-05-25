@@ -41,6 +41,11 @@
 
     .price {
       font-size: a.$middle-fs;
+      color: a.$primary-clr-5;
+    }
+
+    .description {
+      color: a.$secondary-clr-3;
     }
 
     .size {
@@ -57,7 +62,7 @@
 
           .info {
             position: absolute;
-            background-color: a.$primary-clr-2;
+            background-color: a.$primary-clr-3;
             border-radius: 0.5rem;
             padding: 0rem 0.3rem;
             top: -0.3rem;
@@ -65,7 +70,7 @@
 
             &__title {
               font-size: a.$small-fs;
-              color: a.$primary-clr-5;
+              color: a.$primary-clr;
             }
           }
         }
