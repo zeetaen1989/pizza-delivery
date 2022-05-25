@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
@@ -9,7 +8,6 @@ import { OrderBtn } from "@components/elements";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
   const timeOutRef = useRef(null);
 
   const handleArrow = (direction) => {
@@ -47,12 +45,6 @@ const Hero = () => {
   return (
     <section className={styles.container}>
       <div className={styles.top}>
-        <section className={styles.arrow__left}>
-          <MdArrowBackIosNew
-            className={styles.arrow}
-            onClick={() => handleArrow("left")}
-          />
-        </section>
         <section
           className={styles.wrapper}
           style={{ transform: `translateX(${-100 * currentSlide}vw)` }}
@@ -61,8 +53,7 @@ const Hero = () => {
             <div className={styles.slider} key={img.id}>
               <article>
                 <h1>{img.title}</h1>
-                <h2>Pizza</h2>
-                <span className={styles.percentage}>{img.percentage} Off</span>
+                <p>{img.subtitle}</p>
                 <div className={styles.btn__order}>
                   <OrderBtn text="Order Now" />
                 </div>
@@ -71,8 +62,8 @@ const Hero = () => {
                 <Image
                   src={img.img}
                   alt="Pizza"
-                  height={500}
-                  width={540}
+                  height={550}
+                  width={950}
                   objectFit="contain"
                   priority
                 />
@@ -80,14 +71,14 @@ const Hero = () => {
             </div>
           ))}
         </section>
-        <section className={styles.arrow__right}>
-          <MdArrowForwardIos
-            className={styles.arrow}
-            onClick={() => handleArrow("right")}
-          />
-        </section>
       </div>
       <div className={styles.bottom}>
+        <section className={styles.arrow__left}>
+          <MdArrowBackIosNew
+            className={styles.arrow}
+            onClick={() => handleArrow("left")}
+          />
+        </section>
         {imgSlider.map((item) => {
           return (
             <span
@@ -101,6 +92,12 @@ const Hero = () => {
             ></span>
           );
         })}
+        <section className={styles.arrow__right}>
+          <MdArrowForwardIos
+            className={styles.arrow}
+            onClick={() => handleArrow("right")}
+          />
+        </section>
       </div>
     </section>
   );
