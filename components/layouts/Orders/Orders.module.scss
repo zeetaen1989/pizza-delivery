@@ -6,19 +6,50 @@
   text-align: center;
 
   .header {
-    @include a.header;
+    h1 {
+      font-size: a.$medium-fs;
+    }
+
+    figure {
+      animation: animate-icon 0.8s ease-in-out infinite alternate;
+
+      @keyframes animate-icon {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+    }
   }
 
   .content {
+    padding: 1rem 0rem;
+
     table {
       width: 100%;
       border-collapse: collapse;
+      font-size: a.$regular-fs;
 
       thead {
         tr {
           border-bottom: 1px solid a.$primary-clr-2;
+
+          th {
+            padding: 0.2rem 3rem;
+          }
         }
       }
+    }
+  }
+
+  .footer {
+    p {
+      font-size: 1.1rem;
+      color: a.$primary-clr-5;
+      font-style: italic;
     }
   }
 }
