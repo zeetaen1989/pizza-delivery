@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 const MONGODB_URL = process.env.MONGODB_URL;
 
+// check the MongoDB URL
 if (!MONGODB_URL) {
   throw new Error(
     "Please define the MONGODB_URI environment variable inside .env.local"
