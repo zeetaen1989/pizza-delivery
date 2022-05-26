@@ -7,7 +7,6 @@ import styles from "./Cart.module.scss";
 
 const Cart = () => {
   const { products, total } = useSelector((state) => state.cart);
-
   const [activeTab, setActiveTab] = useState("1");
 
   return (
