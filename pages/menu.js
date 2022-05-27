@@ -1,20 +1,12 @@
 import Head from "next/head";
 import axios from "axios";
-import { useRouter } from "next/router";
-import { Header } from "@components/elements";
-import { ProductList, Sidebar } from "@components/templates";
+import { Menu } from "@components/layouts";
 
 const ProductsPage = ({ pizzaList }) => {
-  const router = useRouter();
-
-  const path = router.pathname.split("/")[1];
-
   return (
     <>
       <Head>
-        <title>
-          Our Products || Choose from multitude of customer favorite Pizza
-        </title>
+        <title>Our Menu || Choose from variety of regional tastes</title>
         <meta
           name="description"
           content="Choose from variety of Pizza's and order it from our platform"
@@ -24,17 +16,7 @@ const ProductsPage = ({ pizzaList }) => {
           content="Popular Products, Menu, Pizza, Food, Food Delivery"
         />
       </Head>
-      <div style={{ marginTop: "1rem" }}>
-        <Header
-          title="Our Menu"
-          subtitle="Various Regional Taste"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor vitae purus faucibus ornare."
-        />
-      </div>
-      <div style={{ padding: "2rem", display: "flex", gap: "2rem" }}>
-        <Sidebar />
-        <ProductList pizzaList={pizzaList} path={path} />
-      </div>
+      <Menu pizzaList={pizzaList} />
     </>
   );
 };
