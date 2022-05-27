@@ -114,6 +114,12 @@ const CartItems = ({ products, total, setActiveTab }) => {
         <div className={styles.container}>
           <h1>Your Shopping Cart is Empty!!</h1>
           <OrderBtn text="Order Now" />
+          <Image
+            src="/images/empty-cart.svg"
+            alt="Empty Cart"
+            height="350"
+            width="350"
+          />
         </div>
       )}
     </>
