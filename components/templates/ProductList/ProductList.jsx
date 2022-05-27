@@ -4,7 +4,7 @@ import { ProductCard } from "@components/elements";
 import { HorizontalProductCard } from "@components/templates";
 import styles from "./ProductList.module.scss";
 
-const ProductList = ({ pizzaList, path }) => {
+const ProductList = ({ pizzaList }) => {
   const [sort, setSort] = useState("Lowest");
   const [isGrid, setIsGrid] = useState(true);
   const [filteredProducts, setFilteredProducts] = useState(pizzaList);
@@ -35,9 +35,15 @@ const ProductList = ({ pizzaList, path }) => {
   return (
     <div className={styles.container}>
       <section className={styles.top}>
-        <div className={styles.icons__container}>
-          <MdGridView className={styles.icon} onClick={() => setIsGrid(true)} />
-          <MdMenu className={styles.icon} onClick={() => setIsGrid(false)} />
+        <div className={styles.icons}>
+          <MdGridView
+            className={isGrid ? styles.active : styles.inactive}
+            onClick={() => setIsGrid(true)}
+          />
+          <MdMenu
+            className={isGrid ? styles.inactive : styles.active}
+            onClick={() => setIsGrid(false)}
+          />
           <p>{filteredProducts.length} Products</p>
         </div>
         <div className={styles.sort__container}>
