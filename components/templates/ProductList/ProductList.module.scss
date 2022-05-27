@@ -11,11 +11,19 @@
     margin-left: 1rem;
     margin-right: 1rem;
 
-    .icons__container {
+    .icons {
       display: flex;
       gap: 1rem;
 
-      .icon {
+      .active {
+        color: a.$primary-clr;
+        background-color: a.$primary-clr-2;
+        font-size: 1.8rem;
+        border-radius: 0.2rem;
+        padding: 0.2rem;
+      }
+
+      .inactive {
         border: 1px solid a.$primary-clr-2;
         border-radius: 0.2rem;
         padding: 0.2rem;
@@ -24,12 +32,8 @@
         font-size: 1.8rem;
         cursor: pointer;
         transition: a.$transition-ease;
-
-        &:hover {
-          background-color: a.$primary-clr-2;
-          color: a.$primary-clr;
-        }
       }
+
 
       p {
         margin-left: 1rem;
