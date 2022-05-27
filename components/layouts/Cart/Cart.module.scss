@@ -1,11 +1,12 @@
 @use "@styles/abstracts"as a;
 
 .container {
-  @include a.flex-direction-column;
   padding: 2rem 3rem;
-  gap: 1.5rem;
 
   .tabs {
+    @include a.flex-direction-column;
+    gap: 1.5rem;
+
     .nav {
       width: 95%;
       margin: auto;
@@ -24,5 +25,14 @@
   .bottom {
     display: flex;
     justify-content: center;
+  }
+}
+
+// ******MEDIA QUERIES******
+
+// Media query for larger devices (less than 1024px)
+@include a.media-query(large) {
+  .container {
+    padding: 2rem 1rem;
   }
 }
