@@ -35,7 +35,7 @@ const ProductList = ({ pizzaList }) => {
   return (
     <div className={styles.container}>
       <section className={styles.top}>
-        <div className={styles.icons}>
+        <div className={styles.icons__container}>
           <MdGridView
             className={isGrid ? styles.active : styles.inactive}
             onClick={() => setIsGrid(true)}
