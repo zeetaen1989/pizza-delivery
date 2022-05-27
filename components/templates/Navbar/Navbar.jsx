@@ -72,6 +72,7 @@ const Navbar = () => {
             <MdAccountCircle className={styles.icon} />
           </button>
           <div className={styles.dropdown__menu}>
+            <div className={styles.triangle}></div>
             <Link href="/login" passHref>
               <a>Login</a>
             </Link>
