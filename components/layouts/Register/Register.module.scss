@@ -132,3 +132,49 @@
     }
   }
 }
+
+//********MEDIA QUERY********
+
+// Media Query for large devices (less than 1024px)
+@include a.media-query(large) {
+  .container {
+    .wrapper {
+      flex-direction: column;
+
+      .right {
+        border-top-right-radius: 0rem;
+        border-bottom-left-radius: 1rem;
+      }
+    }
+  }
+}
+
+// Media Query for medium devices (less than 768px)
+@include a.media-query(medium) {
+  .container {
+    padding: 2rem;
+  }
+}
+
+// Media Query for small devices (less than 480px)
+@include a.media-query(small) {
+  .container {
+    padding: 1rem;
+
+    .wrapper {
+      .left {
+        &__content {
+          padding: 1rem;
+
+          form {
+            .form__control {
+              input {
+                width: 15rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
