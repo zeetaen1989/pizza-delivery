@@ -1,0 +1,50 @@
+@use "@styles/abstracts"as a;
+
+.container {
+  .header {
+    margin-top: 1rem;
+  }
+
+  .content {
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+  }
+}
+
+//********MEDIA QUERY********
+
+// Media Query for large deviees (less than 1024px)
+@include a.media-query(large) {
+  .container {
+    .header {
+      margin-top: -2rem;
+    }
+
+    .content {
+      padding: 1.5rem;
+      gap: 1rem;
+    }
+  }
+}
+
+// Media Query for medium devices (less than 768px)
+@include a.media-query(medium) {
+  .container {
+    .content {
+      gap: 0.5rem;
+    }
+  }
+}
+
+// Media Query for small devices (less than 480px)
+@include a.media-query(small) {
+  .container {
+    .content {
+      margin-top: -1rem;
+      padding: 1rem;
+      @include a.flex-direction-column;
+      gap: 2rem;
+    }
+  }
+}
