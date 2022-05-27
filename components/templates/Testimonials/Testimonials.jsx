@@ -1,6 +1,12 @@
 import Image from "next/image";
 import { useState } from "react";
-import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
+import {
+  FaArrowAltCircleLeft,
+  FaArrowAltCircleRight,
+  FaMinus,
+} from "react-icons/fa";
+import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
+
 import { Header } from "@components/elements";
 import { testimonialsData } from "@data/testimonials-data";
 import styles from "./Testimonials.module.scss";
@@ -51,8 +57,15 @@ const Testimonials = () => {
                 />
               </figure>
               <div className={styles.info}>
-                <h3>{testimonial.title}</h3>
-                <p>{testimonial.description}</p>
+                <p>
+                  <RiDoubleQuotesL />
+                  {testimonial.description}
+                  <RiDoubleQuotesR />
+                </p>
+                <h3>
+                  <FaMinus />
+                  {testimonial.title}
+                </h3>
               </div>
             </article>
           ))}
