@@ -24,6 +24,8 @@
         justify-content: center;
         width: 100vw;
         height: 100%;
+        padding-bottom: 1rem;
+        padding-left: 8rem;
 
         article {
           flex: 1;
@@ -33,7 +35,6 @@
           text-align: center;
           line-height: 1;
           text-transform: uppercase;
-          padding-left: 8rem;
           text-align: left;
 
           h1 {
@@ -107,19 +108,12 @@
 // Media Query for large devices (less than 1024px)
 @include a.media-query(large) {
   .container {
-    height: calc(43vh - 5.25rem);
+    height: calc(37vh - 5.25rem);
 
     .top {
-
-      .arrow__left,
-      .arrow__right {
-        font-size: 2.5rem;
-        width: 3rem;
-      }
-
       .wrapper {
         .slider {
-          padding: 2rem 4rem;
+          padding: 1rem 0rem 1rem 4rem;
         }
       }
     }
@@ -129,7 +123,7 @@
 // Media Query for medium devices (less than 768px)
 @include a.media-query(medium) {
   .container {
-    height: calc(45vh - 5.25rem);
+    height: calc(40vh - 5.25rem);
 
     .top {
       .wrapper {
@@ -148,20 +142,18 @@
 // Media Query for small devices (less than 480px)
 @include a.media-query(small) {
   .container {
-    height: calc(75vh - 5.25rem);
+    height: calc(66vh - 5.25rem);
 
     .top {
-      .arrow__left {
-        left: 0rem;
-        font-size: 2rem;
-      }
-
       .wrapper {
         .slider {
+          gap: 1.5rem;
+          padding: 0rem 2rem 1rem;
           flex-direction: column-reverse;
 
           article {
-            gap: 0.7rem;
+            gap: 1rem;
+            text-align: center;
 
             h1 {
               font-size: a.$middle-fs;
