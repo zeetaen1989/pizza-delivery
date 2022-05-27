@@ -76,3 +76,14 @@
     }
   }
 }
+
+//********MEDIA QUERY********
+
+// Media Query for medium deviees (less than 768px)
+@include a.media-query(medium) {
+  .container {
+    .info {
+      padding: 1rem 0.6rem;
+    }
+  }
+}
