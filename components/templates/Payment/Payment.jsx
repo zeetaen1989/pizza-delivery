@@ -166,7 +166,7 @@ const Payment = ({ products, total, setActiveTab }) => {
           <hr />
           <BillSummary products={products} total={total} />
           <hr />
-          <div style={{ maxWidth: "750px", minHeight: "200px" }}>
+          <div>
             <PayPalScriptProvider
               options={{
                 "client-id":
