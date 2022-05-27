@@ -20,3 +20,30 @@
     }
   }
 }
+
+//********MEDIA QUERY********
+
+// Media Query for small deviees (less than 480px)
+@include a.media-query(small) {
+  .sidebar {
+    text-align: center;
+
+    .category {
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+      }
+    }
+
+    .price {
+      @include a.flex-direction-column;
+
+      input {
+        width: 50%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
