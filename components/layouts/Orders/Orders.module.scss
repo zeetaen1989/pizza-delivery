@@ -27,19 +27,21 @@
 
   .content {
     padding: 1rem 0rem;
+    overflow-x: auto;
 
     table {
       width: 100%;
       border-collapse: collapse;
       font-size: a.$regular-fs;
 
+      th,
+      td {
+        padding: 0.5rem 1rem;
+      }
+
       thead {
         tr {
           border-bottom: 1px solid a.$primary-clr-2;
-
-          th {
-            padding: 0.2rem 3rem;
-          }
         }
       }
     }
@@ -50,6 +52,37 @@
       font-size: 1.1rem;
       color: a.$primary-clr-5;
       font-style: italic;
+    }
+  }
+}
+
+// ******MEDIA QUERIES******
+
+// Media query for large devices (less than 1024px)
+@include a.media-query(large) {
+  .container {
+    height: 65vh;
+  }
+}
+
+// Media query for medium devices (less than 768px)
+@include a.media-query(medium) {
+  .container {
+    .header {
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+
+// Media query for small devices (less than 480px)
+@include a.media-query(small) {
+  .container {
+    .header {
+      h1 {
+        font-size: 2rem;
+      }
     }
   }
 }
