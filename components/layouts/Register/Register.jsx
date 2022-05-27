@@ -19,7 +19,7 @@ const Register = () => {
                 <label htmlFor="name">Name</label>
                 <input
                   type="text"
-                  name="register"
+                  name="name"
                   id="name"
                   placeholder="Enter Your Name"
                 />
@@ -28,7 +28,7 @@ const Register = () => {
                 <label htmlFor="email">Email</label>
                 <input
                   type="email"
-                  name="register"
+                  name="email"
                   id="email"
                   placeholder="Enter Your Email"
                 />
@@ -36,18 +36,18 @@ const Register = () => {
               <div className={styles.form__control}>
                 <label htmlFor="password">Password</label>
                 <input
-                  name="register"
+                  name="password"
                   type="password"
                   id="password"
                   placeholder="Enter Your Password"
                 />
               </div>
               <div className={styles.form__control}>
-                <label htmlFor="confirm-password">Confirm Password</label>
+                <label htmlFor="confirmPassword">Confirm Password</label>
                 <input
-                  name="register"
+                  name="confirmPassword"
                   type="password"
-                  id="confirm-password"
+                  id="confirmPassword"
                   placeholder="Confirm Your Password"
                 />
               </div>
