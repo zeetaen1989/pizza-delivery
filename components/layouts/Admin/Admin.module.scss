@@ -1,0 +1,102 @@
+@use "@styles/abstracts"as a;
+
+.container {
+  display: flex;
+  text-align: center;
+  gap: 2rem;
+  padding: 1rem 3rem;
+
+  &__left {
+    flex: 1;
+
+    h1 {
+      color: a.$secondary-clr-2;
+      font-size: a.$middle-fs;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      td,
+      th {
+        padding: 0.2rem 0.5rem;
+        border: 1px solid a.$secondary-clr-1;
+      }
+
+      td {
+        padding: 0.5rem;
+      }
+
+
+
+      .btn {
+        border: none;
+        color: a.$secondary-clr-2;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+      }
+
+      .btn:first-child {
+        background-color: a.$secondary-clr-1;
+        transition: a.$transition-ease;
+        margin-right: 0.5rem;
+
+        &:hover {
+          background-color: a.$secondary-clr-2;
+          color: a.$secondary-clr;
+        }
+      }
+
+      .btn:last-child {
+        background-color: a.$primary-clr-1;
+        transition: a.$transition-ease;
+
+        &:hover {
+          background-color: a.$primary-clr-2;
+          color: a.$primary-clr;
+        }
+      }
+    }
+  }
+
+  &__right {
+    flex: 1;
+
+    h1 {
+      color: a.$secondary-clr-2;
+      font-size: a.$middle-fs;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      td,
+      th {
+        padding: 0.2rem 0.5rem;
+        border: 1px solid a.$secondary-clr-1;
+      }
+
+      td {
+        padding: 0.5rem;
+      }
+
+      .btn {
+        border: none;
+        color: a.$secondary-clr-2;
+        background-color: a.$secondary-clr-1;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: a.$transition-ease;
+
+        &:hover {
+          background-color: a.$secondary-clr-2;
+          color: a.$secondary-clr;
+        }
+      }
+    }
+  }
+}

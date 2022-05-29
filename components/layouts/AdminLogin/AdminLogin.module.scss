@@ -1,0 +1,58 @@
+@use "@styles/abstracts"as a;
+
+.container {
+  display: grid;
+  place-items: center;
+  height: calc(100vh - 20rem);
+
+  .content {
+    @include a.flex-direction-column;
+    gap: 0.5rem;
+    background-color: a.$secondary-clr;
+    border: 1px solid a.$secondary-clr-1;
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+
+    h1 {
+      text-align: center;
+      font-size: a.$middle-fs;
+    }
+
+    form {
+      @include a.flex-direction-column;
+      gap: 1rem;
+
+
+      input {
+        border: none;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        background-color: a.$secondary-clr-1;
+        color: a.$secondary-clr-3;
+        outline: none;
+        font-size: a.$regular-fs;
+      }
+
+      .btn {
+        border: none;
+        border-radius: 0.5rem;
+        background-color: a.$secondary-clr-2;
+        color: a.$secondary-clr;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        transition: a.$transition-ease;
+        text-transform: uppercase;
+        font-weight: a.$bold-fw;
+
+        &:hover {
+          background-color: a.$secondary-clr-1;
+          color: a.$secondary-clr-3;
+        }
+      }
+
+      .error {
+        color: a.$primary-clr-4;
+      }
+    }
+  }
+}
