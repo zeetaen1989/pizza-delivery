@@ -44,7 +44,7 @@ const ProductList = ({ pizzaList }) => {
             className={isGrid ? styles.inactive : styles.active}
             onClick={() => setIsGrid(false)}
           />
-          <p>{filteredProducts.length} Products</p>
+          <p>{filteredProducts.length} Products Available</p>
         </div>
         <div className={styles.sort__container}>
           <p>Sort by:</p>
