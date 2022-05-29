@@ -15,30 +15,21 @@ const Cart = () => {
         <ul className={styles.nav}>
           <TabItem
             id="1"
-            img="/images/cart.svg"
-            title="Shopping Cart"
-            height="50"
-            width="50"
+            title="Cart"
             activeTab={activeTab}
             setActiveTab={setActiveTab}
           />
           <hr />
           <TabItem
             id="2"
-            img="/images/contact.svg"
-            title="Contact Info"
-            height="40"
-            width="40"
+            title="Customer Info"
             activeTab={activeTab}
             setActiveTab={setActiveTab}
           />
           <hr />
           <TabItem
             id="3"
-            img="/images/pay.svg"
-            title="Contact Info"
-            height="40"
-            width="40"
+            title="Payment"
             activeTab={activeTab}
             setActiveTab={setActiveTab}
           />
