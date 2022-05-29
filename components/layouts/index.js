@@ -7,3 +7,5 @@ export { default as Login } from "./Login/Login";
 export { default as Orders } from "./Orders/Orders";
 export { default as Error } from "./Error/Error";
 export { default as Menu } from "./Menu/Menu";
+export { default as Admin } from "./Admin/Admin";
+export { default as AdminLogin } from "./AdminLogin/AdminLogin";
