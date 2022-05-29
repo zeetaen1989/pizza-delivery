@@ -7,24 +7,19 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: a.$secondary-clr-3;
+    background-color: a.$secondary-clr-1;
+    border-radius: 2rem;
     cursor: pointer;
-    animation: active 0.8s ease infinite alternate;
-
-    @keyframes active {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
   }
 
   .inactive {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: a.$secondary-clr-3;
     cursor: pointer;
     opacity: 0.35;
 
