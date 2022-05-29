@@ -1,15 +1,7 @@
 import Image from "next/image";
 import styles from "./TabItem.module.scss";
 
-const TabItem = ({
-  id,
-  img,
-  title,
-  height,
-  width,
-  activeTab,
-  setActiveTab,
-}) => {
+const TabItem = ({ id, title, activeTab, setActiveTab }) => {
   const handleClick = () => {
     setActiveTab(id);
   };
@@ -20,7 +12,7 @@ const TabItem = ({
         onClick={handleClick}
         className={activeTab === id ? `${styles.active}` : `${styles.inactive}`}
       >
-        <Image src={img} alt={title} height={height} width={width} />
+        <h1>{title}</h1>
       </figure>
     </li>
   );
