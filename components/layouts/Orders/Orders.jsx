@@ -24,6 +24,8 @@ const Orders = ({ order }) => {
               <th>Customer Name</th>
               <th>Address</th>
               <th>Total</th>
+              <th>Payment</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -32,6 +34,8 @@ const Orders = ({ order }) => {
               <td>{order.customer}</td>
               <td>{order.address}</td>
               <td>${order.total}</td>
+              <td>{order.method}</td>
+              <td>{order.status}</td>
             </tr>
           </tbody>
         </table>
