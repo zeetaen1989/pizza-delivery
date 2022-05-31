@@ -1,16 +1,6 @@
 import styles from "./Sidebar.module.scss";
 
-const Sidebar = () => {
-  const catList = [
-    "All",
-    "Italian",
-    "American",
-    "Canadian",
-    "Greek",
-    "Vegan",
-    "Miscellaneous",
-  ];
-
+const Sidebar = ({ categories, filterItems }) => {
   return (
     <div className={styles.sidebar}>
       <section className={styles.search}>
@@ -18,11 +8,16 @@ const Sidebar = () => {
       </section>
       <section className={styles.category}>
         <h3>Categories</h3>
-        <ul>
-          {catList.map((list) => (
-            <li key={list}>{list}</li>
-          ))}
-        </ul>
+        {categories.map((category) => (
+          <button
+            key={category}
+            className={styles.btn__filter}
+            type="button"
+            onClick={filterItems(category)}
+          >
+            {category}
+          </button>
+        ))}
       </section>
       <section className={styles.price}>
         <h3>Price</h3>
