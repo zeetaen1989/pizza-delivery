@@ -109,8 +109,9 @@
         background: none;
         border: none;
         color: a.$primary-clr-3;
-        display: grid;
-        place-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         &:focus+.dropdown__menu {
           opacity: 1;
@@ -122,8 +123,8 @@
       .dropdown__menu {
         @include a.flex-direction-column;
         position: absolute;
-        right: 0.7rem;
-        top: calc(100% + 0.4rem);
+        right: 1.6rem;
+        top: calc(100% + 0.5rem);
         z-index: 2;
         opacity: 0;
         visibility: hidden;
