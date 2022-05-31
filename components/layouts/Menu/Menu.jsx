@@ -1,11 +1,21 @@
-import { useRouter } from "next/router";
+import { useState } from "react";
 import { Header } from "@components/elements";
 import { ProductList, Sidebar } from "@components/templates";
 import styles from "./Menu.module.scss";
 
-const Menu = ({ pizzaList }) => {
-  const router = useRouter();
-  const path = router.pathname.split("/")[1];
+const Menu = ({ pizzaList, allCategories }) => {
+  const [menuItems, setMenuItems] = useState(pizzaList);
+  const [categories, setCategories] = useState(allCategories);
+
+  const filterItems = (category) => {
+    if (category === "All") {
+      setMenuItems(pizzaList);
+      return;
+    }
+
+    const newItems = pizzaList.filter((pizza) => pizza.category === category);
+    setMenuItems(newItems);
+  };
 
   return (
     <section className={styles.container}>
@@ -17,8 +27,8 @@ const Menu = ({ pizzaList }) => {
         />
       </div>
       <div className={styles.content}>
-        <Sidebar />
-        <ProductList pizzaList={pizzaList} path={path} />
+        <Sidebar categories={categories} filterItems={filterItems} />
+        <ProductList pizzaList={menuItems} />
       </div>
     </section>
   );
