@@ -3,6 +3,11 @@ import axios from "axios";
 import { Menu } from "@components/layouts";
 
 const ProductsPage = ({ pizzaList }) => {
+  const allCategories = [
+    "All",
+    ...new Set(pizzaList.map((pizza) => pizza.category)),
+  ];
+
   return (
     <>
       <Head>
@@ -16,7 +21,7 @@ const ProductsPage = ({ pizzaList }) => {
           content="Popular Products, Menu, Pizza, Food, Food Delivery"
         />
       </Head>
-      <Menu pizzaList={pizzaList} />
+      <Menu pizzaList={pizzaList} allCategories={allCategories} />
     </>
   );
 };
