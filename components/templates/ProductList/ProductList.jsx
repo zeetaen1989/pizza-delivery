@@ -5,7 +5,7 @@ import { HorizontalProductCard } from "@components/templates";
 import styles from "./ProductList.module.scss";
 
 const ProductList = ({ pizzaList }) => {
-  const [sort, setSort] = useState("Lowest");
+  const [sort, setSort] = useState("lowest");
   const [isGrid, setIsGrid] = useState(true);
   const [filteredProducts, setFilteredProducts] = useState(pizzaList);
 
@@ -26,6 +26,14 @@ const ProductList = ({ pizzaList }) => {
       } else if (sort === "descending") {
         return setFilteredProducts((prev) =>
           [...prev].sort((a, b) => b.title.localeCompare(a.title))
+        );
+      } else if (sort === "high") {
+        return setFilteredProducts((prev) =>
+          [...prev].sort((a, b) => b.rating - a.rating)
+        );
+      } else {
+        return setFilteredProducts((prev) =>
+          [...prev].sort((a, b) => a.rating - b.rating)
         );
       }
     };
@@ -57,6 +65,8 @@ const ProductList = ({ pizzaList }) => {
             <option value="highest">Price (Highest)</option>
             <option value="ascending">Name (Ascending)</option>
             <option value="descending">Name (Descending)</option>
+            <option value="high">Rating (High)</option>
+            <option value="low">Rating (Low)</option>
           </select>
         </div>
       </section>
