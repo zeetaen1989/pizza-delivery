@@ -6,15 +6,15 @@ import {
   MdMenuOpen,
   MdAccountCircle,
   MdRestaurantMenu,
+  MdOutlineKeyboardArrowDown,
 } from "react-icons/md";
 import { FaPhone } from "react-icons/fa";
 
 import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
-  const quantity = useSelector((state) => state.cart.quantity);
-
   const [isOpen, setIsOpen] = useState(false);
+  const quantity = useSelector((state) => state.cart.quantity);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -70,6 +70,7 @@ const Navbar = () => {
         <div className={styles.right__account}>
           <button className={styles.btn__link}>
             <MdAccountCircle className={styles.icon} />
+            <MdOutlineKeyboardArrowDown />
           </button>
           <div className={styles.dropdown__menu}>
             <div className={styles.triangle}></div>
