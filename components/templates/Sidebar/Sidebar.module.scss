@@ -19,6 +19,18 @@
       }
     }
   }
+
+  .category {
+    .btn__filter {
+      @include a.flex-direction-column;
+      margin-top: 0.5rem;
+      border: none;
+      background-color: transparent;
+      color: a.$primary-clr-3;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  }
 }
 
 //********MEDIA QUERY********
