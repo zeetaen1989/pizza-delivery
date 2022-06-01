@@ -11,6 +11,8 @@ import {
 import { FaPhone } from "react-icons/fa";
 
 import styles from "./Navbar.module.scss";
+import { links, linksLeft, linksRight } from "@data/nav-data";
+import { ActiveLink } from "@components/elements";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,31 +41,23 @@ const Navbar = () => {
       </div>
       <nav className={styles.center}>
         <ul>
-          <li>
-            <Link href="/" passHref>
-              <a className={styles.center__links}>Home</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/menu" passHref>
-              <a className={styles.center__links}>Menu</a>
-            </Link>
-          </li>
+          {linksLeft.map((link) => (
+            <li key={link.id}>
+              <ActiveLink link={link} />
+            </li>
+          ))}
         </ul>
-        <Link href="/" passHref>
-          <h1>PizzaLand</h1>
-        </Link>
         <ul>
-          <li>
-            <Link href="/#locations" passHref>
-              <a className={styles.center__links}>Locations</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact" passHref>
-              <a className={styles.center__links}>Contact Us</a>
-            </Link>
-          </li>
+          <Link href="/" passHref>
+            <h1>PizzaLand</h1>
+          </Link>
+        </ul>
+        <ul>
+          {linksRight.map((link) => (
+            <li key={link.id}>
+              <ActiveLink link={link} />
+            </li>
+          ))}
         </ul>
       </nav>
       <div className={styles.right}>
