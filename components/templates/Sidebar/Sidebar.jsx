@@ -1,6 +1,12 @@
+import { useState } from "react";
 import styles from "./Sidebar.module.scss";
 
-const Sidebar = ({ categories, filterItems }) => {
+const Sidebar = ({
+  allCategories,
+  filterItemsByCategory,
+  filterItemsByPrice,
+}) => {
+  const [input, setInput] = useState(20);
   return (
     <div className={styles.sidebar}>
       <section className={styles.search}>
@@ -8,11 +14,11 @@ const Sidebar = ({ categories, filterItems }) => {
       </section>
       <section className={styles.category}>
         <h3>Categories</h3>
-        {categories.sort().map((category) => (
+        {allCategories.sort().map((category) => (
           <button
             key={category}
             className={styles.btn}
-            onClick={() => filterItems(category)}
+            onClick={() => filterItemsByCategory(category)}
           >
             {category}
           </button>
@@ -20,8 +26,21 @@ const Sidebar = ({ categories, filterItems }) => {
       </section>
       <section className={styles.price}>
         <h3>Price</h3>
-        <label htmlFor="price">$5 - $50</label>
-        <input type="range" name="price" id="price" />
+        <form>
+          <label htmlFor="price">$5 - ${input}</label>
+          <input
+            type="range"
+            name="price"
+            id="price"
+            value={input}
+            min="5"
+            max="20"
+            onChange={(e) => {
+              setInput(e.target.value);
+              filterItemsByPrice(e.target.value);
+            }}
+          />
+        </form>
       </section>
     </div>
   );
