@@ -55,7 +55,7 @@ const Hero = () => {
                 <h1>{img.title}</h1>
                 <p>{img.subtitle}</p>
                 <div className={styles.btn__order}>
-                  <OrderBtn text="Order Now" />
+                  <OrderBtn text="Order Now" href="menu" />
                 </div>
               </article>
               <figure className={styles.slider__img}>
