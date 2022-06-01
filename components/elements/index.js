@@ -8,3 +8,4 @@ export { default as Ratings } from "./Ratings/Ratings";
 export { default as ProductCard } from "./ProductCard/ProductCard";
 export { default as TabItem } from "./TabItem/TabItem";
 export { default as TabContent } from "./TabContent/TabContent";
+export { default as ActiveLink } from "./ActiveLink/ActiveLink";
