@@ -5,7 +5,7 @@ const ErrorPage = () => {
   return (
     <>
       <Head>
-        <title>PizzaLand || 404 Page Not Found</title>
+        <title>404 Page Not Found</title>
         <meta name="description" content="Error 404 Page Not Found" />
         <meta
           name="keywords"
