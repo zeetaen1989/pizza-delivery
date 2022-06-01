@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { OrderBtn } from "@components/elements";
 import styles from "./Error.module.scss";
 
 const Error = () => {
@@ -13,6 +14,9 @@ const Error = () => {
       </figure>
       <footer className={styles.footer}>
         <h1>Sorry the page you requested was not found!</h1>
+        <div className={styles.btn__order}>
+          <OrderBtn text="Go Back" href="" />
+        </div>
       </footer>
     </section>
   );
