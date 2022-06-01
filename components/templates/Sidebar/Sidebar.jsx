@@ -8,12 +8,11 @@ const Sidebar = ({ categories, filterItems }) => {
       </section>
       <section className={styles.category}>
         <h3>Categories</h3>
-        {categories.map((category) => (
+        {categories.sort().map((category) => (
           <button
             key={category}
-            className={styles.btn__filter}
-            type="button"
-            onClick={filterItems(category)}
+            className={styles.btn}
+            onClick={() => filterItems(category)}
           >
             {category}
           </button>
