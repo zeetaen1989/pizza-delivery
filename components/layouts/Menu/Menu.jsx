@@ -10,11 +10,10 @@ const Menu = ({ pizzaList, allCategories }) => {
   const filterItems = (category) => {
     if (category === "All") {
       setMenuItems(pizzaList);
-      return;
+    } else {
+      const newItems = pizzaList.filter((pizza) => pizza.category === category);
+      setMenuItems(newItems);
     }
-
-    const newItems = pizzaList.filter((pizza) => pizza.category === category);
-    setMenuItems(newItems);
   };
 
   return (
