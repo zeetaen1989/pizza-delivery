@@ -7,10 +7,23 @@ const Sidebar = ({
   filterItemsByPrice,
 }) => {
   const [input, setInput] = useState(20);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
   return (
     <div className={styles.sidebar}>
       <section className={styles.search}>
-        <input type="text" placeholder="Search" />
+        <input
+          id="name"
+          name="name"
+          type="text"
+          value={searchTerm}
+          placeholder="Search"
+          onChange={handleChange}
+        />
       </section>
       <section className={styles.category}>
         <h3>Categories</h3>
