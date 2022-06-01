@@ -68,6 +68,12 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+
+  .products__empty {
+    display: grid;
+    place-items: center;
+    color: a.$primary-clr-3;
+  }
 }
 
 //********MEDIA QUERY********
