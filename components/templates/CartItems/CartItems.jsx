@@ -106,7 +106,7 @@ const CartItems = ({ products, total, setActiveTab }) => {
                   </div>
                 </button>
               </div>
-              <OrderBtn text="Continue Shopping" />
+              <OrderBtn text="Continue Shopping" href="menu" />
             </aside>
           </div>
         </div>
@@ -121,7 +121,7 @@ const CartItems = ({ products, total, setActiveTab }) => {
               width="550"
             />
           </figure>
-          <OrderBtn text="Order Now" />
+          <OrderBtn text="Order Now" href="menu" />
         </div>
       )}
     </>
