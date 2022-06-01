@@ -14,11 +14,13 @@
       gap: 1rem;
 
       .active {
-        color: a.$primary-clr;
-        background-color: a.$primary-clr-2;
+        color: a.$secondary-clr;
+        background-color: a.$secondary-clr-2;
         font-size: 1.8rem;
         border-radius: 0.2rem;
         padding: 0.2rem;
+        transition: a.$transition-ease;
+        cursor: pointer;
       }
 
       .inactive {
