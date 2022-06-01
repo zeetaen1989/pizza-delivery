@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { MdGridView, MdMenu } from "react-icons/md";
 import { ProductCard } from "@components/elements";
 import { HorizontalProductCard } from "@components/templates";
 import styles from "./ProductList.module.scss";
+import Image from "next/image";
 
 const ProductList = ({ pizzaList }) => {
   const [sort, setSort] = useState("lowest");
@@ -56,17 +57,30 @@ const ProductList = ({ pizzaList }) => {
           </select>
         </div>
       </section>
-      {isGrid ? (
-        <section className={styles.products__grid}>
-          {pizzaList.map((pizza) => (
-            <ProductCard pizza={pizza} key={pizza._id} />
-          ))}
-        </section>
+      {pizzaList.length > 0 ? (
+        isGrid ? (
+          <section className={styles.products__grid}>
+            {pizzaList.map((pizza) => (
+              <ProductCard pizza={pizza} key={pizza._id} />
+            ))}
+          </section>
+        ) : (
+          <section className={styles.products__line}>
+            {pizzaList.map((pizza) => (
+              <HorizontalProductCard pizza={pizza} key={pizza._id} {...pizza} />
+            ))}
+          </section>
+        )
       ) : (
-        <section className={styles.products__line}>
-          {pizzaList.map((pizza) => (
-            <HorizontalProductCard pizza={pizza} key={pizza._id} {...pizza} />
-          ))}
+        <section className={styles.products__empty}>
+          <h3>Please Search Again</h3>
+          <p>Sorry, no products available matched your search criteria!!!</p>
+          <Image
+            src="/images/empty-products.svg"
+            alt="Empty Search"
+            height="300"
+            width="300"
+          />
         </section>
       )}
     </div>
