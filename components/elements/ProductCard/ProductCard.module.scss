@@ -6,7 +6,7 @@
 
   .wrapper__img {
     position: relative;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.35s ease;
 
     &>span {
       filter: drop-shadow(0 2rem 0.8rem rgba($color: a.$primary-clr-1, $alpha: 0.5));
@@ -38,6 +38,7 @@
       padding: 0.5rem;
       background-color: a.$primary-clr;
       border: 1px solid a.$primary-clr-1;
+      transition: a.$transition-ease;
       border-radius: 50%;
       cursor: pointer;
     }
