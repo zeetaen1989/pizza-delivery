@@ -7,38 +7,20 @@ import styles from "./ProductList.module.scss";
 const ProductList = ({ pizzaList }) => {
   const [sort, setSort] = useState("lowest");
   const [isGrid, setIsGrid] = useState(true);
-  const [filteredProducts, setFilteredProducts] = useState(pizzaList);
 
-  useEffect(() => {
-    const sortProducts = () => {
-      if (sort === "lowest") {
-        return setFilteredProducts((prev) =>
-          [...prev].sort((a, b) => a.prices[0] - b.prices[0])
-        );
-      } else if (sort === "highest") {
-        return setFilteredProducts((prev) =>
-          [...prev].sort((a, b) => b.prices[0] - a.prices[0])
-        );
-      } else if (sort === "ascending") {
-        return setFilteredProducts((prev) =>
-          [...prev].sort((a, b) => a.title.localeCompare(b.title))
-        );
-      } else if (sort === "descending") {
-        return setFilteredProducts((prev) =>
-          [...prev].sort((a, b) => b.title.localeCompare(a.title))
-        );
-      } else if (sort === "high") {
-        return setFilteredProducts((prev) =>
-          [...prev].sort((a, b) => b.rating - a.rating)
-        );
-      } else {
-        return setFilteredProducts((prev) =>
-          [...prev].sort((a, b) => a.rating - b.rating)
-        );
-      }
-    };
-    sortProducts();
-  }, [sort]);
+  if (sort === "lowest") {
+    pizzaList.sort((a, b) => a.prices[0] - b.prices[0]);
+  } else if (sort === "highest") {
+    pizzaList.sort((a, b) => b.prices[0] - a.prices[0]);
+  } else if (sort === "ascending") {
+    pizzaList.sort((a, b) => a.title.localeCompare(b.title));
+  } else if (sort === "descending") {
+    pizzaList.sort((a, b) => b.title.localeCompare(a.title));
+  } else if (sort === "high") {
+    pizzaList.sort((a, b) => b.rating - a.rating);
+  } else {
+    pizzaList.sort((a, b) => a.rating - b.rating);
+  }
 
   return (
     <div className={styles.container}>
@@ -52,7 +34,7 @@ const ProductList = ({ pizzaList }) => {
             className={isGrid ? styles.inactive : styles.active}
             onClick={() => setIsGrid(false)}
           />
-          <p>{filteredProducts.length} Products Available</p>
+          <p>{pizzaList.length} Products Available</p>
         </div>
         <div className={styles.sort__container}>
           <p>Sort by:</p>
@@ -72,13 +54,13 @@ const ProductList = ({ pizzaList }) => {
       </section>
       {isGrid ? (
         <section className={styles.products__grid}>
-          {filteredProducts.map((pizza) => (
-            <ProductCard pizza={pizza} key={pizza._id} {...pizza} />
+          {pizzaList.map((pizza) => (
+            <ProductCard pizza={pizza} key={pizza._id} />
           ))}
         </section>
       ) : (
         <section className={styles.products__line}>
-          {filteredProducts.map((pizza) => (
+          {pizzaList.map((pizza) => (
             <HorizontalProductCard pizza={pizza} key={pizza._id} {...pizza} />
           ))}
         </section>
