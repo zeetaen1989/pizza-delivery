@@ -5,15 +5,19 @@ import styles from "./Menu.module.scss";
 
 const Menu = ({ pizzaList, allCategories }) => {
   const [menuItems, setMenuItems] = useState(pizzaList);
-  const [categories, setCategories] = useState(allCategories);
 
-  const filterItems = (category) => {
+  const filterItemsByCategory = (category) => {
     if (category === "All") {
       setMenuItems(pizzaList);
     } else {
       const newItems = pizzaList.filter((pizza) => pizza.category === category);
       setMenuItems(newItems);
     }
+  };
+
+  const filterItemsByPrice = (price) => {
+    const newItems = pizzaList.filter((pizza) => pizza.prices[0] <= price);
+    setMenuItems(newItems);
   };
 
   return (
@@ -26,7 +30,11 @@ const Menu = ({ pizzaList, allCategories }) => {
         />
       </div>
       <div className={styles.content}>
-        <Sidebar categories={categories} filterItems={filterItems} />
+        <Sidebar
+          allCategories={allCategories}
+          filterItemsByCategory={filterItemsByCategory}
+          filterItemsByPrice={filterItemsByPrice}
+        />
         <ProductList pizzaList={menuItems} />
       </div>
     </section>
