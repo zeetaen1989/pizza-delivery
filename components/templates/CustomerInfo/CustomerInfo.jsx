@@ -8,8 +8,8 @@ mapboxgl.accessToken =
 const CustomerInfo = ({ setActiveTab }) => {
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const [lng, setLng] = useState(-70.9);
-  const [lat, setLat] = useState(42.35);
+  const [lat, setLat] = useState(28.237987);
+  const [lng, setLng] = useState(83.9955879);
   const [zoom, setZoom] = useState(9);
 
   useEffect(() => {
