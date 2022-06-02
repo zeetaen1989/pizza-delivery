@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
-import { addProduct } from "redux/cartRedux";
 import { FaSearch } from "react-icons/fa";
 
+import { addProduct } from "redux/cartRedux";
 import { Ratings, AddToCartBtn } from "@components/elements";
 import styles from "./ProductCard.module.scss";
 
