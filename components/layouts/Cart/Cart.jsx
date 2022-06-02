@@ -3,10 +3,11 @@ import { useSelector } from "react-redux";
 
 import { CartItems, CustomerInfo, Payment } from "@components/templates";
 import { TabContent, TabItem } from "@components/elements";
+import { selectAllCart } from "redux/cartRedux";
 import styles from "./Cart.module.scss";
 
 const Cart = () => {
-  const { products, total } = useSelector((state) => state.cart);
+  const { products, total } = useSelector(selectAllCart);
   const [activeTab, setActiveTab] = useState("1");
 
   return (
