@@ -1,12 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { ImBin } from "react-icons/im";
 
 import { BillSummary, Counter, OrderBtn } from "@components/elements";
-import styles from "./CartItems.module.scss";
 import { removeProduct } from "redux/cartRedux";
+import styles from "./CartItems.module.scss";
 
 const CartItems = ({ products, total, setActiveTab }) => {
   const dispatch = useDispatch();
