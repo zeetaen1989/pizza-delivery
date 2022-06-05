@@ -27,30 +27,30 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer noopener"
           >
-            <FaFacebook />
+            <FaFacebook className={styles.icon} />
           </a>
           <a
             href="https://www.twitter.com/"
             target="_blank"
             rel="noreferrer noopener"
           >
-            <FaTwitter />
+            <FaTwitter className={styles.icon} />
           </a>
           <a
             href="https://www.instagram.com/"
             target="_blank"
             rel="noreferrer noopener"
           >
-            <FaInstagram />
+            <FaInstagram className={styles.icon} />
           </a>
         </div>
-        <span>
+        <p className={styles.copyright}>
           <FaRegCopyright />
           PizzaLand Co. Ltd.
-        </span>
+        </p>
       </div>
-      <div className={styles.links}>
-        <h3>Quick Links</h3>
+      <nav className={styles.links} aria-labelledby="secondary-navigation">
+        <h3 id="secondary-navigation">Quick Links</h3>
         <ul>
           {links.map((link) => (
             <li key={link}>
@@ -58,7 +58,7 @@ const Footer = () => {
             </li>
           ))}
         </ul>
-      </div>
+      </nav>
       <div className={styles.locations}>
         <h3>Our Locations</h3>
         <ul>
@@ -76,11 +76,17 @@ const Footer = () => {
         <ul>
           <li>
             <p>Monday - Friday</p>
-            <span>9:00am - 9:00pm</span>
+            <p>
+              <time dateTime="09:00">9:00am</time> -{" "}
+              <time dateTime="21:00">9:00pm</time>
+            </p>
           </li>
           <li>
             <p>Saturday - Sunday</p>
-            <span>10:00am - 9:00pm</span>
+            <p>
+              <time dateTime="10:00">10:00am</time> -{" "}
+              <time dateTime="21:00">9:00pm</time>
+            </p>
           </li>
         </ul>
       </div>
