@@ -7,7 +7,9 @@ const ActiveLink = ({ link }) => {
 
   const style = {
     color:
-      router.asPath === link.url ? "hsl(200, 19%, 18%)" : "hsl(0, 65%, 51%)",
+      router.asPath === link.url && link.url !== "/"
+        ? "hsl(200, 19%, 18%)"
+        : "hsl(0, 65%, 51%)",
   };
 
   return (
