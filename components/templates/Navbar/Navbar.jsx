@@ -10,9 +10,9 @@ import {
 } from "react-icons/md";
 import { FaPhone } from "react-icons/fa";
 
-import styles from "./Navbar.module.scss";
-import { links, linksLeft, linksRight } from "@data/nav-data";
+import { linksLeft, linksRight } from "@data/nav-data";
 import { ActiveLink } from "@components/elements";
+import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +39,7 @@ const Navbar = () => {
           <span>+01 234 567 89</span>
         </div>
       </div>
-      <nav className={styles.center}>
+      <nav className={styles.center} aria-label="primary-navigation">
         <ul>
           {linksLeft.map((link) => (
             <li key={link.id}>
