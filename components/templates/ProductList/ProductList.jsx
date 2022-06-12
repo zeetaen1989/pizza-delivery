@@ -35,11 +35,10 @@ const ProductList = ({ pizzaList }) => {
             className={isGrid ? styles.inactive : styles.active}
             onClick={() => setIsGrid(false)}
           />
-          {pizzaList.length > 1 ? (
-            <p>{pizzaList.length} Products Available</p>
-          ) : (
-            <p>{pizzaList.length} Product Available</p>
-          )}
+          <p>
+            {pizzaList.length} {pizzaList.length === 1 ? "Product" : "Products"}
+            Available
+          </p>
         </div>
         <div className={styles.sort__container}>
           <p>Sort by:</p>
