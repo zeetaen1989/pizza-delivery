@@ -73,7 +73,7 @@ const ProductList = ({ pizzaList }) => {
       ) : (
         <section className={styles.products__empty}>
           <h3>Please Search Again</h3>
-          <p>Sorry, no products available matched your search criteria!!!</p>
+          <p>No Products Matched Your Search Criteria!!!</p>
           <Image
             src="/images/empty-products.svg"
             alt="Empty Search"
