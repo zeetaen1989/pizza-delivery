@@ -14,7 +14,7 @@ const Popular = ({ pizzaList }) => {
           <ProductCard key={pizza._id} pizza={pizza} {...pizza} />
         ))}
       </div>
-      <OrderBtn text="See All Menu" />
+      <OrderBtn text="See All Menu" href="menu" />
     </section>
   );
 };
