@@ -5,13 +5,10 @@ const Sidebar = ({
   allCategories,
   filterItemsByCategory,
   filterItemsByPrice,
+  handleChange,
+  searchTerm,
 }) => {
   const [input, setInput] = useState(20);
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const handleChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
 
   return (
     <div className={styles.sidebar}>
@@ -20,8 +17,8 @@ const Sidebar = ({
           id="name"
           name="name"
           type="text"
+          placeholder="Search..."
           value={searchTerm}
-          placeholder="Search"
           onChange={handleChange}
         />
       </section>
@@ -58,4 +55,5 @@ const Sidebar = ({
     </div>
   );
 };
+
 export default Sidebar;
