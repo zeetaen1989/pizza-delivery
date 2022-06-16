@@ -8,10 +8,10 @@ export const ourLocation = [
   },
   {
     id: 2,
-    street: "315 Broadway",
-    city: "Boston",
-    phone: "(01) 254 8454",
-    map: "https://www.google.com/maps/place/Boston,+MA,+USA/@42.3142647,-71.1103696,11z/data=!3m1!4b1!4m5!3m4!1s0x89e3652d0d3d311b:0x787cbf240162e8a0!8m2!3d42.3600825!4d-71.0588801",
+    street: "890 Upstate",
+    city: "New Jersey",
+    phone: "(01) 278 1295",
+    map: "https://www.google.com/maps/place/New+Jersey,+USA/@40.0513939,-76.968038,7z/data=!3m1!4b1!4m5!3m4!1s0x89c0fb959e00409f:0x2cd27b07f83f6d8d!8m2!3d40.0583238!4d-74.4056612",
   },
   {
     id: 3,
@@ -22,9 +22,9 @@ export const ourLocation = [
   },
   {
     id: 4,
-    street: "890 Upstate",
-    city: "New Jersey",
-    phone: "(01) 278 1295",
-    map: "https://www.google.com/maps/place/New+Jersey,+USA/@40.0513939,-76.968038,7z/data=!3m1!4b1!4m5!3m4!1s0x89c0fb959e00409f:0x2cd27b07f83f6d8d!8m2!3d40.0583238!4d-74.4056612",
+    street: "315 Broadway",
+    city: "Boston",
+    phone: "(01) 254 8454",
+    map: "https://www.google.com/maps/place/Boston,+MA,+USA/@42.3142647,-71.1103696,11z/data=!3m1!4b1!4m5!3m4!1s0x89e3652d0d3d311b:0x787cbf240162e8a0!8m2!3d42.3600825!4d-71.0588801",
   },
 ];
