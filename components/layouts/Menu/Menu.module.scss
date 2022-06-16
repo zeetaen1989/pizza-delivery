@@ -1,6 +1,8 @@
 @use "@styles/abstracts"as a;
 
 .container {
+  padding: 2rem 0rem;
+
   .content {
     padding: 2rem;
     display: flex;
@@ -13,10 +15,6 @@
 // Media Query for large deviees (less than 1024px)
 @include a.media-query(large) {
   .container {
-    .header {
-      margin-top: -2rem;
-    }
-
     .content {
       padding: 1.5rem;
       gap: 1rem;
