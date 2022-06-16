@@ -20,9 +20,10 @@ const HorizontalProductCard = ({ pizza }) => {
       })
     );
   };
+
   return (
     <section className={styles.container}>
-      <figure>
+      <figure className={styles.wrapper__img}>
         <Image src={pizza.img} alt={pizza.title} height="300" width="300" />
         <figcaption className={styles.overlap}>
           <Link href={`/product/${pizza._id}`} passHref>
@@ -30,23 +31,23 @@ const HorizontalProductCard = ({ pizza }) => {
           </Link>
         </figcaption>
       </figure>
-      <article>
-        <h1>{pizza.title}</h1>
-        <span className={styles.price}>${pizza.prices[0].toFixed(2)}</span>
+      <section className={styles.info}>
+        <h4>{pizza.title}</h4>
+        <p className={styles.price}>${pizza.prices[0].toFixed(2)}</p>
         <Ratings rating={pizza.rating} />
-        <span className={styles.info__reviews}>
+        <p className={styles.info__reviews}>
           <a href="#">({pizza.reviews} Reviews)</a>
-        </span>
+        </p>
         <p className={styles.desc}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Exercitationem quibusdam doloremque cumque qui, nulla dicta nesciunt
           voluptatibus ab magnam hic facere dolor voluptates corrupti id
           delectus facilis explicabo veniam optio.
         </p>
-        <div className={styles.btn__cart} onClick={handleAddToCart}>
+        <article className={styles.btn__cart} onClick={handleAddToCart}>
           <AddToCartBtn text="Add To Cart" />
-        </div>
-      </article>
+        </article>
+      </section>
     </section>
   );
 };
