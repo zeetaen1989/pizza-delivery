@@ -24,9 +24,9 @@ const ProductList = ({ pizzaList }) => {
   }
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <section className={styles.top}>
-        <div className={styles.icons__container}>
+        <section className={styles.icons__container}>
           <MdGridView
             className={isGrid ? styles.active : styles.inactive}
             onClick={() => setIsGrid(true)}
@@ -39,8 +39,8 @@ const ProductList = ({ pizzaList }) => {
             {pizzaList.length} {pizzaList.length === 1 ? "Product" : "Products"}
             Available
           </p>
-        </div>
-        <div className={styles.sort__container}>
+        </section>
+        <section className={styles.sort__container}>
           <p>Sort by:</p>
           <select
             name="price"
@@ -54,7 +54,7 @@ const ProductList = ({ pizzaList }) => {
             <option value="high">Rating (High)</option>
             <option value="low">Rating (Low)</option>
           </select>
-        </div>
+        </section>
       </section>
       {pizzaList.length > 0 ? (
         isGrid ? (
@@ -72,17 +72,19 @@ const ProductList = ({ pizzaList }) => {
         )
       ) : (
         <section className={styles.products__empty}>
-          <h3>Please Search Again</h3>
+          <h4>Please Search Again</h4>
           <p>No Products Matched Your Search Criteria!!!</p>
-          <Image
-            src="/images/empty-products.svg"
-            alt="Empty Search"
-            height="300"
-            width="300"
-          />
+          <figure>
+            <Image
+              src="/images/empty-products.svg"
+              alt="Empty Search"
+              height="300"
+              width="300"
+            />
+          </figure>
         </section>
       )}
-    </div>
+    </section>
   );
 };
 
