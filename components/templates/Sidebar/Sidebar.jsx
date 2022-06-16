@@ -11,8 +11,8 @@ const Sidebar = ({
   const [input, setInput] = useState(20);
 
   return (
-    <div className={styles.sidebar}>
-      <section className={styles.search}>
+    <section className={styles.sidebar}>
+      <form role="search" className={styles.search}>
         <input
           id="name"
           name="name"
@@ -21,7 +21,7 @@ const Sidebar = ({
           value={searchTerm}
           onChange={handleChange}
         />
-      </section>
+      </form>
       <section className={styles.category}>
         <h3>Categories</h3>
         {allCategories.sort().map((category) => (
@@ -36,7 +36,7 @@ const Sidebar = ({
       </section>
       <section className={styles.price}>
         <h3>Price</h3>
-        <form>
+        <form role="price">
           <label htmlFor="price">$5 - ${input}</label>
           <input
             type="range"
@@ -52,7 +52,7 @@ const Sidebar = ({
           />
         </form>
       </section>
-    </div>
+    </section>
   );
 };
 
