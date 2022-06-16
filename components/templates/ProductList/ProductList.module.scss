@@ -73,6 +73,10 @@
     display: grid;
     place-items: center;
     color: a.$primary-clr-3;
+
+    h4 {
+      font-size: 1.5rem;
+    }
   }
 }
 
