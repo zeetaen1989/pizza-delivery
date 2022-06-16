@@ -12,6 +12,10 @@ const Menu = ({ pizzaList, allCategories }) => {
     setSearchTerm(e.target.value);
   };
 
+  const filteredSearch = menuItems.filter((menu) => {
+    return menu.title.toLowerCase().includes(searchTerm.toLocaleLowerCase());
+  });
+
   const filterItemsByCategory = (category) => {
     if (category === "All") {
       setMenuItems(pizzaList);
@@ -32,14 +36,12 @@ const Menu = ({ pizzaList, allCategories }) => {
 
   return (
     <section className={styles.container}>
-      <header className={styles.header}>
-        <Header
-          title="Our Menu"
-          subtitle="Various Regional Taste"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor vitae purus faucibus ornare."
-        />
-      </header>
-      <main className={styles.content}>
+      <Header
+        title="Our Menu"
+        subtitle="Various Regional Taste"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor vitae purus faucibus ornare."
+      />
+      <section className={styles.content}>
         <Sidebar
           allCategories={allCategories}
           filterItemsByCategory={filterItemsByCategory}
@@ -47,12 +49,8 @@ const Menu = ({ pizzaList, allCategories }) => {
           handleChange={handleChange}
           searchTerm={searchTerm}
         />
-        <ProductList
-          pizzaList={menuItems.filter((menu) =>
-            menu.title.toLowerCase().includes(searchTerm.toLocaleLowerCase())
-          )}
-        />
-      </main>
+        <ProductList pizzaList={filteredSearch} />
+      </section>
     </section>
   );
 };
