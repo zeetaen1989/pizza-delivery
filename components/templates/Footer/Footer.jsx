@@ -18,7 +18,7 @@ const Footer = () => {
   ];
 
   return (
-    <section className={styles.container}>
+    <footer className={styles.container}>
       <div className={styles.logo}>
         <h1>PizzaLand</h1>
         <div className={styles.icons}>
@@ -90,7 +90,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-    </section>
+    </footer>
   );
 };
 

@@ -44,20 +44,20 @@ const Hero = () => {
 
   return (
     <section className={styles.container}>
-      <div className={styles.top}>
+      <section className={styles.top}>
         <section
           className={styles.wrapper}
           style={{ transform: `translateX(${-100 * currentSlide}vw)` }}
         >
           {imgSlider.map((img) => (
-            <div className={styles.slider} key={img.id}>
-              <article>
-                <h1>{img.title}</h1>
-                <p>{img.subtitle}</p>
+            <article className={styles.slider} key={img.id}>
+              <figcaption className={styles.slider__desc}>
+                <h1 className={styles.title}>{img.title}</h1>
+                <p className={styles.subtitle}>{img.subtitle}</p>
                 <div className={styles.btn__order}>
                   <OrderBtn text="Order Now" href="menu" />
                 </div>
-              </article>
+              </figcaption>
               <figure className={styles.slider__img}>
                 <Image
                   src={img.img}
@@ -68,20 +68,20 @@ const Hero = () => {
                   priority
                 />
               </figure>
-            </div>
+            </article>
           ))}
         </section>
-      </div>
-      <div className={styles.bottom}>
-        <section className={styles.arrow__left}>
+      </section>
+      <section className={styles.bottom}>
+        <figure className={styles.arrow__left}>
           <MdArrowBackIosNew
             className={styles.arrow}
             onClick={() => handleArrow("left")}
           />
-        </section>
+        </figure>
         {imgSlider.map((item) => {
           return (
-            <span
+            <figure
               className={
                 currentSlide === item.id - 1
                   ? `${styles.dot}`
@@ -89,16 +89,16 @@ const Hero = () => {
               }
               key={item.id}
               onClick={() => setCurrentSlide(item.id - 1)}
-            ></span>
+            ></figure>
           );
         })}
-        <section className={styles.arrow__right}>
+        <figure className={styles.arrow__right}>
           <MdArrowForwardIos
             className={styles.arrow}
             onClick={() => handleArrow("right")}
           />
-        </section>
-      </div>
+        </figure>
+      </section>
     </section>
   );
 };

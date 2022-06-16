@@ -31,7 +31,7 @@ const Navbar = () => {
   );
 
   return (
-    <section className={styles.container}>
+    <header className={styles.container}>
       <div className={styles.left}>
         <FaPhone fontSize="1.5rem" />
         <div className={styles.left__info}>
@@ -85,7 +85,7 @@ const Navbar = () => {
         </div>
         {isOpen ? openMenu() : closeMenu()}
       </div>
-    </section>
+    </header>
   );
 };
 

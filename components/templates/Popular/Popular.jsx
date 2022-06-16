@@ -9,11 +9,11 @@ const Popular = ({ pizzaList }) => {
         subtitle="What Our Customers Love"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor vitae purus faucibus ornare."
       />
-      <div className={styles.container__products}>
+      <section className={styles.container__products}>
         {pizzaList.slice(0, 6).map((pizza) => (
           <ProductCard key={pizza._id} pizza={pizza} {...pizza} />
         ))}
-      </div>
+      </section>
       <OrderBtn text="See All Menu" href="menu" />
     </section>
   );

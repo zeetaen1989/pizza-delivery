@@ -12,20 +12,20 @@ const Location = () => {
         subtitle="Where Can You Find Us"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor vitae purus faucibus ornare."
       />
-      <div className={styles.location}>
+      <section className={styles.location}>
         {ourLocation.map((item) => (
           <Link key={item.id} href={item.map} passHref>
             <article className={styles.location__wrapper}>
               <MdLocationCity fontSize="2rem" color="red" />
-              <div className={styles.address}>
+              <article className={styles.address}>
                 <h3>{item.city}</h3>
-                <p>{item.street}</p>
-                <span>{item.phone}</span>
-              </div>
+                <p className={styles.street}>{item.street}</p>
+                <p className={styles.phone}>{item.phone}</p>
+              </article>
             </article>
           </Link>
         ))}
-      </div>
+      </section>
     </section>
   );
 };
