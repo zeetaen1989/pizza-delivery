@@ -2,11 +2,11 @@ import styles from "./Header.module.scss";
 
 const Header = ({ title, subtitle, description }) => {
   return (
-    <section className={styles.container}>
-      <span className={styles.top__text}>{title}</span>
-      <h1>{subtitle}</h1>
-      <p>{description}</p>
-    </section>
+    <article className={styles.container}>
+      <h1 className={styles.title}>{title}</h1>
+      <h2 className={styles.subtitle}>{subtitle}</h2>
+      <p className={styles.desc}>{description}</p>
+    </article>
   );
 };
 export default Header;
