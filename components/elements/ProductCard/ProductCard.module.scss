@@ -50,6 +50,7 @@
     padding: 1rem;
     border-radius: 48% 52% 10% 10% / 26% 25% 10% 10%;
     box-shadow: a.$primary-box-shadow;
+    user-select: none;
 
     &__reviews {
       color: a.$secondary-clr-3;
@@ -58,7 +59,28 @@
     &__text {
       text-align: left;
 
-      p {
+      h3 {
+        font-size: 1rem;
+        position: relative;
+
+        &:hover .tooltip {
+          display: block;
+          position: absolute;
+          top: -1.5rem;
+        }
+
+        .tooltip {
+          display: none;
+          background-color: grey;
+          color: whitesmoke;
+          padding: 0rem 0.5rem;
+          border-radius: 0.25rem;
+          font-size: 0.9rem;
+          font-weight: 600;
+        }
+      }
+
+      .desc {
         font-size: a.$small-fs;
         color: a.$secondary-clr-3;
       }
