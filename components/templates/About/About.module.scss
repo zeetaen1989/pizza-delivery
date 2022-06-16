@@ -1,34 +1,33 @@
 @use "@styles/abstracts"as a;
 
 .container {
-  padding: a.$primary-padding;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
   .about {
-    display: grid;
-    place-items: center;
-    padding: a.$secondary-padding;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 25rem;
 
-    &__wrapper {
+    .card {
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      align-items: center;
 
-      .card {
-        display: flex;
-        align-items: center;
+      .img {
+        flex: 0.5;
+        display: grid;
+        place-items: center;
+      }
 
-        .img {
-          flex: 1;
-          display: grid;
-          place-items: center;
-        }
+      .text {
+        flex: 1.1;
 
-        .text {
-          flex: 2;
-
-          p {
-            color: a.$secondary-clr-2;
-          }
+        p {
+          color: a.$secondary-clr-2;
         }
       }
     }
@@ -40,10 +39,26 @@
 // Media Query for large devices (less than 1024px)
 @include a.media-query(large) {
   .container {
-    padding: 2rem;
+    height: 52vh;
+    padding: 0rem 2rem;
 
     .about {
-      padding: 0rem 3rem;
+      padding: 0rem 15rem;
+
+      .card {
+        gap: 1rem;
+      }
+    }
+  }
+}
+
+// Media Query for medium devices (less than 768px)
+@include a.media-query(medium) {
+  .container {
+    height: 60vh;
+
+    .about {
+      padding: 0rem 10rem;
     }
   }
 }
@@ -51,6 +66,8 @@
 // Media Query for small devices (less than 480px)
 @include a.media-query(small) {
   .container {
+    height: 95vh;
+
     .about {
       padding: 0rem;
 
