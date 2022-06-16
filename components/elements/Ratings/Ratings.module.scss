@@ -1,9 +1,6 @@
 @use "@styles/abstracts"as a;
 
 .container {
-  display: flex;
-  justify-content: center;
-
   .star {
     font-size: 1.3rem;
     color: a.$primary-clr-4;
