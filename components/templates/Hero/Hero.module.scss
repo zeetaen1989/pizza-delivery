@@ -27,29 +27,27 @@
         padding-bottom: 1rem;
         padding-left: 8rem;
 
-        article {
+        &__desc {
           flex: 1;
           display: flex;
           flex-direction: column;
           gap: 1.5rem;
-          text-align: center;
           line-height: 1;
           text-transform: uppercase;
-          text-align: left;
 
-          h1 {
+          .title {
             font-size: a.$medium-fs;
             font-weight: a.$bold-fw;
             text-transform: uppercase;
           }
 
-          p {
+          .subtitle {
             font-weight: a.$regular-fw;
             color: a.$secondary-clr-3;
           }
         }
 
-        figure {
+        &__img {
           flex: 2;
         }
       }
@@ -108,12 +106,30 @@
 // Media Query for large devices (less than 1024px)
 @include a.media-query(large) {
   .container {
-    height: calc(37vh - 5.25rem);
+    height: fit-content;
 
     .top {
+      margin: 8rem 0rem 4rem;
+
       .wrapper {
         .slider {
-          padding: 1rem 0rem 1rem 4rem;
+          padding: 1.5rem 0rem;
+          flex-direction: column-reverse;
+          gap: 3rem;
+
+          &__desc {
+            text-align: center;
+            padding: 0rem 5rem;
+            gap: 4rem;
+
+            .subtitle {
+              padding: 0rem 5rem;
+            }
+          }
+
+          &__img {
+            flex: 1;
+          }
         }
       }
     }
@@ -123,14 +139,20 @@
 // Media Query for medium devices (less than 768px)
 @include a.media-query(medium) {
   .container {
-    height: calc(40vh - 5.25rem);
-
     .top {
+      margin: 2rem 0rem 3rem;
+
       .wrapper {
         .slider {
-          article {
-            h1 {
-              font-size: a.$middle-fs;
+          &__desc {
+            gap: 2.5rem;
+
+            .title {
+              font-size: 2.5rem;
+            }
+
+            .subtitle {
+              padding: 0rem 5rem;
             }
           }
         }
@@ -142,45 +164,21 @@
 // Media Query for small devices (less than 480px)
 @include a.media-query(small) {
   .container {
-    height: calc(66vh - 5.25rem);
 
     .top {
+      margin: 2rem 0rem 0rem;
+
       .wrapper {
         .slider {
-          gap: 1.5rem;
-          padding: 0rem 2rem 1rem;
-          flex-direction: column-reverse;
-
-          article {
-            gap: 1rem;
-            text-align: center;
-
-            h1 {
-              font-size: a.$middle-fs;
-            }
-
-            h2 {
-              font-size: a.$medium-fs;
-            }
-
-            .percentage {
-              font-size: a.$middle-fs;
-            }
-
-            .btn__order {
-              margin: 0.5rem 0rem;
-            }
-          }
-
-          figure {
+          &__desc {
             padding: 0rem 2rem;
+            gap: 1.5rem;
+
+            .title {
+              font-size: 1.5rem;
+            }
           }
         }
-      }
-
-      .arrow__right {
-        right: 0rem;
-        font-size: 2rem;
       }
     }
   }

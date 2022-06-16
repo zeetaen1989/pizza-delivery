@@ -1,13 +1,18 @@
 @use "@styles/abstracts"as a;
 
 .container {
-  padding: a.$primary-padding;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0rem 2rem;
 
   .newsletter {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: a.$secondary-padding;
+    padding: 2rem 0rem;
 
     form {
       display: flex;
@@ -55,18 +60,18 @@
 // Media Query for large devices (less than 1024px)
 @include a.media-query(large) {
   .container {
-    padding: 2rem 2rem 0rem;
-
-    .newsletter {
-      padding: 0rem;
-    }
+    height: 30vh;
   }
 }
 
 // Media Query for medium devices (less than 768px)
 @include a.media-query(medium) {
   .container {
+    height: 50vh;
+
     .newsletter {
+      padding: 1rem 0rem;
+
       form {
         button {
           margin-right: 0.1rem;
@@ -79,8 +84,9 @@
 // Media Query for small devices (less than 480px)
 @include a.media-query(small) {
   .container {
+    height: 60vh;
+
     .newsletter {
-      padding: 0rem;
 
       form {
         input {

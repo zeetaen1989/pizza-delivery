@@ -5,10 +5,10 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: a.$primary-padding;
+  padding-bottom: 2rem;
 
   &__products {
-    padding: 2rem 0rem 1rem;
+    padding: 2rem 0rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 3rem;

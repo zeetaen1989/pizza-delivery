@@ -1,13 +1,17 @@
 @use "@styles/abstracts"as a;
 
 .container {
-  padding: a.$primary-padding;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   .location {
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    padding: a.$secondary-padding;
+    gap: 3rem;
+    padding: 3rem 0rem;
 
     &__wrapper {
       height: fit-content;
@@ -17,14 +21,26 @@
       gap: 1rem;
       border-radius: 76% 24% 0% 24% / 0% 38% 0% 42%;
       box-shadow: a.$primary-box-shadow;
-      padding: 1rem;
+      padding: 1.5rem;
       cursor: pointer;
 
       .address {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
 
-        p,
-        span {
+        h3 {
+          line-height: 1;
+        }
+
+        .street {
           color: a.$secondary-clr-2;
+          font-size: 0.9rem;
+        }
+
+        .phone {
+          color: a.$primary-clr-5;
+          font-size: a.$small-fs;
         }
       }
     }
@@ -36,10 +52,11 @@
 // Media Query for large devices (less than 1024px)
 @include a.media-query(large) {
   .container {
-    padding: 1rem 2rem 0rem;
+    height: 40vh;
+    padding: 0rem 2rem;
 
     .location {
-      padding: 0rem;
+      gap: 2rem;
     }
   }
 }
@@ -47,11 +64,17 @@
 // Media Query for medium devices (less than 768px)
 @include a.media-query(medium) {
   .container {
+    height: 62.5vh;
+
     .location {
+      padding: 1rem 0rem;
       display: grid;
       place-items: center;
       grid-template-columns: repeat(2, 0.4fr);
-      gap: 1rem;
+
+      &__wrapper {
+        width: 12.5rem;
+      }
     }
   }
 }
@@ -59,10 +82,15 @@
 // Media Query for small devices (less than 480px)
 @include a.media-query(small) {
   .container {
-    .location {
-      &__wrapper {
-        width: max-content;
+    height: fit-content;
+    margin: 2rem 0rem;
 
+    .location {
+      padding: 1rem 0rem;
+      grid-template-columns: repeat(1, 0.4fr);
+      gap: 2rem;
+
+      &__wrapper {
         .address {
           h3 {
             font-size: 1rem;
