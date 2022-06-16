@@ -7,8 +7,8 @@ import style from "./Ratings.module.scss";
 
 const Ratings = ({ rating }) => {
   return (
-    <div className={style.container}>
-      <span>
+    <section className={style.container}>
+      <figure className={style.star}>
         {rating >= 1 ? (
           <MdStar />
         ) : rating >= 0.5 ? (
@@ -16,8 +16,8 @@ const Ratings = ({ rating }) => {
         ) : (
           <MdOutlineStarOutline />
         )}
-      </span>
-      <span>
+      </figure>
+      <figure className={style.star}>
         {rating >= 2 ? (
           <MdStar />
         ) : rating >= 1.5 ? (
@@ -25,8 +25,8 @@ const Ratings = ({ rating }) => {
         ) : (
           <MdOutlineStarOutline />
         )}
-      </span>
-      <span>
+      </figure>
+      <figure className={style.star}>
         {rating >= 3 ? (
           <MdStar />
         ) : rating >= 2.5 ? (
@@ -34,8 +34,8 @@ const Ratings = ({ rating }) => {
         ) : (
           <MdOutlineStarOutline />
         )}
-      </span>
-      <span>
+      </figure>
+      <figure className={style.star}>
         {rating >= 4 ? (
           <MdStar />
         ) : rating >= 3.5 ? (
@@ -43,8 +43,8 @@ const Ratings = ({ rating }) => {
         ) : (
           <MdOutlineStarOutline />
         )}
-      </span>
-      <span>
+      </figure>
+      <figure className={style.star}>
         {rating >= 5 ? (
           <MdStar />
         ) : rating >= 4.5 ? (
@@ -52,8 +52,8 @@ const Ratings = ({ rating }) => {
         ) : (
           <MdOutlineStarOutline />
         )}
-      </span>
-    </div>
+      </figure>
+    </section>
   );
 };
 export default Ratings;
