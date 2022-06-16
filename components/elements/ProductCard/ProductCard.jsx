@@ -31,30 +31,33 @@ const ProductCard = ({ pizza }) => {
           </Link>
         </figcaption>
       </figure>
-      <article className={styles.info}>
+      <section className={styles.info}>
         <Ratings rating={pizza.rating} />
-        <span className={styles.info__reviews}>
+        <p className={styles.info__reviews}>
           <a href="#">({pizza.reviews} Reviews)</a>
-        </span>
-        <div className={styles.info__text}>
+        </p>
+        <article className={styles.info__text}>
           {pizza.title.length > 18 ? (
-            <h4>{pizza.title.slice(0, 15)}....</h4>
+            <h3>
+              <p className={styles.tooltip}>{pizza.title}</p>
+              {pizza.title.slice(0, 16)}...
+            </h3>
           ) : (
-            <h4>{pizza.title}</h4>
+            <h3>{pizza.title}</h3>
           )}
           {pizza.description.length > 50 ? (
-            <p>{pizza.description.slice(0, 50)}....</p>
+            <p className={styles.desc}>{pizza.description.slice(0, 50)}...</p>
           ) : (
-            <p>{pizza.description}</p>
+            <p className={styles.desc}>{pizza.description}</p>
           )}
-        </div>
-        <div className={styles.info__bottom}>
-          <span className={styles.price}>${pizza.prices[0].toFixed(2)}</span>
-          <div className={styles.btn__cart} onClick={handleAddToCart}>
+        </article>
+        <section className={styles.info__bottom}>
+          <p className={styles.price}>${pizza.prices[0].toFixed(2)}</p>
+          <article className={styles.btn__cart} onClick={handleAddToCart}>
             <AddToCartBtn text="+" />
-          </div>
-        </div>
-      </article>
+          </article>
+        </section>
+      </section>
     </section>
   );
 };
