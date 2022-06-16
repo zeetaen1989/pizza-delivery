@@ -1,9 +1,12 @@
-@use "@styles/abstracts" as a;
+@use "@styles/abstracts"as a;
 
 .container {
-  span {
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+
+  .star {
     font-size: 1.3rem;
     color: a.$primary-clr-4;
+    cursor: pointer;
   }
 }
