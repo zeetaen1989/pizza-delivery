@@ -2,28 +2,92 @@
 
 .container {
   background-color: a.$secondary-clr-2;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 0rem;
 
   p {
-    color: a.$primary-clr-3;
+    color: a.$primary-clr;
     font-size: a.$small-fs;
-    animation: text 3s 0.15s ease-in-out infinite;
   }
 
-  @keyframes text {
-    0% {
-      color: a.$primary-clr-4;
-      letter-spacing: 0.3rem;
-    }
+  .btn {
+    color: a.$primary-clr;
+    background-color: transparent;
+    border: 1px solid a.$primary-clr;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
 
-    50% {
-      color: a.$secondary-clr;
-      letter-spacing: 0.1rem;
+    &:hover {
+      background-color: a.$primary-clr;
+      color: a.$secondary-clr-2;
+      text-decoration: none;
+      padding: 0.25rem;
     }
+  }
 
-    100% {
-      color: black;
-      letter-spacing: 0.3rem;
+  .modal__container {
+    background-color: black;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+
+    .modal {
+      // position: fixed;
+      // z-index: 1;
+      // left: 50%;
+      // top: 50%;
+      // transform: translate(-50%, -50%);
+      margin: auto;
+      max-width: 30rem;
+      background-color: a.$secondary-clr-3;
+      border-radius: 0.5rem;
+
+      .conditions {
+        padding: 1rem 2.5rem;
+
+        h1 {
+          text-align: center;
+          color: a.$primary-clr-4;
+          text-decoration: underline;
+          font-size: 1.25rem;
+        }
+
+        ul {
+          list-style-type: decimal;
+          padding: 0.25rem 0rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
+
+          li {
+            font-size: a.$small-fs;
+            color: a.$primary-clr;
+          }
+        }
+      }
+
+      .btn__close {
+        border: none;
+        background-color: transparent;
+        gap: 0.5rem;
+        padding: 0.25rem;
+        cursor: pointer;
+        margin: 1rem 0rem 0rem;
+        position: absolute;
+        top: -1rem;
+        right: 0rem;
+      }
     }
   }
 }
