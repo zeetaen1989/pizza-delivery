@@ -5,7 +5,7 @@
 
   .tabs {
     @include a.flex-direction-column;
-    gap: 1.5rem;
+    gap: 1rem;
 
     .nav {
       width: 75%;
@@ -17,7 +17,7 @@
       hr {
         border: none;
         border-top: 0.1rem solid a.$secondary-clr-1;
-        width: 10rem;
+        width: 12rem;
       }
     }
   }
@@ -30,9 +30,16 @@
 
 // ******MEDIA QUERIES******
 
-// Media query for larger devices (less than 1024px)
-@include a.media-query(large) {
+// Media Query for small devices (less than 480px)
+@include a.media-query(small) {
   .container {
-    padding: 2rem 1rem;
+    padding: 1rem;
+
+    .tabs {
+
+      .nav {
+        width: 100%;
+      }
+    }
   }
 }
