@@ -167,8 +167,6 @@
       input[type=range]:focus::-ms-fill-upper {
         background-color: a.$primary-clr-1;
       }
-
-
     }
   }
 }
@@ -180,9 +178,15 @@
   .sidebar {
     text-align: center;
 
+    .search {
+      input {
+        width: 17rem;
+      }
+    }
+
     .category {
       ul {
-        display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
         gap: 1rem;
         justify-content: center;
@@ -197,7 +201,6 @@
       @include a.flex-direction-column;
 
       input {
-        width: 50%;
         margin: 0 auto;
       }
     }
