@@ -34,33 +34,31 @@
   }
 
   .modal__container {
-    background-color: black;
+    background-color: rgba($color: a.$primary-clr-2, $alpha: 0.3);
     position: fixed;
     z-index: 1;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
     display: flex;
 
     .modal {
-      // position: fixed;
-      // z-index: 1;
-      // left: 50%;
-      // top: 50%;
-      // transform: translate(-50%, -50%);
       margin: auto;
-      max-width: 30rem;
+      max-width: 40rem;
       background-color: a.$secondary-clr-3;
       border-radius: 0.5rem;
+      position: relative;
+      padding: 1.5rem 3rem;
 
       .conditions {
-        padding: 1rem 2.5rem;
-
-        h1 {
-          text-align: center;
-          color: a.$primary-clr-4;
-          text-decoration: underline;
-          font-size: 1.25rem;
+        .header {
+          h1 {
+            text-align: center;
+            color: a.$primary-clr-4;
+            text-decoration: underline;
+            font-size: 1.25rem;
+          }
         }
 
         ul {
@@ -87,6 +85,16 @@
         position: absolute;
         top: -1rem;
         right: 0rem;
+
+        .icon__close {
+          color: a.$primary-clr;
+          font-size: 1.5rem;
+          transition: all 0.3s ease;
+
+          &:hover {
+            color: a.$primary-clr-4;
+          }
+        }
       }
     }
   }
