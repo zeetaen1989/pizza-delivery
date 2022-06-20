@@ -1,7 +1,7 @@
 @use "@styles/abstracts"as a;
 
 .container {
-  padding: 2rem 0rem;
+  padding: 1rem 0rem;
 
   .content {
     padding: 2rem;
@@ -15,6 +15,8 @@
 // Media Query for large deviees (less than 1024px)
 @include a.media-query(large) {
   .container {
+    padding: 0rem;
+
     .content {
       padding: 1.5rem;
       gap: 1rem;
