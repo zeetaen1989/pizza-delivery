@@ -1,111 +1,110 @@
 @use "@styles/abstracts"as a;
 
 .container {
-  @include a.flex-direction-column;
-  padding: 2rem;
+  display: flex;
   gap: 2rem;
+  padding: 2rem;
 
-  h1 {
-    @include a.header;
-    text-align: center;
-  }
+  .left {
+    flex: 3;
+    box-shadow: a.$primary-box-shadow;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    height: fit-content;
+    overflow-x: auto;
 
-  &__empty {
-    margin: -5rem auto -4rem;
-  }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
 
-  .content {
-    display: flex;
-    gap: 2rem;
-
-    .left {
-      flex: 3;
-      box-shadow: a.$primary-box-shadow;
-      padding: 1rem 2rem;
-      border-radius: 1rem;
-      height: fit-content;
-      overflow-x: auto;
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        text-align: center;
-
-        thead {
-          tr {
-            border-bottom: 1px solid a.$primary-clr-2;
-          }
+      thead {
+        tr {
+          border-bottom: 1px solid a.$primary-clr-2;
         }
+      }
 
-        tbody {
-          user-select: none;
-          -moz-user-select: none;
-          -webkit-user-select: none;
+      tbody {
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
 
-          tr {
-            border-bottom: 1px solid a.$primary-clr-1;
+        tr {
+          border-bottom: 1px solid a.$primary-clr-1;
 
-            td {
-              padding: 0.5rem 0rem;
+          td {
+            padding: 0.5rem 0rem;
 
-              .extra__toppings {
-                @include a.flex-direction-column;
-              }
+            .extra__toppings {
+              @include a.flex-direction-column;
+            }
 
-              .img__size {
-                position: relative;
-              }
+            .img__size {
+              position: relative;
+            }
 
-              .size__info {
-                position: absolute;
-                background-color: a.$primary-clr-3;
-                color: a.$primary-clr;
-                font-size: a.$small-fs;
-                border-radius: 0.5rem;
-                padding: 0rem 0.3rem;
-                top: 0rem;
-              }
+            .size__info {
+              position: absolute;
+              background-color: a.$primary-clr-3;
+              color: a.$primary-clr;
+              font-size: a.$small-fs;
+              border-radius: 0.5rem;
+              padding: 0rem 0.3rem;
+              top: 0rem;
             }
           }
         }
+      }
 
-        .counter {
-          display: flex;
-          justify-content: center;
-        }
+      .counter {
+        display: flex;
+        justify-content: center;
+      }
 
-        .bin {
-          cursor: pointer;
-          margin-left: 0.5rem;
-        }
+      .bin {
+        cursor: pointer;
+        margin-left: 0.5rem;
       }
     }
+  }
 
-    .right {
-      @include a.flex-direction-column;
-      gap: 1rem;
-      flex: 1;
+  .right {
+    @include a.flex-direction-column;
+    gap: 1rem;
+    flex: 1;
 
-      &__content {
-        @include a.right-aside;
-        flex: 0;
+    &__content {
+      @include a.right-aside;
+      flex: 0;
 
-        h1 {
-          font-size: a.$middle-fs;
-          text-align: center;
-        }
+      h1 {
+        font-size: a.$middle-fs;
+        text-align: center;
+      }
 
-        hr {
-          border: none;
-          border-top: 0.1rem solid a.$primary-clr;
-          width: 100%;
-        }
+      hr {
+        border: none;
+        border-top: 0.1rem solid a.$primary-clr;
+        width: 100%;
+      }
 
-        .btn {
-          @include a.cart-btns;
-        }
+      .btn {
+        @include a.cart-btns;
       }
     }
+  }
+}
+
+.empty__container {
+  @include a.flex-direction-column;
+
+  .header {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .img {
+    margin: -3rem auto -1rem;
   }
 }
 
@@ -114,20 +113,10 @@
 // Media query for larger devices (less than 1024px)
 @include a.media-query(large) {
   .container {
-    .content {
-      flex-direction: column;
+    flex-direction: column;
 
-      .right {
-        margin: 0 auto;
-      }
-
-      .content {
-        flex-direction: column;
-
-        .right {
-          margin: 0 auto;
-        }
-      }
+    .right {
+      margin: 0 auto;
     }
   }
 }
@@ -137,29 +126,14 @@
   .container {
     padding: 1rem;
 
-    h1 {
-      font-size: 2.5rem;
-    }
+    .left {
+      table {
 
-    .content {
-      .left {
-        table {
-
-          th,
-          td {
-            padding: 0rem 2rem 0.5rem;
-          }
+        th,
+        td {
+          padding: 0rem 2rem 0.5rem;
         }
       }
-    }
-  }
-}
-
-// Media query for small devices (less than 480px)
-@include a.media-query(small) {
-  .container {
-    h1 {
-      font-size: 2rem;
     }
   }
 }
