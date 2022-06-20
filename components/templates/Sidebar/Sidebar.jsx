@@ -8,6 +8,7 @@ const Sidebar = ({
   handleChange,
   searchTerm,
 }) => {
+  const [selectedCategory, setSelectedCategory] = useState(allCategories);
   const [input, setInput] = useState(20);
 
   return (
@@ -24,15 +25,24 @@ const Sidebar = ({
       </form>
       <section className={styles.category}>
         <h3>Categories</h3>
-        {allCategories.sort().map((category) => (
-          <button
-            key={category}
-            className={styles.btn}
-            onClick={() => filterItemsByCategory(category)}
-          >
-            {category}
-          </button>
-        ))}
+        <ul>
+          {allCategories.sort().map((category) => (
+            <button
+              key={category}
+              className={
+                selectedCategory === category
+                  ? styles.btn__active
+                  : styles.btn__inactive
+              }
+              onClick={() => {
+                filterItemsByCategory(category);
+                setSelectedCategory(category);
+              }}
+            >
+              {category}
+            </button>
+          ))}
+        </ul>
       </section>
       <section className={styles.price}>
         <h3>Price</h3>
