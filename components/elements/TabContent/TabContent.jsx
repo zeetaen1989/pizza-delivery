@@ -2,7 +2,7 @@ import styles from "./TabContent.module.scss";
 
 const TabContent = ({ id, activeTab, children }) => {
   return activeTab === id ? (
-    <div className={styles.container}>{children}</div>
+    <section className={styles.container}>{children}</section>
   ) : null;
 };
 
