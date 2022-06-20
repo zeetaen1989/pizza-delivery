@@ -37,7 +37,7 @@ const ProductList = ({ pizzaList }) => {
           />
           <p>
             {pizzaList.length} {pizzaList.length === 1 ? "Product" : "Products"}
-            Available
+            &nbsp;Available
           </p>
         </section>
         <section className={styles.sort__container}>
