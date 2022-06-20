@@ -1,71 +1,61 @@
 @use "@styles/abstracts"as a;
 
 .container {
-  @include a.flex-direction-column;
-  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
   gap: 2rem;
+  padding: 2rem;
 
-  h1 {
-    @include a.header;
-    text-align: center;
+  .left {
+    flex: 1;
+    position: relative;
+
+    .map {
+      height: 35rem;
+      border-radius: 1rem;
+    }
   }
 
-  .content {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
+  .right {
+    @include a.right-aside;
+    padding: 1rem 2rem;
 
-    .left {
-      flex: 1;
-      position: relative;
+    h2 {
+      margin-bottom: 1rem;
+    }
 
-      .map {
-        height: 35rem;
-        border-radius: 1rem;
+    form {
+      @include a.flex-direction-column;
+      gap: 1rem;
+
+      .form__control {
+        @include a.flex-direction-column;
+        gap: 0.5rem;
+
+        input,
+        textarea {
+          width: 100%;
+          font-family: inherit;
+          padding: 0.5rem 1rem;
+          border: 1px solid a.$primary-clr-1;
+          border-radius: 0.5rem;
+          outline: none;
+          color: a.$primary-clr-3;
+
+          &::placeholder {
+            color: a.$primary-clr-4;
+            opacity: 0.4;
+          }
+        }
+
+        textarea {
+          height: 7rem;
+        }
       }
     }
 
-    .right {
-      @include a.right-aside;
-      padding: 1rem 2rem;
-
-      h2 {
-        margin-bottom: 1rem;
-      }
-
-      form {
-        @include a.flex-direction-column;
-        gap: 1rem;
-
-        .form__control {
-          @include a.flex-direction-column;
-          gap: 0.5rem;
-
-          input,
-          textarea {
-            width: 100%;
-            font-family: inherit;
-            padding: 0.5rem 1rem;
-            border: 1px solid a.$primary-clr-1;
-            border-radius: 0.5rem;
-            outline: none;
-            color: a.$primary-clr-3;
-
-            &::placeholder {
-              color: a.$primary-clr-4;
-              opacity: 0.4;
-            }
-          }
-
-          textarea {
-            height: 7rem;
-          }
-        }
-      }
-
-      .btn {
-        @include a.cart-btns;
-      }
+    .btn {
+      @include a.cart-btns;
     }
   }
 }
@@ -77,15 +67,9 @@
   .container {
     padding: 1rem;
 
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    .content {
-      .left {
-        .map {
-          height: 25rem;
-        }
+    .left {
+      .map {
+        height: 25rem;
       }
     }
   }
@@ -94,12 +78,6 @@
 // Media query for small devices (less than 480px)
 @include a.media-query(small) {
   .container {
-    h1 {
-      font-size: 2rem;
-    }
-
-    .content {
-      flex-direction: column;
-    }
+    flex-direction: column;
   }
 }
