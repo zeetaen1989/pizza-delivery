@@ -26,7 +26,7 @@ const Counter = ({ count }) => {
   };
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <MdOutlineRemoveCircleOutline
         className={styles.count__btn}
         onClick={handleMinus}
@@ -38,7 +38,7 @@ const Counter = ({ count }) => {
         {count}
       </span>
       <MdAddCircleOutline className={styles.count__btn} onClick={handleAdd} />
-    </div>
+    </section>
   );
 };
 export default Counter;
