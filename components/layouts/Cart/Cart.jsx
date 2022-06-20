@@ -23,7 +23,7 @@ const Cart = () => {
           <hr />
           <TabItem
             id="2"
-            title="Customer Info"
+            title="Details"
             activeTab={activeTab}
             setActiveTab={setActiveTab}
           />
@@ -35,7 +35,7 @@ const Cart = () => {
             setActiveTab={setActiveTab}
           />
         </ul>
-        <div className={styles.tab__content}>
+        <section className={styles.tab__content}>
           <TabContent id="1" activeTab={activeTab}>
             <CartItems
               products={products}
@@ -57,7 +57,7 @@ const Cart = () => {
               setActiveTab={setActiveTab}
             />
           </TabContent>
-        </div>
+        </section>
       </div>
     </section>
   );
