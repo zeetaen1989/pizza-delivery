@@ -8,7 +8,7 @@
   gap: 1rem;
   padding: 0.5rem 0rem;
 
-  p {
+  .announcement__text {
     color: a.$primary-clr;
     font-size: a.$small-fs;
   }
@@ -34,7 +34,7 @@
   }
 
   .modal__container {
-    background-color: rgba($color: a.$primary-clr-2, $alpha: 0.3);
+    background-color: rgba($color: a.$secondary-clr-2, $alpha: 0.4);
     position: fixed;
     z-index: 1;
     left: 0;
@@ -105,8 +105,16 @@
 // Media Query for small devices (less than 480px)
 @include a.media-query(small) {
   .container {
-    p {
+    padding: 0.5rem;
+
+    .announcement__text {
       font-size: a.$very-small-fs;
+    }
+
+    .modal__container {
+      .modal {
+        width: 25rem;
+      }
     }
   }
 }
