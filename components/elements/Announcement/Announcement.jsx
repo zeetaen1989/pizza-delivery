@@ -11,7 +11,7 @@ const Announcement = () => {
 
   return (
     <section className={styles.container}>
-      <p>
+      <p className={styles.announcement__text}>
         Get Free Delivery on Orders above $50! Delivery within 30min or Money
         Back Guarantee!!
       </p>
