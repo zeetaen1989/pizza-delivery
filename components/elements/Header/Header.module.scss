@@ -26,14 +26,14 @@
 // Media Query for large devices (less than 1024px)
 @include a.media-query(large) {
   .container {
-    padding: 2rem;
+    padding: 1em;
   }
 }
 
 // Media Query for small devices (less than 480px)
 @include a.media-query(small) {
   .container {
-    padding: 2rem 1rem;
+    padding: 0rem 1rem 1rem;
 
     .subtitle {
       font-size: 2rem;
