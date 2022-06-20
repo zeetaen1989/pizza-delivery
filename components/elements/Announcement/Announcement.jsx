@@ -6,40 +6,8 @@ import styles from "./Announcement.module.scss";
 const Announcement = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const openModal = (
-    <section className={styles.modal__container}>
-      <section className={styles.modal}>
-        <article className={styles.conditions}>
-          <h1>Terms & Conditions</h1>
-          <ul>
-            <li>
-              Lorem ipsum, dolor sit amet consectetur adipisicing eliteesdfg
-              Optio molestias commodi dolor illum minus voluptate illo.
-            </li>
-            <li>
-              Lorem ipsum, dolor sit amet consectetur adipisicing eliteesdfg
-              Optio molestias commodi dolor illum minus voluptate illo.
-            </li>
-            <li>
-              Lorem ipsum, dolor sit amet consectetur adipisicing eliteesdfg
-              Optio molestias commodi dolor illum minus voluptate illo.
-            </li>
-            <li>
-              Lorem ipsum, dolor sit amet consectetur adipisicing eliteesdfg
-              Optio molestias commodi dolor illum minus voluptate illo.
-            </li>
-          </ul>
-        </article>
-        <button className={styles.btn__close}>
-          <CgCloseO
-            color="white"
-            fontSize="1.5rem"
-            onClick={() => setIsOpen(false)}
-          />
-        </button>
-      </section>
-    </section>
-  );
+  const termsAndConditions =
+    "Lorem ipsum, dolor sit amet consectetur adipisicing eliteesd Optio molestias commo dolor illum minus voluptate illo.";
 
   return (
     <section className={styles.container}>
@@ -51,7 +19,29 @@ const Announcement = () => {
         Terms & Conditions
         <MdInfo />
       </button>
-      {isOpen && openModal}
+      {isOpen && (
+        <div className={styles.modal__container}>
+          <section className={styles.modal}>
+            <article className={styles.conditions}>
+              <header className={styles.header}>
+                <h1>Terms & Conditions</h1>
+              </header>
+              <ul>
+                <li>{termsAndConditions}</li>
+                <li>{termsAndConditions}</li>
+                <li>{termsAndConditions}</li>
+                <li>{termsAndConditions}</li>
+              </ul>
+            </article>
+            <button className={styles.btn__close}>
+              <CgCloseO
+                className={styles.icon__close}
+                onClick={() => setIsOpen(false)}
+              />
+            </button>
+          </section>
+        </div>
+      )}
     </section>
   );
 };
