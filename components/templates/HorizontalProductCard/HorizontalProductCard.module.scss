@@ -50,6 +50,10 @@
           display: flex;
           align-items: center;
           gap: 0.5rem;
+
+          .info__text {
+            font-size: a.$small-fs;
+          }
         }
 
         &:hover {
