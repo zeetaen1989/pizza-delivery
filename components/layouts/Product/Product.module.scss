@@ -161,10 +161,16 @@
 
 // ******MEDIA QUERY******
 
+// Media Query for large devices (less than 1024px)
+@include a.media-query(large) {
+  .container {
+    flex-direction: column;
+  }
+}
+
 // Media Query for medium devices (less than 768px)
 @include a.media-query(medium) {
   .container {
-    flex-direction: column;
     margin-top: -1rem;
     padding: 1.5rem;
   }
