@@ -44,8 +44,8 @@ const HorizontalProductCard = ({ pizza }) => {
           <div className={styles.more__info}>
             <Link href={`/product/${pizza._id}`} passHref>
               <figure className={styles.info__icon}>
-                <BsInfoCircleFill />
-                More Info...
+                <BsInfoCircleFill fontSize="0.8rem" />
+                <p className={styles.info__text}>More Info...</p>
               </figure>
             </Link>
           </div>
