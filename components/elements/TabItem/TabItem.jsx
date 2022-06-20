@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { FaCheckCircle } from "react-icons/fa";
 import styles from "./TabItem.module.scss";
 
 const TabItem = ({ id, title, activeTab, setActiveTab }) => {
@@ -8,12 +8,15 @@ const TabItem = ({ id, title, activeTab, setActiveTab }) => {
 
   return (
     <li className={styles.container}>
-      <figure
+      <article
         onClick={handleClick}
         className={activeTab === id ? `${styles.active}` : `${styles.inactive}`}
       >
-        <h1>{title}</h1>
-      </figure>
+        <h1 className={styles.title}>{title}</h1>
+        <figure className={styles.checked__icon}>
+          <FaCheckCircle />
+        </figure>
+      </article>
     </li>
   );
 };
