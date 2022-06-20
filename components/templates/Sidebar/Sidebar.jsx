@@ -5,8 +5,8 @@ const Sidebar = ({
   allCategories,
   filterItemsByCategory,
   filterItemsByPrice,
-  handleChange,
   searchTerm,
+  setSearchTerm,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState(allCategories);
   const [input, setInput] = useState(20);
@@ -20,7 +20,7 @@ const Sidebar = ({
           type="text"
           placeholder="Search..."
           value={searchTerm}
-          onChange={handleChange}
+          onChange={(e) => setSearchTerm(e.target.value)}
         />
       </form>
       <section className={styles.category}>
