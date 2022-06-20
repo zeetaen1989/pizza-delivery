@@ -102,85 +102,80 @@ const Payment = ({ products, total, setActiveTab }) => {
   };
 
   return (
-    <div className={styles.container}>
-      <h1>Payment Details</h1>
-      <div className={styles.content}>
-        <article className={styles.left}>
-          <h1>Your Orders</h1>
-          <hr />
-          {products.length > 0 ? (
-            <div className={styles.list__summary}>
-              {products.map((product) => (
-                <div key={product._id} className={styles.list__items}>
-                  <figure className={styles.item__img}>
-                    <Image
-                      src={product.img}
-                      alt={product.title}
-                      height="50"
-                      width="50"
-                    />
-                  </figure>
-                  <div className={styles.item__info}>
-                    <h3>
-                      {product.title}{" "}
-                      <span style={{ fontSize: "0.8rem" }}>
-                        (
-                        {product.size === 0
-                          ? "Small"
-                          : product.size === 1
-                          ? "Medium"
-                          : "Large"}
-                        )
-                      </span>
-                    </h3>
-                    {product.extraToppings ? (
-                      <>
-                        {product.extraToppings.map((extra) => (
-                          <span key={extra._id} className={styles.extras}>
-                            {extra.text}
-                          </span>
-                        ))}
-                      </>
-                    ) : (
-                      <span className={styles.extras}>No Extra Toppings</span>
-                    )}
-                  </div>
-                  <div className={styles.item__details}>
-                    <span className={styles.price}>
-                      $ {product.price.toFixed(2)}
+    <section className={styles.container}>
+      <article className={styles.left}>
+        <h2>Your Orders</h2>
+        <hr />
+        {products.length > 0 ? (
+          <div className={styles.list__summary}>
+            {products.map((product) => (
+              <div key={product._id} className={styles.list__items}>
+                <figure className={styles.item__img}>
+                  <Image
+                    src={product.img}
+                    alt={product.title}
+                    height="50"
+                    width="50"
+                  />
+                </figure>
+                <div className={styles.item__info}>
+                  <h3>
+                    {product.title}{" "}
+                    <span style={{ fontSize: "0.8rem" }}>
+                      (
+                      {product.size === 0
+                        ? "Small"
+                        : product.size === 1
+                        ? "Medium"
+                        : "Large"}
+                      )
                     </span>
-                    <span>X</span>
-                    <span className={styles.quantity}>{product.count}</span>
-                  </div>
+                  </h3>
+                  {product.extraToppings ? (
+                    <>
+                      {product.extraToppings.map((extra) => (
+                        <span key={extra._id} className={styles.extras}>
+                          {extra.text}
+                        </span>
+                      ))}
+                    </>
+                  ) : (
+                    <span className={styles.extras}>No Extra Toppings</span>
+                  )}
                 </div>
-              ))}
-            </div>
-          ) : (
-            <div className={styles.list__summary}>
-              <p className={styles.list__summary__empty}>Your Cart Is Empty</p>
-            </div>
-          )}
-        </article>
-        <aside className={styles.right}>
-          <h1>Bill Summary</h1>
-          <hr />
-          <BillSummary products={products} total={total} />
-          <hr />
-          <div>
-            <PayPalScriptProvider
-              options={{
-                "client-id":
-                  "AfVuFJyu4kkvOizInmQWxAao66SNyKl7ztmYgmvX7ixBPWEvv9_5xIgzE9HNjxgsrsx1mN3vX9ExiCjD",
-                components: "buttons",
-                currency: "USD",
-              }}
-            >
-              <ButtonWrapper currency={currency} showSpinner={false} />
-            </PayPalScriptProvider>
+                <div className={styles.item__details}>
+                  <span className={styles.price}>
+                    $ {product.price.toFixed(2)}
+                  </span>
+                  <span>X</span>
+                  <span className={styles.quantity}>{product.count}</span>
+                </div>
+              </div>
+            ))}
           </div>
-        </aside>
-      </div>
-    </div>
+        ) : (
+          <p className={styles.list__summary__empty}>Your Cart Is Empty</p>
+        )}
+      </article>
+      <aside className={styles.right}>
+        <h2>Bill Summary</h2>
+        <hr />
+        <BillSummary products={products} total={total} />
+        <hr />
+        <div>
+          <PayPalScriptProvider
+            options={{
+              "client-id":
+                "AfVuFJyu4kkvOizInmQWxAao66SNyKl7ztmYgmvX7ixBPWEvv9_5xIgzE9HNjxgsrsx1mN3vX9ExiCjD",
+              components: "buttons",
+              currency: "USD",
+            }}
+          >
+            <ButtonWrapper currency={currency} showSpinner={false} />
+          </PayPalScriptProvider>
+        </div>
+      </aside>
+    </section>
   );
 };
 export default Payment;
