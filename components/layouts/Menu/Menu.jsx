@@ -8,10 +8,6 @@ const Menu = ({ pizzaList, allCategories }) => {
   const [menuItems, setMenuItems] = useState(pizzaList);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
-
   const filteredSearch = menuItems.filter((menu) => {
     return menu.title.toLowerCase().includes(searchTerm.toLocaleLowerCase());
   });
@@ -27,9 +23,9 @@ const Menu = ({ pizzaList, allCategories }) => {
 
   const filterItemsByPrice = (price) => {
     if (price === 20) {
-      setMenuItems(pizzaList);
+      setMenuItems(menuItems);
     } else {
-      const newItems = pizzaList.filter((pizza) => pizza.prices[0] <= price);
+      const newItems = menuItems.filter((menu) => menu.prices[0] <= price);
       setMenuItems(newItems);
     }
   };
@@ -46,7 +42,7 @@ const Menu = ({ pizzaList, allCategories }) => {
           allCategories={allCategories}
           filterItemsByCategory={filterItemsByCategory}
           filterItemsByPrice={filterItemsByPrice}
-          handleChange={handleChange}
+          setSearchTerm={setSearchTerm}
           searchTerm={searchTerm}
         />
         <ProductList pizzaList={filteredSearch} />
