@@ -5,7 +5,7 @@ import { addProduct } from "redux/cartRedux";
 import { AddToCartBtn, Ratings } from "@components/elements";
 import styles from "./HorizontalProductCard.module.scss";
 import Link from "next/link";
-import { FaSearch } from "react-icons/fa";
+import { BsInfoCircleFill } from "react-icons/bs";
 
 const HorizontalProductCard = ({ pizza }) => {
   const dispatch = useDispatch();
@@ -25,11 +25,6 @@ const HorizontalProductCard = ({ pizza }) => {
     <section className={styles.container}>
       <figure className={styles.wrapper__img}>
         <Image src={pizza.img} alt={pizza.title} height="300" width="300" />
-        <figcaption className={styles.overlap}>
-          <Link href={`/product/${pizza._id}`} passHref>
-            <FaSearch className={styles.icon} />
-          </Link>
-        </figcaption>
       </figure>
       <section className={styles.info}>
         <h4>{pizza.title}</h4>
@@ -46,6 +41,14 @@ const HorizontalProductCard = ({ pizza }) => {
         </p>
         <article className={styles.btn__cart} onClick={handleAddToCart}>
           <AddToCartBtn text="Add To Cart" />
+          <div className={styles.more__info}>
+            <Link href={`/product/${pizza._id}`} passHref>
+              <figure className={styles.info__icon}>
+                <BsInfoCircleFill />
+                More Info...
+              </figure>
+            </Link>
+          </div>
         </article>
       </section>
     </section>
