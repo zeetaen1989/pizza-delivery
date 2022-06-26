@@ -5,17 +5,17 @@ import Image from "next/image";
 const Register = () => {
   return (
     <section className={styles.container}>
-      <div className={styles.wrapper}>
-        <div className={styles.left}>
+      <section className={styles.wrapper}>
+        <section className={styles.left}>
           <figure className={styles.left__header}>
             <h1>PizzaLand</h1>
           </figure>
           <hr />
-          <div className={styles.left__content}>
+          <article className={styles.left__content}>
             <h2>Create An Account</h2>
             <p>Get access to Exclusive Features by creating an account</p>
             <form>
-              <div className={styles.form__control}>
+              <article className={styles.form__control}>
                 <label htmlFor="name">Name</label>
                 <input
                   type="text"
@@ -23,8 +23,8 @@ const Register = () => {
                   id="name"
                   placeholder="Enter Your Name"
                 />
-              </div>
-              <div className={styles.form__control}>
+              </article>
+              <article className={styles.form__control}>
                 <label htmlFor="email">Email</label>
                 <input
                   type="email"
@@ -32,8 +32,8 @@ const Register = () => {
                   id="email"
                   placeholder="Enter Your Email"
                 />
-              </div>
-              <div className={styles.form__control}>
+              </article>
+              <article className={styles.form__control}>
                 <label htmlFor="password">Password</label>
                 <input
                   name="password"
@@ -41,8 +41,8 @@ const Register = () => {
                   id="password"
                   placeholder="Enter Your Password"
                 />
-              </div>
-              <div className={styles.form__control}>
+              </article>
+              <article className={styles.form__control}>
                 <label htmlFor="confirmPassword">Confirm Password</label>
                 <input
                   name="confirmPassword"
@@ -50,13 +50,13 @@ const Register = () => {
                   id="confirmPassword"
                   placeholder="Confirm Your Password"
                 />
-              </div>
-              <div className={styles.terms}>
+              </article>
+              <article className={styles.terms}>
                 <input type="checkbox" name="register" id="terms" />
                 <label htmlFor="terms">
                   I&apos;ve read and accept the Terms & Conditions
                 </label>
-              </div>
+              </article>
               <a className={styles.btn}>
                 <span className={styles.text}>Register</span>
                 <svg viewBox="0 0 13 10" height="10px" width="15px">
@@ -65,14 +65,14 @@ const Register = () => {
                 </svg>
               </a>
             </form>
-            <div className={styles.bottom__content}>
+            <article className={styles.bottom__content}>
               <p>Already have an account?</p>
               <Link href="/login">
                 <a>Login</a>
               </Link>
-            </div>
-          </div>
-        </div>
+            </article>
+          </article>
+        </section>
         <div className={styles.right}>
           <Image
             src="/images/register-delivery.svg"
@@ -85,7 +85,7 @@ const Register = () => {
             minutes. Moneyback guarantee.
           </p>
         </div>
-      </div>
+      </section>
     </section>
   );
 };

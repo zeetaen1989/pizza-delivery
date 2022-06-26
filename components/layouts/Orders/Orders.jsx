@@ -4,8 +4,10 @@ import styles from "./Orders.module.scss";
 const Orders = ({ order }) => {
   return (
     <section className={styles.container}>
-      <header className={styles.header}>
-        <h1>Thank You for Ordering!!!</h1>
+      <article className={styles.header}>
+        <header>
+          <h1>Thank You for Ordering!!!</h1>
+        </header>
         <p>Your Pizza is getting ready to be delivered...</p>
         <figure>
           <Image
@@ -15,7 +17,7 @@ const Orders = ({ order }) => {
             width="80"
           />
         </figure>
-      </header>
+      </article>
       <section className={styles.content}>
         <table>
           <thead>

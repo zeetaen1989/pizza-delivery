@@ -23,8 +23,8 @@ const AdminLogin = () => {
 
   return (
     <section className={styles.container}>
-      <div className={styles.content}>
-        <h1>Admin Login</h1>
+      <article className={styles.content}>
+        <h2>Admin Login</h2>
         <form>
           <input
             type="text"
@@ -47,7 +47,7 @@ const AdminLogin = () => {
             <span className={styles.error}>Invalid Username or Password</span>
           )}
         </form>
-      </div>
+      </article>
     </section>
   );
 };

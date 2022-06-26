@@ -13,7 +13,7 @@
     border-radius: 1rem;
     padding: 1rem 1.5rem;
 
-    h1 {
+    h2 {
       text-align: center;
       font-size: a.$middle-fs;
     }
@@ -25,17 +25,18 @@
 
       input {
         border: none;
-        border-radius: 0.5rem;
+        border-radius: 0.25rem;
         padding: 0.5rem;
+        width: 15rem;
         background-color: a.$secondary-clr-1;
         color: a.$secondary-clr-3;
         outline: none;
-        font-size: a.$regular-fs;
+        font-size: a.$small-fs;
       }
 
       .btn {
         border: none;
-        border-radius: 0.5rem;
+        border-radius: 0.25rem;
         background-color: a.$secondary-clr-2;
         color: a.$secondary-clr;
         padding: 0.5rem 1rem;

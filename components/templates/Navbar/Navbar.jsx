@@ -32,13 +32,13 @@ const Navbar = () => {
 
   return (
     <header className={styles.container}>
-      <div className={styles.left}>
+      <figure className={styles.left}>
         <FaPhone fontSize="1.5rem" />
-        <div className={styles.left__info}>
+        <figcaption className={styles.left__info}>
           <h1>Order Now!</h1>
           <span>+01 234 567 89</span>
-        </div>
-      </div>
+        </figcaption>
+      </figure>
       <nav className={styles.center} aria-label="primary-navigation">
         <ul>
           {linksLeft.map((link) => (
@@ -60,13 +60,13 @@ const Navbar = () => {
           ))}
         </ul>
       </nav>
-      <div className={styles.right}>
-        <div className={styles.right__account}>
+      <section className={styles.right}>
+        <section className={styles.right__account}>
           <button className={styles.btn__link}>
             <MdAccountCircle className={styles.icon} />
             <MdOutlineKeyboardArrowDown />
           </button>
-          <div className={styles.dropdown__menu}>
+          <article className={styles.dropdown__menu}>
             <div className={styles.triangle}></div>
             <Link href="/login" passHref>
               <a>Login</a>
@@ -75,16 +75,16 @@ const Navbar = () => {
             <Link href="/register" passHref>
               <a>Register</a>
             </Link>
-          </div>
-        </div>
-        <div className={styles.right__cart}>
+          </article>
+        </section>
+        <section className={styles.right__cart}>
           <Link href="/cart" passHref>
             <MdOutlineShoppingCart className={styles.icon} />
           </Link>
           {quantity > 0 && <span className={styles.quantity}>{quantity}</span>}
-        </div>
+        </section>
         {isOpen ? openMenu() : closeMenu()}
-      </div>
+      </section>
     </header>
   );
 };

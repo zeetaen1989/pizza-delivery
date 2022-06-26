@@ -5,29 +5,31 @@ import Image from "next/image";
 const Login = () => {
   return (
     <section className={styles.container}>
-      <div className={styles.wrapper}>
-        <div className={styles.left}>
-          <Image
-            src="/images/login-enjoy.svg"
-            alt="Enjoy"
-            height="500"
-            width="700"
-          />
+      <section className={styles.wrapper}>
+        <section className={styles.left}>
+          <figure>
+            <Image
+              src="/images/login-enjoy.svg"
+              alt="Enjoy"
+              height="500"
+              width="700"
+            />
+          </figure>
           <p>
             Enjoy freshly made hot and tasty pizza with your loved ones and
             family.
           </p>
-        </div>
-        <div className={styles.right}>
+        </section>
+        <section className={styles.right}>
           <figure className={styles.right__header}>
             <h1>PizzaLand</h1>
           </figure>
           <hr />
-          <div className={styles.right__content}>
+          <article className={styles.right__content}>
             <h2>Log In</h2>
             <p>Welcome to Pizzaland. Please Log In to access your profile.</p>
             <form>
-              <div className={styles.form__control}>
+              <article className={styles.form__control}>
                 <label htmlFor="email">Email</label>
                 <input
                   type="email"
@@ -35,8 +37,8 @@ const Login = () => {
                   id="email"
                   placeholder="Enter Your Email"
                 />
-              </div>
-              <div className={styles.form__control}>
+              </article>
+              <article className={styles.form__control}>
                 <label htmlFor="password">Password</label>
                 <input
                   type="password"
@@ -44,14 +46,14 @@ const Login = () => {
                   id="password"
                   placeholder="Enter Your Password"
                 />
-              </div>
+              </article>
               <Link href="#">
                 <a className={styles.forgot}>Forgot Password?</a>
               </Link>
-              <div className={styles.remember}>
+              <article className={styles.remember}>
                 <input type="checkbox" name="login" id="remember" />
                 <label htmlFor="remember">Remember Me</label>
-              </div>
+              </article>
               <a className={styles.btn}>
                 <span className={styles.text}>Login</span>
                 <svg viewBox="0 0 13 10" height="10px" width="15px">
@@ -60,15 +62,15 @@ const Login = () => {
                 </svg>
               </a>
             </form>
-            <div className={styles.bottom__content}>
+            <article className={styles.bottom__content}>
               <p>Don&apos;t have an account?</p>
               <Link href="/register">
                 <a>Register</a>
               </Link>
-            </div>
-          </div>
-        </div>
-      </div>
+            </article>
+          </article>
+        </section>
+      </section>
     </section>
   );
 };
