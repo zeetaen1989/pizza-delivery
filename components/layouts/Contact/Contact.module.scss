@@ -32,13 +32,29 @@
           display: grid;
           place-items: center;
           font-size: 1.5rem;
+          transition: all 0.25s ease-in-out;
+
+          &:hover {
+            background-color: a.$primary-clr-1;
+            color: a.$secondary-clr-2;
+          }
         }
       }
 
       .social__links {
         display: flex;
+        justify-content: center;
         gap: 1rem;
         font-size: 1.5rem;
+
+        a {
+          transition: all 0.25s ease-in-out;
+
+          &:hover {
+            color: a.$secondary-clr-2;
+            transform: translateY(-3px);
+          }
+        }
       }
     }
 
