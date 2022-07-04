@@ -1,13 +1,16 @@
+import { useId } from "react";
 import { FaPhone, FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import { MdMail, MdLocationPin } from "react-icons/md";
 import { Header } from "@components/elements";
 import styles from "./Contact.module.scss";
 
 const Contact = () => {
+  const id = useId();
+
   return (
     <section className={styles.container}>
       <Header title="Contact Us" subtitle="Get In Touch With Us" />
-      <div className={styles.container__contact}>
+      <section className={styles.container__contact}>
         <article className={styles.left}>
           <figure>
             <div className={styles.icons}>
@@ -34,7 +37,7 @@ const Contact = () => {
             </figcaption>
           </figure>
           <h1>Follow Us</h1>
-          <div className={styles.social__links}>
+          <figure className={styles.social__links}>
             <a
               href="https://www.facebook.com/"
               target="_blank"
@@ -56,49 +59,49 @@ const Contact = () => {
             >
               <FaInstagram />
             </a>
-          </div>
+          </figure>
         </article>
         <article className={styles.right}>
           <h1>Contact Us</h1>
           <form>
-            <div className={styles.form__control}>
-              <label htmlFor="fullName">Full Name</label>
+            <article className={styles.form__control}>
+              <label htmlFor={`${id}-fullName`}>Full Name</label>
               <input
+                id={`${id}-fullName`}
                 type="text"
                 name="fullName"
-                id="fullName"
                 placeholder="Enter Your Full Name"
               />
-            </div>
-            <div className={styles.form__control}>
-              <label htmlFor="email">Email</label>
+            </article>
+            <article className={styles.form__control}>
+              <label htmlFor={`${id}-email`}>Email</label>
               <input
+                id={`${id}-email`}
                 type="email"
                 name="email"
-                id="email"
                 placeholder="Enter Your Email Address"
               />
-            </div>
-            <div className={styles.form__control}>
-              <label htmlFor="phone">Phone Number</label>
+            </article>
+            <article className={styles.form__control}>
+              <label htmlFor={`${id}-phone`}>Phone Number</label>
               <input
+                id={`${id}-phone`}
                 type="tel"
                 name="phone"
-                id="phone"
                 placeholder="Enter Your Phone Number"
               />
-            </div>
-            <div className={styles.form__control}>
-              <label htmlFor="message">Message</label>
+            </article>
+            <article className={styles.form__control}>
+              <label htmlFor={`${id}-message`}>Message</label>
               <textarea
+                id={`${id}-message`}
                 type="text"
-                id="message"
                 placeholder="Write Your Message"
               />
-            </div>
+            </article>
           </form>
         </article>
-      </div>
+      </section>
     </section>
   );
 };
