@@ -1,8 +1,11 @@
 import Link from "next/link";
-import styles from "./Register.module.scss";
 import Image from "next/image";
+import { useId } from "react";
+import styles from "./Register.module.scss";
 
 const Register = () => {
+  const id = useId();
+
   return (
     <section className={styles.container}>
       <section className={styles.wrapper}>
@@ -16,44 +19,46 @@ const Register = () => {
             <p>Get access to Exclusive Features by creating an account</p>
             <form>
               <article className={styles.form__control}>
-                <label htmlFor="name">Name</label>
+                <label htmlFor={`${id}-name`}>Name</label>
                 <input
+                  id={`${id}-name`}
                   type="text"
                   name="name"
-                  id="name"
                   placeholder="Enter Your Name"
                 />
               </article>
               <article className={styles.form__control}>
-                <label htmlFor="email">Email</label>
+                <label htmlFor={`${id}-email`}>Email</label>
                 <input
+                  id={`${id}-email`}
                   type="email"
                   name="email"
-                  id="email"
                   placeholder="Enter Your Email"
                 />
               </article>
               <article className={styles.form__control}>
-                <label htmlFor="password">Password</label>
+                <label htmlFor={`${id}-password`}>Password</label>
                 <input
+                  id={`${id}-password`}
                   name="password"
                   type="password"
-                  id="password"
                   placeholder="Enter Your Password"
                 />
               </article>
               <article className={styles.form__control}>
-                <label htmlFor="confirmPassword">Confirm Password</label>
+                <label htmlFor={`${id}-confirmPassword`}>
+                  Confirm Password
+                </label>
                 <input
+                  id={`${id}-confirmPassword`}
                   name="confirmPassword"
                   type="password"
-                  id="confirmPassword"
                   placeholder="Confirm Your Password"
                 />
               </article>
               <article className={styles.terms}>
-                <input type="checkbox" name="register" id="terms" />
-                <label htmlFor="terms">
+                <input type="checkbox" name="terms" id={`${id}-terms`} />
+                <label htmlFor={`${id}-terms`}>
                   I&apos;ve read and accept the Terms & Conditions
                 </label>
               </article>
