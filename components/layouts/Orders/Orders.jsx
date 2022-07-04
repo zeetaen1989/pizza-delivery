@@ -5,9 +5,7 @@ const Orders = ({ order }) => {
   return (
     <section className={styles.container}>
       <article className={styles.header}>
-        <header>
-          <h1>Thank You for Ordering!!!</h1>
-        </header>
+        <h1>Thank You for Ordering!!!</h1>
         <p>Your Pizza is getting ready to be delivered...</p>
         <figure>
           <Image
@@ -42,9 +40,9 @@ const Orders = ({ order }) => {
           </tbody>
         </table>
       </section>
-      <footer className={styles.footer}>
+      <article className={styles.footer}>
         <p>We hope you enjoy your delicious pizza with your loved ones...</p>
-      </footer>
+      </article>
     </section>
   );
 };
