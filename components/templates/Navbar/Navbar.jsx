@@ -16,7 +16,7 @@ import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const quantity = useSelector((state) => state.cart.quantity);
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -81,7 +81,9 @@ const Navbar = () => {
           <Link href="/cart" passHref>
             <MdOutlineShoppingCart className={styles.icon} />
           </Link>
-          {quantity > 0 && <span className={styles.quantity}>{quantity}</span>}
+          {totalQuantity > 0 && (
+            <span className={styles.quantity}>{totalQuantity}</span>
+          )}
         </section>
         {isOpen ? openMenu() : closeMenu()}
       </section>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { FaSearch } from "react-icons/fa";
 
-import { addProduct } from "redux/cartRedux";
+import { addProduct } from "redux/cartSlice";
 import { Ratings, AddToCartBtn } from "@components/elements";
 import styles from "./ProductCard.module.scss";
 
@@ -16,7 +16,8 @@ const ProductCard = ({ pizza }) => {
         ...pizza,
         price: pizza.prices[0],
         size: 0,
-        count: 1,
+        quantity: 1,
+        // totalPrice: pizza.prices[0] * quantity,
       })
     );
   };
@@ -24,7 +25,13 @@ const ProductCard = ({ pizza }) => {
   return (
     <section className={styles.container}>
       <figure className={styles.wrapper__img}>
-        <Image src={pizza.img} alt={pizza.title} height="200" width="200" />
+        <Image
+          src={pizza.img}
+          alt={pizza.title}
+          height="200"
+          width="200"
+          priority
+        />
         <figcaption className={styles.overlap}>
           <Link href={`/product/${pizza._id}`} passHref>
             <FaSearch className={styles.icon} />

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useDispatch } from "react-redux";
 
-import { addProduct } from "redux/cartRedux";
+import { addProduct } from "redux/cartSlice";
 import { AddToCartBtn, Ratings } from "@components/elements";
 import styles from "./HorizontalProductCard.module.scss";
 import Link from "next/link";
