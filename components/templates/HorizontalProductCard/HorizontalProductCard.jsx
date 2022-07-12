@@ -1,11 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useDispatch } from "react-redux";
 
 import { addProduct } from "redux/cartSlice";
 import { AddToCartBtn, Ratings } from "@components/elements";
 import styles from "./HorizontalProductCard.module.scss";
-import Link from "next/link";
-import { BsInfoCircleFill } from "react-icons/bs";
 
 const HorizontalProductCard = ({ pizza }) => {
   const dispatch = useDispatch();
@@ -33,22 +32,17 @@ const HorizontalProductCard = ({ pizza }) => {
         <p className={styles.info__reviews}>
           <a href="#">({pizza.reviews} Reviews)</a>
         </p>
-        <p className={styles.desc}>
+        <p className={styles.desc_wrapper}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Exercitationem quibusdam doloremque cumque qui, nulla dicta nesciunt
           voluptatibus ab magnam hic facere dolor voluptates corrupti id
-          delectus facilis explicabo veniam optio.
+          delectus facilis explicabo veniam optio.&nbsp;
+          <Link href={`/product/${pizza._id}`} passHref>
+            <a className={styles.info__text}>More Info...</a>
+          </Link>
         </p>
         <article className={styles.btn__cart} onClick={handleAddToCart}>
           <AddToCartBtn text="Add To Cart" />
-          <div className={styles.more__info}>
-            <Link href={`/product/${pizza._id}`} passHref>
-              <figure className={styles.info__icon}>
-                <BsInfoCircleFill fontSize="0.8rem" />
-                <p className={styles.info__text}>More Info...</p>
-              </figure>
-            </Link>
-          </div>
         </article>
       </section>
     </section>

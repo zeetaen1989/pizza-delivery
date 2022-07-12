@@ -28,8 +28,21 @@
       color: a.$primary-clr-5;
     }
 
-    .desc {
+    .desc_wrapper {
       margin-top: 0.5rem;
+
+      .info__text {
+        text-decoration: underline;
+        color: a.$secondary-clr-3;
+        background-color: a.$primary-clr-1;
+        padding: 0rem 0.5rem;
+        border-radius: 0.25rem;
+        transition: a.$transition-ease;
+
+        &:hover {
+          color: a.$primary-clr-3;
+        }
+      }
     }
 
     .btn__cart {
@@ -38,29 +51,6 @@
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-
-      .more__info {
-        background-color: a.$primary-clr-1;
-        padding: 0rem 0.5rem;
-        border-radius: 0.25rem;
-        cursor: pointer;
-        transition: a.$transition-ease;
-
-        .info__icon {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-
-          .info__text {
-            font-size: a.$small-fs;
-          }
-        }
-
-        &:hover {
-          background-color: a.$primary-clr-3;
-          color: a.$primary-clr;
-        }
-      }
     }
   }
 }
