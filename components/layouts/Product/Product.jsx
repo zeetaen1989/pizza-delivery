@@ -14,20 +14,20 @@ import styles from "./Product.module.scss";
 
 const Product = ({ pizza }) => {
   const dispatch = useDispatch();
-  const [count, setCount] = useState(1);
+  const [quantity, setQuantity] = useState(1);
   const [price, setPrice] = useState(pizza.prices[0]);
   const [size, setSize] = useState(0);
   const [extraToppings, setExtraToppings] = useState([]);
 
   const handleAdd = () => {
-    setCount(count + 1);
+    setQuantity(quantity + 1);
   };
 
   const handleMinus = () => {
-    if (count > 1) {
-      setCount(count - 1);
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
     } else {
-      setCount(1);
+      setQuantity(1);
     }
   };
 
@@ -56,7 +56,16 @@ const Product = ({ pizza }) => {
   };
 
   const handleAddToCart = () => {
-    dispatch(addProduct({ ...pizza, price, size, extraToppings, count }));
+    dispatch(
+      addProduct({
+        ...pizza,
+        price,
+        size,
+        extraToppings,
+        quantity,
+        // totalPrice: price * quantity,
+      })
+    );
   };
 
   return (
@@ -140,9 +149,9 @@ const Product = ({ pizza }) => {
               />
               <span
                 className={styles.count__num}
-                onChange={(e) => setCount(e.target.value)}
+                onChange={(e) => setQuantity(e.target.value)}
               >
-                {count}
+                {quantity}
               </span>
               <MdAddCircleOutline
                 className={styles.count__btn}

@@ -3,14 +3,11 @@ import {
   MdAddCircleOutline,
   MdOutlineRemoveCircleOutline,
 } from "react-icons/md";
-import { useDispatch } from "react-redux";
-import { decreaseProduct } from "redux/cartRedux";
 
 import styles from "./Counter.module.scss";
 
-const Counter = ({ count }) => {
-  // const dispatch = useDispatch();
-  const [counter, setCounter] = useState(1);
+const Counter = ({ quantity }) => {
+  const [counter, setCounter] = useState(quantity);
 
   const handleAdd = () => {
     setCounter(counter + 1);
@@ -19,7 +16,6 @@ const Counter = ({ count }) => {
   const handleMinus = () => {
     if (counter > 1) {
       setCounter(counter - 1);
-      // dispatch(decreaseProduct(count._id));
     } else {
       setCounter(1);
     }
@@ -35,7 +31,7 @@ const Counter = ({ count }) => {
         className={styles.count__num}
         onChange={(e) => setCounter(e.target.value)}
       >
-        {count}
+        {counter}
       </span>
       <MdAddCircleOutline className={styles.count__btn} onClick={handleAdd} />
     </section>

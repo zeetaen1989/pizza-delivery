@@ -3,11 +3,12 @@ import { useSelector } from "react-redux";
 
 import { CartItems, CustomerInfo, Payment } from "@components/templates";
 import { TabContent, TabItem } from "@components/elements";
-import { selectAllCart } from "redux/cartRedux";
 import styles from "./Cart.module.scss";
 
 const Cart = () => {
-  const { products, total } = useSelector(selectAllCart);
+  const products = useSelector((state) => state.cart.products);
+  const totalAmount = useSelector((state) => state.cart.totalAmount);
+
   const [activeTab, setActiveTab] = useState("1");
 
   return (
@@ -39,21 +40,17 @@ const Cart = () => {
           <TabContent id="1" activeTab={activeTab}>
             <CartItems
               products={products}
-              total={total}
+              totalAmount={totalAmount}
               setActiveTab={setActiveTab}
             />
           </TabContent>
           <TabContent id="2" activeTab={activeTab}>
-            <CustomerInfo
-              products={products}
-              total={total}
-              setActiveTab={setActiveTab}
-            />
+            <CustomerInfo setActiveTab={setActiveTab} />
           </TabContent>
           <TabContent id="3" activeTab={activeTab}>
             <Payment
               products={products}
-              total={total}
+              totalAmount={totalAmount}
               setActiveTab={setActiveTab}
             />
           </TabContent>

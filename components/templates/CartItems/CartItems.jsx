@@ -1,14 +1,15 @@
 import Image from "next/image";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ImBin } from "react-icons/im";
 
 import { BillSummary, Counter, OrderBtn } from "@components/elements";
-import { removeProduct } from "redux/cartRedux";
+import { removeProduct } from "redux/cartSlice";
 import styles from "./CartItems.module.scss";
 
-const CartItems = ({ products, total, setActiveTab }) => {
+const CartItems = ({ products, totalAmount, setActiveTab }) => {
   const dispatch = useDispatch();
+  // const totalPrice = useSelector((state) => state.cart.totalPrice);
   const [list, setList] = useState(products);
 
   const handleRemove = (id) => {
@@ -68,10 +69,10 @@ const CartItems = ({ products, total, setActiveTab }) => {
                     <td>$ {product.price.toFixed(2)}</td>
                     <td>
                       <div className={styles.counter}>
-                        <Counter count={product.count} />
+                        <Counter quantity={product.quantity} />
                       </div>
                     </td>
-                    <td>$ {(product.price * product.count).toFixed(2)}</td>
+                    <td>$ {(product.price * product.quantity).toFixed(2)}</td>
                     <td>
                       <ImBin
                         className={styles.bin}
@@ -87,7 +88,7 @@ const CartItems = ({ products, total, setActiveTab }) => {
             <article className={styles.right__content}>
               <h1>Bill Summary</h1>
               <hr />
-              <BillSummary products={products} total={total} />
+              <BillSummary products={products} totalAmount={totalAmount} />
               <button className={styles.btn} onClick={() => setActiveTab("2")}>
                 Checkout Now
                 <figure className={styles.icon}>

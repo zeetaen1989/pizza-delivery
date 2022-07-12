@@ -1,20 +1,20 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { calculateTotals } from "redux/cartRedux";
+import { calculateTotals } from "redux/cartSlice";
 import styles from "./BillSummary.module.scss";
 
-const BillSummary = ({ products, total }) => {
+const BillSummary = ({ products, totalAmount }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(calculateTotals());
   }, [products, dispatch]);
 
-  let noCharge = (0.0).toFixed(2);
-  let fixedDeliveryCharge = (5.0).toFixed(2);
+  let noCharge = 0;
+  let fixedDeliveryCharge = 5;
   let deliveryCharge, extraCharge;
 
-  if (total > 50) {
+  if (totalAmount > 50) {
     deliveryCharge = "FREE";
     extraCharge = 0;
   } else {
@@ -26,11 +26,15 @@ const BillSummary = ({ products, total }) => {
     <div className={styles.container}>
       <div className={styles.summary}>
         <p>Subtotal:</p>
-        <span>$ {total.toFixed(2)}</span>
+        <span>$ {totalAmount.toFixed(2)}</span>
       </div>
       <div className={styles.summary}>
         <p>Delivery Charge:</p>
-        {total > 50 ? <span>FREE!!!</span> : <span>$ {deliveryCharge}</span>}
+        {totalAmount > 50 ? (
+          <span>FREE!!!</span>
+        ) : (
+          <span>$ {deliveryCharge}</span>
+        )}
       </div>
       <div className={styles.summary}>
         <p>Discount:</p>
@@ -45,7 +49,7 @@ const BillSummary = ({ products, total }) => {
       <hr />
       <div className={styles.summary}>
         <p>Total:</p>
-        <span>$ {(total + extraCharge).toFixed(2)}</span>
+        <span>$ {(totalAmount + extraCharge).toFixed(2)}</span>
       </div>
     </div>
   );

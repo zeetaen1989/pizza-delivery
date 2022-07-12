@@ -9,18 +9,18 @@ import {
   usePayPalScriptReducer,
 } from "@paypal/react-paypal-js";
 
-import { resetCart } from "redux/cartRedux";
+import { resetCart } from "redux/cartSlice";
 import { BillSummary } from "@components/elements";
 import styles from "./Payment.module.scss";
 
-const Payment = ({ products, total, setActiveTab }) => {
+const Payment = ({ products, totalAmount }) => {
   const router = useRouter();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
 
   let deliveryCharge, extraCharge;
 
-  if (total > 50) {
+  if (totalAmount > 50) {
     deliveryCharge = 0;
     extraCharge = 0;
   } else {
@@ -28,7 +28,7 @@ const Payment = ({ products, total, setActiveTab }) => {
     extraCharge = deliveryCharge;
   }
 
-  const amount = cart.total + extraCharge;
+  const amount = cart.totalAmount + extraCharge;
   const currency = "USD";
   const style = { layout: "vertical" };
 
@@ -91,7 +91,7 @@ const Payment = ({ products, total, setActiveTab }) => {
               createOrder({
                 customer: shipping.name.full_name,
                 address: shipping.address.address_line_1,
-                total: cart.total + extraCharge,
+                totalAmount: cart.totalAmount + extraCharge,
                 method: 1,
               });
             });
@@ -148,7 +148,7 @@ const Payment = ({ products, total, setActiveTab }) => {
                     $ {product.price.toFixed(2)}
                   </span>
                   <span>X</span>
-                  <span className={styles.quantity}>{product.count}</span>
+                  <span className={styles.quantity}>{product.quantity}</span>
                 </div>
               </div>
             ))}
@@ -160,7 +160,7 @@ const Payment = ({ products, total, setActiveTab }) => {
       <aside className={styles.right}>
         <h2>Bill Summary</h2>
         <hr />
-        <BillSummary products={products} total={total} />
+        <BillSummary products={products} totalAmount={totalAmount} />
         <hr />
         <div>
           <PayPalScriptProvider
