@@ -9,18 +9,25 @@ const ProductList = ({ pizzaList }) => {
   const [sort, setSort] = useState("lowest");
   const [isGrid, setIsGrid] = useState(true);
 
-  if (sort === "lowest") {
-    pizzaList.sort((a, b) => a.prices[0] - b.prices[0]);
-  } else if (sort === "highest") {
-    pizzaList.sort((a, b) => b.prices[0] - a.prices[0]);
-  } else if (sort === "ascending") {
-    pizzaList.sort((a, b) => a.title.localeCompare(b.title));
-  } else if (sort === "descending") {
-    pizzaList.sort((a, b) => b.title.localeCompare(a.title));
-  } else if (sort === "high") {
-    pizzaList.sort((a, b) => b.rating - a.rating);
-  } else {
-    pizzaList.sort((a, b) => a.rating - b.rating);
+  switch (sort) {
+    case "highest":
+      pizzaList.sort((a, b) => b.prices[0] - a.prices[0]);
+      break;
+    case "ascending":
+      pizzaList.sort((a, b) => a.title.localeCompare(b.title));
+      break;
+    case "descending":
+      pizzaList.sort((a, b) => b.title.localeCompare(a.title));
+      break;
+    case "high":
+      pizzaList.sort((a, b) => b.rating - a.rating);
+      break;
+    case "low":
+      pizzaList.sort((a, b) => a.rating - b.rating);
+      break;
+    default:
+      pizzaList.sort((a, b) => a.prices[0] - b.prices[0]);
+      break;
   }
 
   return (
