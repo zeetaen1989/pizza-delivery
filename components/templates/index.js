@@ -13,3 +13,4 @@ export { default as Payment } from "./Payment/Payment";
 export { default as Delivery } from "./Delivery/Delivery";
 export { default as Sidebar } from "./Sidebar/Sidebar";
 export { default as HorizontalProductCard } from "./HorizontalProductCard/HorizontalProductCard";
+export { default as Reviews } from "./Reviews/Reviews";
