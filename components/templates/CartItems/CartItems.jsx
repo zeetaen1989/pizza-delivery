@@ -9,7 +9,7 @@ import styles from "./CartItems.module.scss";
 
 const CartItems = ({ products, totalAmount, setActiveTab }) => {
   const dispatch = useDispatch();
-  // const totalPrice = useSelector((state) => state.cart.totalPrice);
+  const totalPrice = useSelector((state) => state.cart.totalPrice);
   const [list, setList] = useState(products);
 
   const handleRemove = (id) => {
@@ -69,10 +69,17 @@ const CartItems = ({ products, totalAmount, setActiveTab }) => {
                     <td>$ {product.price.toFixed(2)}</td>
                     <td>
                       <div className={styles.counter}>
-                        <Counter quantity={product.quantity} />
+                        <Counter
+                          quantity={product.quantity}
+                          price={product.price}
+                        />
                       </div>
                     </td>
-                    <td>$ {(product.price * product.quantity).toFixed(2)}</td>
+                    <td>
+                      {(product.price * product.quantity + totalPrice).toFixed(
+                        2
+                      )}
+                    </td>
                     <td>
                       <ImBin
                         className={styles.bin}
