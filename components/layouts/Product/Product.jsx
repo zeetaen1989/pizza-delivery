@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Head from "next/head";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addProduct } from "redux/cartSlice";
@@ -63,7 +62,7 @@ const Product = ({ pizza }) => {
         size,
         extraToppings,
         quantity,
-        // totalPrice: price * quantity,
+        totalPrice: price * quantity,
       })
     );
   };

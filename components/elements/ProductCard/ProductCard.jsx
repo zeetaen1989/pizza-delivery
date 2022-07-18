@@ -17,7 +17,7 @@ const ProductCard = ({ pizza }) => {
         price: pizza.prices[0],
         size: 0,
         quantity: 1,
-        // totalPrice: pizza.prices[0] * quantity,
+        totalPrice: pizza.prices[0] * 1,
       })
     );
   };
