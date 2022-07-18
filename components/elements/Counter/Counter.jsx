@@ -1,21 +1,26 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import {
   MdAddCircleOutline,
   MdOutlineRemoveCircleOutline,
 } from "react-icons/md";
 
+import { addPrice } from "redux/cartSlice";
 import styles from "./Counter.module.scss";
 
-const Counter = ({ quantity }) => {
+const Counter = ({ quantity, price }) => {
+  const dispatch = useDispatch();
   const [counter, setCounter] = useState(quantity);
 
   const handleAdd = () => {
     setCounter(counter + 1);
+    dispatch(addPrice(price));
   };
 
   const handleMinus = () => {
     if (counter > 1) {
       setCounter(counter - 1);
+      dispatch(addPrice(-price));
     } else {
       setCounter(1);
     }
