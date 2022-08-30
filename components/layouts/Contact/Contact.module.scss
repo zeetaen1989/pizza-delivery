@@ -72,11 +72,13 @@
     .right {
       @include a.flex-direction-column;
       flex: 2;
-      box-shadow: a.$secondary-box-shadow;
-      border-radius: 1rem;
       justify-content: center;
       align-items: center;
       padding: 2rem;
+
+      .header {
+        font-size: a.$regular-fs;
+      }
 
       form {
         @include a.flex-direction-column;
@@ -109,7 +111,7 @@
         }
 
         .btn {
-          margin: 0 auto;
+          margin: 1rem auto;
           width: 12.5rem;
           padding: 0.75rem 1rem;
           text-transform: uppercase;
