@@ -99,6 +99,9 @@ const Contact = () => {
                 placeholder="Write Your Message"
               />
             </article>
+            <button className={styles.btn} type="submit">
+              Send Message
+            </button>
           </form>
         </article>
       </section>

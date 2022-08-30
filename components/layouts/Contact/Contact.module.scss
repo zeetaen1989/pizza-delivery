@@ -69,7 +69,6 @@
 
       form {
         @include a.flex-direction-column;
-
         gap: 1rem;
         margin-top: 1rem;
 
@@ -95,6 +94,26 @@
 
           textarea {
             height: 10rem;
+          }
+        }
+
+        .btn {
+          margin: 0 auto;
+          width: 12.5rem;
+          padding: 0.75rem 1rem;
+          text-transform: uppercase;
+          font-size: a.$small-fs;
+          font-weight: a.$bold-fw;
+          color: a.$primary-clr-1;
+          background-color: a.$primary-clr-3;
+          border: none;
+          border-radius: 0.25rem;
+          cursor: pointer;
+          transition: a.$transition-ease;
+
+          &:hover {
+            color: a.$primary-clr;
+            background-color: a.$primary-clr-5;
           }
         }
       }
