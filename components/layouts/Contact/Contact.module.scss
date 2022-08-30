@@ -13,9 +13,8 @@
     .left {
       flex: 1.5;
       display: grid;
-      place-items: center;
-      justify-content: center;
-      padding: 10rem 0rem;
+      place-content: center;
+      gap: 2rem;
       background-color: a.$primary-clr-1;
       border-radius: 1rem 0 0 1rem;
 
