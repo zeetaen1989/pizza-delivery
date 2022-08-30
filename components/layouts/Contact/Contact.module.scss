@@ -4,19 +4,20 @@
   margin-top: 2rem;
 
   &__contact {
-    padding: 2rem;
     display: flex;
-    gap: 2rem;
+    margin: 2rem 10rem;
+    box-shadow: a.$secondary-box-shadow;
+    border-radius: 1rem;
+
 
     .left {
       flex: 1.5;
-      box-shadow: a.$secondary-box-shadow;
-      border-radius: 1rem;
       display: grid;
       place-items: center;
       justify-content: center;
-      gap: 2rem;
-      padding: 8rem 0rem;
+      padding: 10rem 0rem;
+      background-color: a.$primary-clr-1;
+      border-radius: 1rem 0 0 1rem;
 
       figure {
         display: flex;
