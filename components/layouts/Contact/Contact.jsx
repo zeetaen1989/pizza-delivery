@@ -101,7 +101,11 @@ const Contact = () => {
                 placeholder="Write Your Message"
               />
             </article>
-            <button className={styles.btn} type="submit">
+            <button
+              className={styles.btn}
+              type="submit"
+              onClick={(e) => e.preventDefault()}
+            >
               Send Message
             </button>
           </form>
