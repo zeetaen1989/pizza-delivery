@@ -36,33 +36,35 @@ const Contact = () => {
               <span>123 Main Street, New York</span>
             </figcaption>
           </figure>
-          <h1>Follow Us</h1>
-          <figure className={styles.social__links}>
-            <a
-              href="https://www.facebook.com/"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <FaFacebook />
-            </a>
-            <a
-              href="https://www.twitter.com/"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <FaTwitter />
-            </a>
-            <a
-              href="https://www.instagram.com/"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <FaInstagram />
-            </a>
-          </figure>
+          <article className={styles.bottom}>
+            <h1>Follow Us</h1>
+            <figure className={styles.social__links}>
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <FaFacebook />
+              </a>
+              <a
+                href="https://www.twitter.com/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <FaTwitter />
+              </a>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <FaInstagram />
+              </a>
+            </figure>
+          </article>
         </article>
         <article className={styles.right}>
-          <h1>Contact Us</h1>
+          <h1 className={styles.header}>Contact Us</h1>
           <form>
             <article className={styles.form__control}>
               <label htmlFor={`${id}-fullName`}>Full Name</label>
