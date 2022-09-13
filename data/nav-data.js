@@ -19,7 +19,7 @@ export const linksRight = [
   },
   {
     id: 2,
-    url: "/contact",
+    url: "/contact-us",
     text: "Contact Us",
   },
 ];
