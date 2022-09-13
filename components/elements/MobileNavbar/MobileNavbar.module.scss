@@ -1,0 +1,22 @@
+@use "@styles/abstracts"as a;
+
+.mobile__container {
+  position: relative;
+
+  .mobile__menu {
+    display: none;
+    cursor: pointer;
+  }
+}
+
+//********MEDIA QUERY********
+
+// Media Query for small devices (less than 1024px)
+@include a.media-query(small) {
+  .mobile__container {
+    .mobile__menu {
+      display: block;
+      font-size: 1.5rem;
+    }
+  }
+}

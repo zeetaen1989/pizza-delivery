@@ -1,0 +1,25 @@
+@use "@styles/abstracts"as a;
+
+.mobile__nav {
+  position: absolute;
+  right: -0.82rem;
+  top: 3rem;
+  z-index: 1;
+  background-color: a.$secondary-clr-1;
+  width: 100vw;
+
+  .mobile__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0;
+
+    .mobile__link {
+      text-align: center;
+
+      &:hover {
+        color: a.$secondary-clr-3;
+      }
+    }
+  }
+}
