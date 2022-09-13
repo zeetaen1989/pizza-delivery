@@ -1,34 +1,18 @@
 import Link from "next/link";
-import { useState } from "react";
 import { useSelector } from "react-redux";
 import {
   MdOutlineShoppingCart,
-  MdMenuOpen,
   MdAccountCircle,
-  MdRestaurantMenu,
   MdOutlineKeyboardArrowDown,
 } from "react-icons/md";
 import { FaPhone } from "react-icons/fa";
 
 import { linksLeft, linksRight } from "@data/nav-data";
-import { ActiveLink } from "@components/elements";
+import { ActiveLink, MobileNavbar } from "@components/elements";
 import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const closeMenu = () => (
-    <MdMenuOpen className={styles.right__menu} onClick={toggleMenu} />
-  );
-
-  const openMenu = () => (
-    <MdRestaurantMenu className={styles.right__menu} onClick={toggleMenu} />
-  );
 
   return (
     <header className={styles.container}>
@@ -85,7 +69,7 @@ const Navbar = () => {
             <span className={styles.quantity}>{totalQuantity}</span>
           )}
         </section>
-        {isOpen ? openMenu() : closeMenu()}
+        <MobileNavbar />
       </section>
     </header>
   );
