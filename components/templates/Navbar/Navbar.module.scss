@@ -151,11 +151,6 @@
         user-select: none;
       }
     }
-
-    &__menu {
-      display: none;
-      cursor: pointer;
-    }
   }
 }
 
@@ -213,11 +208,6 @@
 
     .right {
       gap: 0.2rem;
-
-      &__menu {
-        display: block;
-        font-size: 1.5rem;
-      }
 
       &__icon {
         font-size: 1.5rem;
