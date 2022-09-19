@@ -1,15 +1,86 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useId } from "react";
+import { useRef, useState, useEffect, useId } from "react";
 import styles from "./Register.module.scss";
+import { FaCheck, FaInfoCircle, FaTimes } from "react-icons/fa";
+
+const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
+const EMAIL_REGEX =
+  /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
 const Register = () => {
   const id = useId();
+
+  const userRef = useRef();
+  const emailRef = useRef();
+  const errorRef = useRef();
+
+  const [user, setUser] = useState("");
+  const [validName, setValidName] = useState(false);
+  const [userFocus, setUserFocus] = useState(false);
+
+  const [email, setEmail] = useState("");
+  const [validEmail, setValidEmail] = useState(false);
+  const [emailFocus, setEmailFocus] = useState(false);
+
+  const [pwd, setPwd] = useState("");
+  const [validPwd, setValidPwd] = useState(false);
+  const [pwdFocus, setPwdFocus] = useState(false);
+
+  const [matchPwd, setMatchPwd] = useState("");
+  const [validMatch, setValidMatch] = useState(false);
+  const [matchFocus, setMatchFocus] = useState(false);
+
+  const [errorMessage, setErrorMessage] = useState("");
+  const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+    userRef.current;
+  }, []);
+
+  useEffect(() => {
+    const result = USER_REGEX.test(user);
+    setValidName(result);
+  }, [user]);
+
+  useEffect(() => {
+    const result = EMAIL_REGEX.test(email);
+    setValidEmail(result);
+  }, [email]);
+
+  useEffect(() => {
+    const result = PWD_REGEX.test(pwd);
+    setValidPwd(result);
+
+    const match = pwd === matchPwd;
+    setValidMatch(match);
+  }, [pwd, matchPwd]);
+
+  useEffect(() => {
+    setErrorMessage("");
+  }, [user, pwd, matchPwd]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const v1 = USER_REGEX.test(user);
+    const v2 = PWD_REGEX.test(pwd);
+    if (!v1 || !v2) {
+      setErrorMessage("Invalid Entry!!!");
+      return;
+    }
+  };
 
   return (
     <section className={styles.container}>
       <section className={styles.wrapper}>
         <section className={styles.left}>
+          <p
+            ref={errorRef}
+            className={`${errorMessage ? styles.error__msg : styles.offscreen}`}
+            aria-live="assertive"
+          ></p>
           <figure className={styles.left__header}>
             <h1>PizzaLand</h1>
           </figure>
