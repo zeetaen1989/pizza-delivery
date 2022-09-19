@@ -48,12 +48,13 @@
           .form__control {
             display: flex;
             justify-content: space-between;
-            align-items: center;
             gap: 2rem;
 
             label {
               font-size: 0.9rem;
               font-weight: 600;
+              display: flex;
+              gap: 0.25rem;
             }
 
             input {
