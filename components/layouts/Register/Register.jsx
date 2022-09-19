@@ -88,44 +88,182 @@ const Register = () => {
           <article className={styles.left__content}>
             <h2>Create An Account</h2>
             <p>Get access to Exclusive Features by creating an account</p>
-            <form>
+            <form onSubmit={handleSubmit}>
               <article className={styles.form__control}>
-                <label htmlFor={`${id}-name`}>Name</label>
-                <input
-                  id={`${id}-name`}
-                  type="text"
-                  name="name"
-                  placeholder="Enter Your Name"
-                />
+                <label htmlFor={`${id}-name`}>
+                  Name
+                  <span className={`${validName ? styles.valid : styles.hide}`}>
+                    <FaCheck className={styles.form__icons} />
+                  </span>
+                  <span
+                    className={`${
+                      validName || !user ? styles.hide : styles.invalid
+                    }`}
+                  >
+                    <FaTimes className={styles.form__icons} />
+                  </span>
+                </label>
+                <div className={styles.input__field}>
+                  <input
+                    id={`${id}-name`}
+                    ref={userRef}
+                    type="text"
+                    name="name"
+                    autoComplete="off"
+                    onChange={(e) => setUser(e.target.value)}
+                    aria-invalid={validName ? "false" : "true"}
+                    aria-describedby="uidnote"
+                    onFocus={() => setUserFocus(true)}
+                    onBlur={() => setUserFocus(false)}
+                    placeholder="Enter Your Name"
+                    required
+                  />
+                  <p
+                    id="uidnote"
+                    className={`${
+                      userFocus && user && !validName
+                        ? styles.instructions
+                        : styles.offscreen
+                    }`}
+                  >
+                    <FaInfoCircle className={styles.info__icons} />
+                    4 to 24 characters.
+                    <br />
+                    Must begin with a letter.
+                    <br />
+                    Letters, numbers, underscores, hyphens allowed.
+                  </p>
+                </div>
               </article>
               <article className={styles.form__control}>
-                <label htmlFor={`${id}-email`}>Email</label>
-                <input
-                  id={`${id}-email`}
-                  type="email"
-                  name="email"
-                  placeholder="Enter Your Email"
-                />
+                <label htmlFor={`${id}-email`}>
+                  Email
+                  <span className={validEmail ? styles.valid : styles.hide}>
+                    <FaCheck className={styles.form__icons} />
+                  </span>
+                  <span
+                    className={
+                      validEmail || !email ? styles.hide : styles.invalid
+                    }
+                  >
+                    <FaTimes className={styles.form__icons} />
+                  </span>
+                </label>
+                <div className={styles.input__field}>
+                  <input
+                    id={`${id}-email`}
+                    type="email"
+                    name="email"
+                    ref={emailRef}
+                    autoComplete="off"
+                    onChange={(e) => setEmail(e.target.value)}
+                    aria-invalid={validEmail ? "false" : "true"}
+                    aria-describedby="emailnote"
+                    onFocus={() => setEmailFocus(true)}
+                    onBlur={() => setEmailFocus(false)}
+                    placeholder="Enter Your Email"
+                    required
+                  />
+                  <p
+                    id="emailnote"
+                    className={`${
+                      emailFocus && email && !validEmail
+                        ? styles.instructions
+                        : styles.offscreen
+                    }`}
+                  >
+                    <FaInfoCircle className={styles.info__icons} />
+                    Please enter valid email address!
+                  </p>
+                </div>
               </article>
               <article className={styles.form__control}>
-                <label htmlFor={`${id}-password`}>Password</label>
-                <input
-                  id={`${id}-password`}
-                  name="password"
-                  type="password"
-                  placeholder="Enter Your Password"
-                />
+                <label htmlFor={`${id}-password`}>
+                  Password
+                  <span className={validPwd ? styles.valid : styles.hide}>
+                    <FaCheck className={styles.form__icons} />
+                  </span>
+                  <span
+                    className={validPwd || !pwd ? styles.hide : styles.invalid}
+                  >
+                    <FaTimes className={styles.form__icons} />
+                  </span>
+                </label>
+                <div className={styles.input__field}>
+                  <input
+                    id={`${id}-password`}
+                    name="password"
+                    type="password"
+                    autoComplete="off"
+                    onChange={(e) => setPwd(e.target.value)}
+                    aria-invalid={validPwd ? "false" : "true"}
+                    aria-describedby="pwdnote"
+                    onFocus={() => setPwdFocus(true)}
+                    onBlur={() => setPwdFocus(false)}
+                    placeholder="Enter Your Password"
+                    required
+                  />
+                  <p
+                    id="pwdnote"
+                    className={`${
+                      pwdFocus && !validPwd
+                        ? styles.instructions
+                        : styles.offscreen
+                    }`}
+                  >
+                    <FaInfoCircle className={styles.info__icons} />
+                    8 to 24 characters.
+                    <br />
+                    Must have one lowercase letter.
+                    <br />
+                    Must have one uppercase letter.
+                    <br />
+                    Must have one number.
+                    <br />
+                    Must have one special character.
+                  </p>
+                </div>
               </article>
               <article className={styles.form__control}>
                 <label htmlFor={`${id}-confirmPassword`}>
                   Confirm Password
+                  <span className={validMatch ? styles.valid : styles.hide}>
+                    <FaCheck className={styles.form__icons} />
+                  </span>
+                  <span
+                    className={
+                      validMatch || !matchPwd ? styles.hide : styles.invalid
+                    }
+                  >
+                    <FaTimes className={styles.form__icons} />
+                  </span>
                 </label>
-                <input
-                  id={`${id}-confirmPassword`}
-                  name="confirmPassword"
-                  type="password"
-                  placeholder="Confirm Your Password"
-                />
+                <div className={styles.input__field}>
+                  <input
+                    id={`${id}-confirmPassword`}
+                    name="confirmPassword"
+                    type="password"
+                    autoComplete="off"
+                    onChange={(e) => setMatchPwd(e.target.value)}
+                    aria-invalid={validMatch ? "false" : "true"}
+                    aria-describedby="confirmnote"
+                    onFocus={() => setMatchFocus(true)}
+                    onBlur={() => setMatchFocus(false)}
+                    placeholder="Confirm Your Password"
+                    required
+                  />
+                  <p
+                    id="confirmnote"
+                    className={`${
+                      matchFocus && matchPwd && !validMatch
+                        ? styles.instructions
+                        : styles.offscreen
+                    }`}
+                  >
+                    <FaInfoCircle className={styles.info__icons} />
+                    Passwords did not match!
+                  </p>
+                </div>
               </article>
               <article className={styles.terms}>
                 <input type="checkbox" name="terms" id={`${id}-terms`} />
