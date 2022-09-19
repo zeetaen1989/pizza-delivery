@@ -271,7 +271,7 @@ const Register = () => {
                   I&apos;ve read and accept the Terms & Conditions
                 </label>
               </article>
-              <a className={styles.btn}>
+              <a className={styles.btn} role="button">
                 <span className={styles.text}>Register</span>
                 <svg viewBox="0 0 13 10" height="10px" width="15px">
                   <path d="M1,5 L11,5"></path>
