@@ -69,6 +69,61 @@
                 color: a.$primary-clr-2;
               }
             }
+
+            .form__icons {
+              display: grid;
+              place-items: center;
+            }
+
+            .info__icons {
+              position: absolute;
+              top: 0.25rem;
+              right: 0;
+            }
+
+            .input__field {
+              display: flex;
+              flex-direction: column;
+            }
+
+            .instructions {
+              width: 17rem;
+              font-size: 0.6rem;
+              border-radius: 0.5rem;
+              background: #000;
+              color: #fff;
+              padding: 0.25rem;
+              position: relative;
+            }
+
+            .instructions>svg {
+              margin-right: 0.25rem;
+            }
+
+            .offscreen {
+              position: absolute;
+              left: -9999px;
+            }
+
+            .hide {
+              display: none;
+            }
+
+            .valid {
+              color: limegreen;
+            }
+
+            .invalid {
+              color: red;
+            }
+
+            .error__msg {
+              background-color: lightpink;
+              color: firebrick;
+              font-weight: bold;
+              padding: 0.5rem;
+              margin-bottom: 0.5rem;
+            }
           }
 
           .terms {
