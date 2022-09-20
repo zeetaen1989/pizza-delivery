@@ -1,19 +1,25 @@
-import Link from "next/link";
-import Image from "next/image";
 import { useRef, useState, useEffect, useId } from "react";
-import styles from "./Register.module.scss";
+import axios from "pages/api/axios";
 import { FaCheck, FaInfoCircle, FaTimes } from "react-icons/fa";
+import {
+  AuthenticationBtn,
+  AuthenticationImage,
+  AuthenticationLink,
+  AuthenticationSuccess,
+} from "@components/elements";
+import styles from "./Register.module.scss";
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
 const EMAIL_REGEX =
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
+const REGISTER_URL = "/register";
+
 const Register = () => {
   const id = useId();
 
   const userRef = useRef();
-  const emailRef = useRef();
   const errorRef = useRef();
 
   const [user, setUser] = useState("");
@@ -78,11 +84,12 @@ const Register = () => {
     <section className={styles.container}>
       <section className={styles.wrapper}>
         {success ? (
-          <section>
-            <h1>Registration Successful!</h1>
-            <Link href="/login">
-              <a>Login</a>
-            </Link>
+          <section className={styles.success}>
+            <AuthenticationSuccess
+              title="Registration Successful!"
+              linkName="Login"
+              linkURL="login"
+            />
           </section>
         ) : (
           <section className={styles.left}>
@@ -168,7 +175,6 @@ const Register = () => {
                       id={`${id}-email`}
                       type="email"
                       name="email"
-                      ref={emailRef}
                       autoComplete="off"
                       onChange={(e) => setEmail(e.target.value)}
                       aria-invalid={validEmail ? "false" : "true"}
@@ -291,35 +297,23 @@ const Register = () => {
                     I&apos;ve read and accept the Terms & Conditions
                   </label>
                 </article>
-                <button className={styles.btn} role="button">
-                  <span className={styles.text}>Register</span>
-                  <svg viewBox="0 0 13 10" height="10px" width="15px">
-                    <path d="M1,5 L11,5"></path>
-                    <polyline points="8 1 12 5 8 9"></polyline>
-                  </svg>
-                </button>
+                <AuthenticationBtn btnName="Register" />
               </form>
-              <article className={styles.bottom__content}>
-                <p>Already have an account?</p>
-                <Link href="/login">
-                  <a>Login</a>
-                </Link>
-              </article>
+              <AuthenticationLink
+                linkDescription="Already have an account?"
+                linkName="Login"
+              />
             </article>
           </section>
         )}
-        <div className={styles.right}>
-          <Image
-            src="/images/register-delivery.svg"
+        <section className={styles.right}>
+          <AuthenticationImage
+            imgSrc="/images/register-delivery.svg"
             alt="Delivery"
-            height="500"
-            width="700"
+            imgCaption="Get your favorite pizza delivered to your doorstep within 30
+            minutes. Moneyback guarantee."
           />
-          <p>
-            Get your favorite pizza delivered to your doorstep within 30
-            minutes. Moneyback guarantee.
-          </p>
-        </div>
+        </section>
       </section>
     </section>
   );
