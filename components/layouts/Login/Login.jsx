@@ -9,16 +9,20 @@ import {
   AuthenticationSuccess,
 } from "@components/elements";
 import styles from "./Login.module.scss";
-import { useState } from "react";
+import axios from "pages/api/axios";
+
+const LOGIN_URL = "/auth";
 
 const Login = () => {
+  const { setAuth } = useContext(AuthContext);
+
   const id = useId();
 
   const emailRef = useRef();
   const errorRef = useRef();
 
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [pwd, setPwd] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [success, setSuccess] = useState(false);
 
@@ -28,12 +32,47 @@ const Login = () => {
 
   useEffect(() => {
     setErrorMessage("");
-  }, [email, password]);
+  }, [email, pwd]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // try {
+    //   const response = await axios.post(
+    //     LOGIN_URL,
+    //     JSON.stringify({ email, pwd }),
+    //     {
+    //       headers: { "Content-Type": "application/json" },
+    //       withCredentials: true,
+    //     }
+    //   );
+
+    //   console.log(JSON.stringify(response?.data));
+    //   console.log(JSON.stringify(response))
+
+    //   const accessToken = response?.data?.accessToken;
+    //   const roles = response?.data?.roles;
+
+    //   setAuth({ email, pwd, roles, accessToken });
+    //   setEmail("");
+    //   setPwd("");
+    //   setSuccess(true);
+    // } catch (err) {
+    //   if (!err?.response) {
+    //     setErrorMessage("No Server Response!");
+    //   } else if (err.response?.status === 400) {
+    //     setErrorMessage("Missing Email or Password");
+    //   } else if (err.response?.status === 401) {
+    //     setErrorMessage("Unauthorized!");
+    //   } else {
+    //     setErrorMessage("Login Failed");
+    //   }
+
+    //   errorRef.current.focus();
+    // }
+
     setEmail("");
-    setPassword("");
+    setPwd("");
     setSuccess(true);
   };
 
