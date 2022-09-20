@@ -11,19 +11,14 @@
     box-shadow: a.$secondary-box-shadow;
     border-radius: 1rem;
 
+    .success {
+      @include a.authentication-success;
+    }
+
     .left {
-      @include a.flex-direction-column;
-      gap: 1rem;
-      flex: 1;
-      background-color: a.$primary-clr-1;
+      @include a.authentication-image;
       border-top-left-radius: 1rem;
       border-bottom-left-radius: 1rem;
-      padding: 2rem;
-
-      p {
-        text-align: center;
-        font-size: a.$regular-fs;
-      }
     }
 
     .right {
@@ -69,26 +64,18 @@
           .form__control {
             display: flex;
             justify-content: space-between;
-            align-items: center;
             gap: 2rem;
 
             input {
-              border: 1px solid a.$primary-clr-1;
-              border-radius: 0.5rem;
-              padding: 0.5rem;
-              width: 17rem;
-              outline: none;
-              color: a.$primary-clr-3;
-
-              &::placeholder {
-                color: a.$primary-clr-2;
-              }
+              @include a.authentication-input;
             }
 
             label {
-              font-size: 0.9rem;
-              font-weight: 600;
+              font-size: a.$base-fs;
+              font-weight: a.$medium-fw;
             }
+
+            @include a.authentication-form-validation;
           }
 
           .remember {
@@ -99,39 +86,6 @@
             label {
               font-size: a.$small-fs;
             }
-          }
-
-          .btn {
-            @include a.btn;
-            margin: 0rem auto;
-            padding: 0.2rem 1rem;
-            cursor: pointer;
-            user-select: none;
-
-            &::before {
-              @include a.btn-before;
-            }
-
-            .text {
-              @include a.btn-text;
-            }
-
-            svg {
-              @include a.btn-svg;
-            }
-          }
-        }
-
-        .bottom__content {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          margin-top: 1rem;
-
-          a {
-            font-size: a.$small-fs;
-            color: a.$primary-clr-4;
-            text-decoration: underline;
           }
         }
       }
