@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { useEffect, useId, useRef } from "react";
+import { useState, useEffect, useId, useRef } from "react";
+import { useContext } from "react";
+import AuthContext from "context/AuthProvider";
 import {
   AuthenticationBtn,
   AuthenticationImage,
@@ -90,8 +92,8 @@ const Login = () => {
                     id={`${id}-password`}
                     type="password"
                     name="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    value={pwd}
+                    onChange={(e) => setPwd(e.target.value)}
                     placeholder="Enter Your Password"
                     required
                   />
