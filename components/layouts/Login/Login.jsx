@@ -1,78 +1,121 @@
 import Link from "next/link";
+import { useEffect, useId, useRef } from "react";
+import {
+  AuthenticationBtn,
+  AuthenticationImage,
+  AuthenticationLink,
+  AuthenticationSuccess,
+} from "@components/elements";
 import styles from "./Login.module.scss";
-import Image from "next/image";
-import { useId } from "react";
+import { useState } from "react";
 
 const Login = () => {
   const id = useId();
+
+  const emailRef = useRef();
+  const errorRef = useRef();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+    emailRef.current.focus();
+  }, []);
+
+  useEffect(() => {
+    setErrorMessage("");
+  }, [email, password]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setEmail("");
+    setPassword("");
+    setSuccess(true);
+  };
 
   return (
     <section className={styles.container}>
       <section className={styles.wrapper}>
         <section className={styles.left}>
-          <figure>
-            <Image
-              src="/images/login-enjoy.svg"
-              alt="Enjoy"
-              height="500"
-              width="700"
+          <AuthenticationImage
+            imgSrc="/images/login-enjoy.svg"
+            altText="Enjoy"
+            imgCaption="Enjoy freshly made hot and tasty pizza with your loved ones and family."
+          />
+        </section>
+        {success ? (
+          <section className={styles.success}>
+            <AuthenticationSuccess
+              title="Login Successful!"
+              linkName="Return to Homepage"
+              linkURL=""
             />
-          </figure>
-          <p>
-            Enjoy freshly made hot and tasty pizza with your loved ones and
-            family.
-          </p>
-        </section>
-        <section className={styles.right}>
-          <figure className={styles.right__header}>
-            <h1>PizzaLand</h1>
-          </figure>
-          <hr />
-          <article className={styles.right__content}>
-            <h2>Log In</h2>
-            <p>Welcome to Pizzaland. Please Log In to access your profile.</p>
-            <form>
-              <article className={styles.form__control}>
-                <label htmlFor={`${id}-email`}>Email</label>
-                <input
-                  id={`${id}-email`}
-                  type="email"
-                  name="email"
-                  placeholder="Enter Your Email"
-                />
-              </article>
-              <article className={styles.form__control}>
-                <label htmlFor={`${id}-password`}>Password</label>
-                <input
-                  id={`${id}-password`}
-                  type="password"
-                  name="password"
-                  placeholder="Enter Your Password"
-                />
-              </article>
-              <Link href="#">
-                <a className={styles.forgot}>Forgot Password?</a>
-              </Link>
-              <article className={styles.remember}>
-                <input type="checkbox" name="remember" id={`${id}-remember`} />
-                <label htmlFor={`${id}-remember`}>Remember Me</label>
-              </article>
-              <a className={styles.btn}>
-                <span className={styles.text}>Login</span>
-                <svg viewBox="0 0 13 10" height="10px" width="15px">
-                  <path d="M1,5 L11,5"></path>
-                  <polyline points="8 1 12 5 8 9"></polyline>
-                </svg>
-              </a>
-            </form>
-            <article className={styles.bottom__content}>
-              <p>Don&apos;t have an account?</p>
-              <Link href="/register">
-                <a>Register</a>
-              </Link>
+          </section>
+        ) : (
+          <section className={styles.right}>
+            <p
+              ref={errorRef}
+              className={`${
+                errorMessage ? styles.error__msg : styles.offscreen
+              }`}
+              aria-live="assertive"
+            ></p>
+            <figure className={styles.right__header}>
+              <h1>PizzaLand</h1>
+            </figure>
+            <hr />
+            <article className={styles.right__content}>
+              <h2>Log In</h2>
+              <p>Welcome to Pizzaland. Please Log In to access your profile.</p>
+              <form onSubmit={handleSubmit}>
+                <article className={styles.form__control}>
+                  <label htmlFor={`${id}-email`}>Email</label>
+                  <input
+                    id={`${id}-email`}
+                    type="email"
+                    name="email"
+                    ref={emailRef}
+                    autoComplete="off"
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                    placeholder="Enter Your Email"
+                    required
+                  />
+                </article>
+                <article className={styles.form__control}>
+                  <label htmlFor={`${id}-password`}>Password</label>
+                  <input
+                    id={`${id}-password`}
+                    type="password"
+                    name="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Enter Your Password"
+                    required
+                  />
+                </article>
+                <Link href="#">
+                  <a className={styles.forgot}>Forgot Password?</a>
+                </Link>
+                <article className={styles.remember}>
+                  <input
+                    type="checkbox"
+                    name="remember"
+                    id={`${id}-remember`}
+                  />
+                  <label htmlFor={`${id}-remember`}>Remember Me</label>
+                </article>
+                <AuthenticationBtn btnName="Login" />
+              </form>
+              <AuthenticationLink
+                linkDescription="Don't have an account?"
+                linkName="Register"
+              />
             </article>
-          </article>
-        </section>
+          </section>
+        )}
       </section>
     </section>
   );
