@@ -12,3 +12,7 @@ export { default as ActiveLink } from "./ActiveLink/ActiveLink";
 export { default as Loader } from "./Loader/Loader";
 export { default as MobileNavbar } from "./MobileNavbar/MobileNavbar";
 export { default as MobileNavLinks } from "./MobileNavLinks/MobileNavLinks";
+export { default as AuthenticationBtn } from "./AuthenticationBtn/AuthenticationBtn";
+export { default as AuthenticationLink } from "./AuthenticationLink/AuthenticationLink";
+export { default as AuthenticationImage } from "./AuthenticationImage/AuthenticationImage";
+export { default as AuthenticationSuccess } from "./AuthenticationSuccess/AuthenticationSuccess";
