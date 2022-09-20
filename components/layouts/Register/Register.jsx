@@ -67,7 +67,7 @@ const Register = () => {
     setErrorMessage("");
   }, [user, pwd, matchPwd]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const v1 = USER_REGEX.test(user);
@@ -77,6 +77,31 @@ const Register = () => {
       return;
     }
 
+    // try {
+    //   const response = await axios.post(
+    //     REGISTER_URL,
+    //     JSON.stringify({ user, pwd }),
+    //     {
+    //       headers: { "Content-Type": "application/json" },
+    //       withCredentials: true,
+    //     }
+    //   );
+
+    //   console.log(response.data);
+    //   console.log(response.accessToken);
+    //   console.log(JSON.stringify(response));
+
+    // } catch (err) {
+    //   if (!err?.response) {
+    //     setErrorMessage("No Server Response!");
+    //   } else if (err.response?.status === 409) {
+    //     setErrorMessage("Username Taken");
+    //   } else {
+    //     setErrorMessage("Registration Failed!");
+    //   }
+
+    //   errorRef.current.focus();
+    // }
     setSuccess(true);
   };
 
