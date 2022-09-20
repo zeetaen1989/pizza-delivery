@@ -42,7 +42,7 @@ const Register = () => {
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
-    userRef.current;
+    userRef.current.focus();
   }, []);
 
   useEffect(() => {
