@@ -102,6 +102,126 @@
   transition: t.$transition-ease;
 }
 
+// Register & Login Button
+@mixin authentication-btn {
+  @include btn;
+  margin: 0rem auto;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  user-select: none;
+  background-color: c.$primary-clr-1;
+  border-radius: 1rem;
+
+  .text {
+    @include btn-text;
+  }
+
+  svg {
+    @include btn-svg;
+  }
+}
+
+// Register & Login Page Image
+@mixin authentication-image {
+  @include flex-direction-column;
+  gap: 1rem;
+  flex: 1;
+  background-color: c.$primary-clr-1;
+  padding: 2rem;
+
+  p {
+    text-align: center;
+    font-size: f.$regular-fs;
+  }
+}
+
+// Register & Login Page Input
+@mixin authentication-input {
+  border: 1px solid c.$primary-clr-1;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: 17rem;
+  outline: none;
+  color: c.$primary-clr-3;
+
+  &::placeholder {
+    color: c.$primary-clr-2;
+  }
+}
+
+// Register & Login Success Page
+@mixin authentication-success {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.5rem;
+
+  h1 {
+    font-size: f.$medium-fs;
+  }
+
+  a {
+    font-size: f.$small-fs;
+    text-decoration: underline
+  }
+}
+
+// Register & Login Page form validation
+@mixin authentication-form-validation {
+  .info__icons {
+    position: absolute;
+    top: 0.25rem;
+    right: 0;
+  }
+
+  .input__field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .instructions {
+    width: 17rem;
+    font-size: 0.6rem;
+    border-radius: 0.5rem;
+    background: #000;
+    color: #fff;
+    padding: 0.25rem;
+    position: relative;
+  }
+
+  .instructions>svg {
+    margin-right: 0.25rem;
+  }
+
+  .offscreen {
+    position: absolute;
+    left: -9999px;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .valid {
+    color: limegreen;
+  }
+
+  .invalid {
+    color: red;
+  }
+
+  .error__msg {
+    background-color: lightpink;
+    color: firebrick;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
 // Add To Cart Button Style
 @mixin btn-container {
   padding: 0.5rem 2.5rem 0.5rem 1rem;
