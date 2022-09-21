@@ -5,11 +5,11 @@
   gap: 2rem;
   flex: 3;
 
-  .top {
+  .container__top {
     display: flex;
     justify-content: space-between;
 
-    .icons__container {
+    .container__icons {
       display: flex;
       gap: 1rem;
 
@@ -40,7 +40,7 @@
       }
     }
 
-    .sort__container {
+    .container__sort {
       display: flex;
       gap: 0.5rem;
 
@@ -51,6 +51,7 @@
         color: a.$primary-clr-3;
         padding-left: 0.25rem;
         outline: none;
+        cursor: pointer;
       }
     }
   }
@@ -104,9 +105,9 @@
 // Media Query for small devices (less than 480px)
 @include a.media-query(small) {
   .container {
-    .top {
+    .container__top {
 
-      .icons__container {
+      .container__icons {
         align-items: center;
 
         p {
@@ -115,7 +116,7 @@
         }
       }
 
-      .sort__container {
+      .container__sort {
         font-size: 0.9rem;
         align-items: center;
         gap: 0rem;
