@@ -32,8 +32,8 @@ const ProductList = ({ pizzaList }) => {
 
   return (
     <section className={styles.container}>
-      <section className={styles.top}>
-        <section className={styles.icons__container}>
+      <section className={styles.container__top}>
+        <section className={styles.container__icons}>
           <MdGridView
             className={isGrid ? styles.active : styles.inactive}
             onClick={() => setIsGrid(true)}
@@ -47,7 +47,7 @@ const ProductList = ({ pizzaList }) => {
             &nbsp;Available
           </p>
         </section>
-        <section className={styles.sort__container}>
+        <section className={styles.container__sort}>
           <p>Sort by:</p>
           <select
             name="price"
