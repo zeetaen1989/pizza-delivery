@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 import { Header } from "@components/elements";
 import { about } from "@data/about-data";
 import styles from "./About.module.scss";
